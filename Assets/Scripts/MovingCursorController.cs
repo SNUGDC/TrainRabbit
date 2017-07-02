@@ -33,12 +33,12 @@ public class MovingCursorController : MonoBehaviour
 
 	private Vector2 CursorPos(Vector2 movingVector)
 	{
-		if(movingVector.magnitude <= 100f)
+		if(movingVector.magnitude <= 75f)
 		{
 			return movingVector + origin;
 		}
 
-		return origin + movingVector.normalized * 100;
+		return origin + movingVector.normalized * 75;
 	}
 
 	private void TellMovingVectorToPlayer(Vector2 movingVector)
