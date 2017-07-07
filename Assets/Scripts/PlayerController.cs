@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionStay2D(Collision2D coll)
 	{
-		if(coll.gameObject.tag == "Normal Rabbit")
+		if(coll.gameObject.GetComponent<BasicRabbitController>() != null)
 		{
 			GetComponent<BasicRabbitController>().HP -= HPDecreasePush;
 		}
