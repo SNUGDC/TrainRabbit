@@ -15,7 +15,9 @@ public class TextStarter : MonoBehaviour
 	{
 		if(transform.parent.gameObject.name.Contains("Postgraduate"))
 		{
-			talkManager.isClickPostgraduateRabbit = true;
+            if (talkManager.isMeetPostgraduateRabbit == true) {
+                talkManager.isClickPostgraduateRabbit = true;
+            }
 		}
 	}
 }
