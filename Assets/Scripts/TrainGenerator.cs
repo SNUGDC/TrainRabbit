@@ -11,9 +11,14 @@ public class TrainGenerator : MonoBehaviour
     public GameObject[] BadRabbitPrefab;
     public GameObject[] GoodRabbitPrefab;
 
-    private Dictionary<string, GameObject> NormalRabbit;
-    private Dictionary<string, GameObject> BadRabbit;
-    private Dictionary<string, GameObject> GoodRabbit;
+    private Dictionary<string, GameObject> NRdic;
+    private Dictionary<string, GameObject> BRdic;
+    private Dictionary<string, GameObject> GRdic;
+
+    private void Start()
+    {
+        BRdic.Add("잡상인", BadRabbitPrefab[0]); //암튼 이런식으로 해야함
+    }
 
     private void Update()
     {
