@@ -67,8 +67,14 @@ public class PlayerController : MonoBehaviour
 		if(coll.gameObject.tag == "Door")
 		{
 			GameObject door = coll.gameObject;
+            bool isRightDoor;
 
-			Debug.Log(door.GetComponent<Door>().doorPosition);
+            if (door.GetComponent<Door>().doorPosition == Door.DoorPosition.Right)
+                isRightDoor = true;
+            else
+                isRightDoor = false;
+
+            Debug.Log(GameObject.Find("Train").GetComponent<Train>().IsThereNextTrain(isRightDoor));
 		}
 	}
 
