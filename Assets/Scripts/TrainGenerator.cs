@@ -15,8 +15,12 @@ public class TrainGenerator : MonoBehaviour
     private Dictionary<string, GameObject> BRdic;
     private Dictionary<string, GameObject> GRdic;
 
+    private List<GameObject> Rabbits;
+
     private void Start()
     {
+        Rabbits = new List<GameObject>();
+
         ArrayToDictionary();
     }
 
@@ -35,13 +39,17 @@ public class TrainGenerator : MonoBehaviour
 
     private void CreateRabbits(/*주인동 토끼의 레벨, 열차 칸 번호를 받아와야 함*/)
     {
-        Instantiate(GRdic["OldGentleman"]);
-        Instantiate(GRdic["Postgraduate"]);
-        Instantiate(GRdic["College"]);
+        Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
+        Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+        Rabbits.Add(Instantiate(GRdic["College"]));
     }
 
     private void DeleteAllRabbits() //모든 토끼 제거
     {
+        foreach(GameObject rabbit in Rabbits)
+        {
+            Destroy(rabbit);
+        }
     }
 
     private void ArrayToDictionary()
