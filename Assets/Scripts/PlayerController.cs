@@ -62,6 +62,16 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	private void OnCollisionEnter2D(Collision2D coll)
+	{
+		if(coll.gameObject.tag == "Door")
+		{
+			GameObject door = coll.gameObject;
+
+			Debug.Log(door.GetComponent<Door>().doorPosition);
+		}
+	}
+
 	private void OnCollisionStay2D(Collision2D coll)
 	{
 		if(coll.gameObject.GetComponent<BasicRabbitController>() != null)
