@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
 {
+	public enum PlayerAge
+	{
+		Kinder, Elementry, Middle, High, Graduate
+	}
+	
 	public GameObject HPBar;
 	public GameObject ConscienceBar;
 

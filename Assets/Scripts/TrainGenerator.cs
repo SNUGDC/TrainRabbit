@@ -11,15 +11,20 @@ public class TrainGenerator : MonoBehaviour
     public RabbitDictionary[] BRD;
     public RabbitDictionary[] GRD;
 
+    public PlayerStatus.PlayerAge playerAge;
+    public int AmountOfNR;
+
     private Dictionary<string, GameObject> NRdic;
     private Dictionary<string, GameObject> BRdic;
     private Dictionary<string, GameObject> GRdic;
 
     private List<GameObject> Rabbits;
+    private GameObject Train;
 
     private void Start()
     {
         Rabbits = new List<GameObject>();
+        Train = GameObject.Find("Train");
 
         ArrayToDictionary();
     }
@@ -28,20 +33,46 @@ public class TrainGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            CreateRabbits();//지하철 내의 토끼들 생성
+            //지하철 내의 토끼들 생성
+            CreateGoodRabbits(playerAge, Train.GetComponent<Train>().trainNumber);
+            CreateNormalRabbits();
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            DeleteAllRabbits();//지하철 내의 토끼들 제거
+            DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
     }
 
-    private void CreateRabbits(/*주인동 토끼의 레벨, 열차 칸 번호를 받아와야 함*/)
+    private void CreateGoodRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)
     {
-        Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
-        Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
-        Rabbits.Add(Instantiate(GRdic["College"]));
+        switch(playerAge)
+        {
+            case PlayerStatus.PlayerAge.Kinder:
+                Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
+                Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                Rabbits.Add(Instantiate(GRdic["College"]));
+                break;
+            case PlayerStatus.PlayerAge.Elementry:
+                break;
+            case PlayerStatus.PlayerAge.Middle:
+                break;
+            case PlayerStatus.PlayerAge.High:
+                break;
+            case PlayerStatus.PlayerAge.Graduate:
+                break;
+        }
+    }
+
+    private void CreateNormalRabbits()
+    {
+        for(int amount = 0; amount < AmountOfNR; amount++)
+        {
+            int randomNum = Random.Range(0, 7);
+            Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
+
+            Rabbits.Add(Instantiate(NRD[randomNum].RabbitPrefab, spawnPos, Quaternion.identity));
+        }
     }
 
     private void DeleteAllRabbits() //모든 토끼 제거
