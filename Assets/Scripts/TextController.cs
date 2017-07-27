@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class TextController : MonoBehaviour {
 
     public TextAsset ttext;
-
+    List<string> dialogueList = new List<string>();
+    List<string> nameList = new List<string>();
+    int i = 0;
 
     Text nextName;
     Text nextText;
@@ -17,11 +19,12 @@ public class TextController : MonoBehaviour {
         Debug.Log(ttext.text);
         DialougeReader reader = new DialougeReader();
         reader.Load(ttext);
-        string[] strArray = { };
+
 
         foreach (var row in reader.GetRowList())
         {
-
+            nameList.Add(row.name);
+            dialogueList.Add(row.dialogue);
             Debug.Log(row.name + ": " + row.dialogue);
         }
         nextName = GameObject.Find("Name").GetComponent<Text>();
@@ -33,8 +36,13 @@ public class TextController : MonoBehaviour {
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-        nextName.text = "LOL";
-        nextText.text = "WTFF";
+            nextName.text = "ABC";
+            nextText.text = "123";
+            /*
+            nextName.text = nameList[i];
+            nextText.text = dialogueList[i];
+            i++;
+            */
         }
     }
 
