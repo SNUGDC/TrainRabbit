@@ -36,13 +36,10 @@ public class TextController : MonoBehaviour {
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
-            nextName.text = "ABC";
-            nextText.text = "123";
-            /*
             nextName.text = nameList[i];
             nextText.text = dialogueList[i];
             i++;
-            */
+
         }
     }
 
