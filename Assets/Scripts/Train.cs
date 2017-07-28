@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-	public int trainNumber;
+	static public int trainNumber;
 
     public bool IsThereNextTrain(bool isRightDoor)
     {

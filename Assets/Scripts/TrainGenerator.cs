@@ -19,29 +19,29 @@ public class TrainGenerator : MonoBehaviour
     private Dictionary<string, GameObject> GRdic;
 
     private List<GameObject> Rabbits;
-    private GameObject Train;
+    private GameObject NowTrain;
 
     private void Start()
     {
         Rabbits = new List<GameObject>();
-        Train = GameObject.Find("Train");
+        NowTrain = GameObject.Find("Train");
 
         ArrayToDictionary();
+        CreateRabbits();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            //지하철 내의 토끼들 생성
-            CreateGoodRabbits(playerAge, Train.GetComponent<Train>().trainNumber);
-            CreateNormalRabbits();
-        }
-
         if (Input.GetKeyDown(KeyCode.D))
         {
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
+    }
+
+    private void CreateRabbits()
+    {
+        CreateGoodRabbits(playerAge, Train.trainNumber);
+        CreateNormalRabbits();
     }
 
     private void CreateGoodRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)

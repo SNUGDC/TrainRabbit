@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D coll)
 	{
-		if(coll.gameObject.tag == "Door")
+		if(coll.gameObject.tag == "Door") //문에 부딪치면 다음 열차 차량으로 넘어가는 코드
 		{
 			GameObject door = coll.gameObject;
             bool isRightDoor;
@@ -73,8 +74,16 @@ public class PlayerController : MonoBehaviour
                 isRightDoor = true;
             else
                 isRightDoor = false;
-
-            Debug.Log(GameObject.Find("Train").GetComponent<Train>().IsThereNextTrain(isRightDoor));
+			
+			Train NowTrain = GameObject.Find("Train").GetComponent<Train>();
+            //Debug.Log(GameObject.Find("Train").GetComponent<Train>().IsThereNextTrain(isRightDoor));
+			if(NowTrain.IsThereNextTrain(isRightDoor) && isRightDoor == true)
+			{
+				Debug.Log(Train.trainNumber + "에서 " + (Train.trainNumber - 1) + "으로 넘어갑니다.");
+				Train.trainNumber -= 1;
+				Scene scene = SceneManager.GetActiveScene(); //현재 씬 가져오기
+				SceneManager.LoadScene(scene.name);
+			}
 		}
 	}
 
