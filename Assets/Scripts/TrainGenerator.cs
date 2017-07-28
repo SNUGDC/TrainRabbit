@@ -12,6 +12,7 @@ public class TrainGenerator : MonoBehaviour
     public RabbitDictionary[] GRD;
 
     public PlayerStatus.PlayerAge playerAge;
+    public int trainNum;
     public int AmountOfNR;
 
     private Dictionary<string, GameObject> NRdic;
@@ -19,29 +20,30 @@ public class TrainGenerator : MonoBehaviour
     private Dictionary<string, GameObject> GRdic;
 
     private List<GameObject> Rabbits;
-    private GameObject Train;
+    private GameObject NowTrain;
 
     private void Start()
     {
         Rabbits = new List<GameObject>();
-        Train = GameObject.Find("Train");
+        NowTrain = GameObject.Find("Train");
+        trainNum = Train.trainNumber.Value;
 
         ArrayToDictionary();
+        CreateRabbits();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            //지하철 내의 토끼들 생성
-            CreateGoodRabbits(playerAge, Train.GetComponent<Train>().trainNumber);
-            CreateNormalRabbits();
-        }
-
         if (Input.GetKeyDown(KeyCode.D))
         {
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
+    }
+
+    private void CreateRabbits()
+    {
+        CreateGoodRabbits(playerAge, trainNum);
+        CreateNormalRabbits();
     }
 
     private void CreateGoodRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)
@@ -49,9 +51,14 @@ public class TrainGenerator : MonoBehaviour
         switch(playerAge)
         {
             case PlayerStatus.PlayerAge.Kinder:
-                Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
-                Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
-                Rabbits.Add(Instantiate(GRdic["College"]));
+                if(trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                else if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
+                else if (trainNum == 14)
+                    Rabbits.Add(Instantiate(GRdic["College"]));
+                else if (trainNum == 10)
+                    Rabbits.Add(Instantiate(GRdic["Mama"]));                
                 break;
             case PlayerStatus.PlayerAge.Elementry:
                 break;

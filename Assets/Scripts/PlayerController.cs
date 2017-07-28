@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
+	public float HP;
+	public int AP;
 	public int Conscience;
 	public GameObject AttackCollider;
 	public float moveSpeed;
 
 	private float HPDecreasePush = 0.02f;
+    private Animator animator;
 
 	private void Start()
 	{
@@ -23,10 +27,15 @@ public class PlayerController : MonoBehaviour
 		}
 		
 		movingVector = Vector2.zero;
+
+        animator = GetComponent<Animator>();
 	}
 	
 	private void Update()
 	{
+		//앞에 있는 토끼는 앞에 있도록 해줍니다.
+		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+
 		if(transform.position.y >= 3f && movingVector.y > 0)
 		{
 			movingVector = new Vector2 (movingVector.x, 0);
@@ -48,13 +57,18 @@ public class PlayerController : MonoBehaviour
 		{
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
-	}
+
+        if (movingVector != Vector2.zero)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
+    }
 
 	public void Attack()
 	{
 		foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
 		{
-			rabbit.GetComponent<BasicRabbitController>().HP -= gameObject.GetComponent<BasicRabbitController>().AP;
+			rabbit.GetComponent<BasicRabbitController>().HP -= AP;
 			if(rabbit.tag == "Normal Rabbit")
 			{
 				Conscience = Conscience - 10;
@@ -64,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D coll)
 	{
-		if(coll.gameObject.tag == "Door")
+		if(coll.gameObject.tag == "Door") //문에 부딪치면 다음 열차 차량으로 넘어가는 코드
 		{
 			GameObject door = coll.gameObject;
             bool isRightDoor;
@@ -73,8 +87,16 @@ public class PlayerController : MonoBehaviour
                 isRightDoor = true;
             else
                 isRightDoor = false;
-
-            Debug.Log(GameObject.Find("Train").GetComponent<Train>().IsThereNextTrain(isRightDoor));
+			
+			Train NowTrain = GameObject.Find("Train").GetComponent<Train>();
+            //Debug.Log(GameObject.Find("Train").GetComponent<Train>().IsThereNextTrain(isRightDoor));
+			if(NowTrain.IsThereNextTrain(isRightDoor) && isRightDoor == true)
+			{
+				Debug.Log(Train.trainNumber + "에서 " + (Train.trainNumber - 1) + "으로 넘어갑니다.");
+				Train.trainNumber -= 1;
+				Scene scene = SceneManager.GetActiveScene(); //현재 씬 가져오기
+				SceneManager.LoadScene(scene.name);
+			}
 		}
 	}
 
@@ -82,7 +104,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(coll.gameObject.GetComponent<BasicRabbitController>() != null)
 		{
-			GetComponent<BasicRabbitController>().HP -= HPDecreasePush;
+			HP -= HPDecreasePush;
 		}
 	}
 }

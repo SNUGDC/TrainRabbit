@@ -21,7 +21,7 @@ public class PlayerStatus : MonoBehaviour
 	}
 	private void Update()
 	{
-		HPBar.GetComponent<Scrollbar>().size = ((float)GetComponent<BasicRabbitController>().HP / 100);
+		HPBar.GetComponent<Scrollbar>().size = ((float)GetComponent<PlayerController>().HP / 100);
 		ConscienceBar.GetComponent<Scrollbar>().size = ((float)GetComponent<PlayerController>().Conscience / 1000);
 	}
 }
