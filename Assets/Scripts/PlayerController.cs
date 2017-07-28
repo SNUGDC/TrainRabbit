@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
+	public float HP;
+	public int AP;
 	public int Conscience;
 	public GameObject AttackCollider;
 	public float moveSpeed;
@@ -28,6 +30,9 @@ public class PlayerController : MonoBehaviour
 	
 	private void Update()
 	{
+		//앞에 있는 토끼는 앞에 있도록 해줍니다.
+		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+
 		if(transform.position.y >= 3f && movingVector.y > 0)
 		{
 			movingVector = new Vector2 (movingVector.x, 0);
@@ -55,7 +60,7 @@ public class PlayerController : MonoBehaviour
 	{
 		foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
 		{
-			rabbit.GetComponent<BasicRabbitController>().HP -= gameObject.GetComponent<BasicRabbitController>().AP;
+			rabbit.GetComponent<BasicRabbitController>().HP -= AP;
 			if(rabbit.tag == "Normal Rabbit")
 			{
 				Conscience = Conscience - 10;
@@ -91,7 +96,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(coll.gameObject.GetComponent<BasicRabbitController>() != null)
 		{
-			GetComponent<BasicRabbitController>().HP -= HPDecreasePush;
+			HP -= HPDecreasePush;
 		}
 	}
 }

@@ -12,6 +12,7 @@ public class TrainGenerator : MonoBehaviour
     public RabbitDictionary[] GRD;
 
     public PlayerStatus.PlayerAge playerAge;
+    public int trainNum;
     public int AmountOfNR;
 
     private Dictionary<string, GameObject> NRdic;
@@ -25,6 +26,7 @@ public class TrainGenerator : MonoBehaviour
     {
         Rabbits = new List<GameObject>();
         NowTrain = GameObject.Find("Train");
+        trainNum = Train.trainNumber.Value;
 
         ArrayToDictionary();
         CreateRabbits();
@@ -40,7 +42,7 @@ public class TrainGenerator : MonoBehaviour
 
     private void CreateRabbits()
     {
-        CreateGoodRabbits(playerAge, Train.trainNumber);
+        CreateGoodRabbits(playerAge, trainNum);
         CreateNormalRabbits();
     }
 
@@ -49,9 +51,14 @@ public class TrainGenerator : MonoBehaviour
         switch(playerAge)
         {
             case PlayerStatus.PlayerAge.Kinder:
-                Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
-                Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
-                Rabbits.Add(Instantiate(GRdic["College"]));
+                if(trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                else if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
+                else if (trainNum == 14)
+                    Rabbits.Add(Instantiate(GRdic["College"]));
+                else if (trainNum == 10)
+                    Rabbits.Add(Instantiate(GRdic["Mama"]));                
                 break;
             case PlayerStatus.PlayerAge.Elementry:
                 break;

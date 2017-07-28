@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Train : MonoBehaviour
 {
-	static public int trainNumber;
+	static public int? trainNumber;
+
+    private void Awake()
+    {
+        if(trainNumber.HasValue == false)
+            trainNumber = 20;
+    }
 
     public bool IsThereNextTrain(bool isRightDoor)
     {
