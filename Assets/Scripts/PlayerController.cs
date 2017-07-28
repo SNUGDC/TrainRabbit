@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	public float moveSpeed;
 
 	private float HPDecreasePush = 0.02f;
+    private Animator animator;
 
 	private void Start()
 	{
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
 		}
 		
 		movingVector = Vector2.zero;
+
+        animator = GetComponent<Animator>();
 	}
 	
 	private void Update()
@@ -54,7 +57,12 @@ public class PlayerController : MonoBehaviour
 		{
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
-	}
+
+        if (movingVector != Vector2.zero)
+            animator.SetBool("isMoving", true);
+        else
+            animator.SetBool("isMoving", false);
+    }
 
 	public void Attack()
 	{
