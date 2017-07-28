@@ -7,10 +7,11 @@ public class BasicRabbitController : MonoBehaviour
 	public float HP; //체력
 	public float AP; //공격력
 	public float moveSpeed = 1f;
+	public bool isSeat;
 
 	private float movingTime;
 	private float waitingTime;
-	public float gameTime;
+	private float gameTime;
 	private Vector2 movingVector = new Vector2 (0, 0);
 
 	private void Start()
@@ -20,26 +21,9 @@ public class BasicRabbitController : MonoBehaviour
 
 	private void Update()
 	{
-		if(gameTime == 0f)
+		if(isSeat == false)
 		{
-			movingVector = DecideBackAndForthVector();
-			movingTime = Random.Range(0.3f, 1.2f);
-			waitingTime = Random.Range(2f, 6f);
-			gameTime += Time.deltaTime;
-		}
-		else if(gameTime <= movingTime)
-		{
-			CheckInside(movingVector);
-			transform.position = (Vector2)transform.position + movingVector;
-			gameTime += Time.deltaTime;
-		}
-		else if(gameTime < waitingTime)
-		{
-			gameTime += Time.deltaTime;
-		}
-		else if (gameTime >= waitingTime)
-		{
-			gameTime = 0f;
+			MoveBackAndForth();
 		}
 			
 		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
@@ -73,7 +57,28 @@ public class BasicRabbitController : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 	}
 
-	private void Move()
+	private void MoveBackAndForth()
 	{
+		if(gameTime == 0f)
+		{
+			movingVector = DecideBackAndForthVector();
+			movingTime = Random.Range(0.3f, 1.2f);
+			waitingTime = Random.Range(2f, 6f);
+			gameTime += Time.deltaTime;
+		}
+		else if(gameTime <= movingTime)
+		{
+			CheckInside(movingVector);
+			transform.position = (Vector2)transform.position + movingVector;
+			gameTime += Time.deltaTime;
+		}
+		else if(gameTime < waitingTime)
+		{
+			gameTime += Time.deltaTime;
+		}
+		else if (gameTime >= waitingTime)
+		{
+			gameTime = 0f;
+		}
 	}
 }
