@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class DialogueController : MonoBehaviour {
-
+public class DialogueController : MonoBehaviour
+{
     public TextAsset ttext;
-    List<string> dialogueList = new List<string>();
-    List<string> nameList = new List<string>();
     public int dialogueOrder = 0;
-
     public GameObject DialogueEnd;
     public Text nextName;
 	public Text nextText;
 
-    // Use this for initialization
-    void Start()
+    private List<string> dialogueList = new List<string>();
+    private List<string> nameList = new List<string>();
+/*
+    private void Start()
     {
-        Debug.Log(ttext.text);
+        //Debug.Log(ttext.text);
         DialougeReader reader = new DialougeReader();
         reader.Load(ttext);
-
 
         foreach (var row in reader.GetRowList())
         {
@@ -29,10 +27,8 @@ public class DialogueController : MonoBehaviour {
         }
     }
 
-
-    void Update()
+    private void Update()
     {
-
         nextName.text = nameList[dialogueOrder];
         nextText.text = dialogueList[dialogueOrder];
         if (Input.GetMouseButtonDown(0))
@@ -52,11 +48,6 @@ public class DialogueController : MonoBehaviour {
             }
         }
     }
-
-	private void OnMouseDown(){
-
-	}
-
-}
+*/}
 
 

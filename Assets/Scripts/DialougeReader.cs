@@ -9,7 +9,6 @@ public class DialougeReader
 	{
 		public string name;
 		public string dialogue;
-
 	}
 
 	List<Row> rowList = new List<Row>();
