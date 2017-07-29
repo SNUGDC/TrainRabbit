@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class TextController : MonoBehaviour {
+public class DialogueController : MonoBehaviour {
 
     public TextAsset ttext;
     List<string> dialogueList = new List<string>();
     List<string> nameList = new List<string>();
-    int i = 0;
+    public int dialogueOrder = 0;
 
     public GameObject DialogueEnd;
-    Text nextName;
-    Text nextText;
+    public Text nextName;
+	public Text nextText;
 
     // Use this for initialization
     void Start()
@@ -28,31 +27,36 @@ public class TextController : MonoBehaviour {
             dialogueList.Add(row.dialogue);
             Debug.Log(row.name + ": " + row.dialogue);
         }
-        nextName = GameObject.Find("Name").GetComponent<Text>();
-        nextText = GameObject.Find("Text").GetComponent<Text>();
     }
+
 
     void Update()
     {
-        nextName.text = nameList[i];
-        nextText.text = dialogueList[i];
+
+        nextName.text = nameList[dialogueOrder];
+        nextText.text = dialogueList[dialogueOrder];
         if (Input.GetMouseButtonDown(0))
         {
-            if (i == dialogueList.Count -2)
+            if (dialogueOrder == dialogueList.Count -2)
             {
-                i++;
-                nextName.text = nameList[i];
-                nextText.text = dialogueList[i];
+                dialogueOrder++;
+                nextName.text = nameList[dialogueOrder];
+                nextText.text = dialogueList[dialogueOrder];
                 DialogueEnd.SetActive(true);
             }
             else
             {
-                i++;
-                nextName.text = nameList[i];
-                nextText.text = dialogueList[i];
-            }
+                dialogueOrder++;
+                nextName.text = nameList[dialogueOrder];
+                nextText.text = dialogueList[dialogueOrder];
             }
         }
     }
+
+	private void OnMouseDown(){
+
+	}
+
+}
 
 
