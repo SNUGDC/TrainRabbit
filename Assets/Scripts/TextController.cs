@@ -45,7 +45,6 @@ public class TextController : MonoBehaviour {
                 nextText.text = dialogueList[i];
                 DialogueEnd.SetActive(true);
 
-                i = 0;
 
             }
             else
