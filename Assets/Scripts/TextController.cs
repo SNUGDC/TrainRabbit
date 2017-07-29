@@ -10,6 +10,7 @@ public class TextController : MonoBehaviour {
     List<string> nameList = new List<string>();
     int i = 0;
 
+    public GameObject DialogueEnd;
     Text nextName;
     Text nextText;
 
@@ -29,19 +30,34 @@ public class TextController : MonoBehaviour {
         }
         nextName = GameObject.Find("Name").GetComponent<Text>();
         nextText = GameObject.Find("Text").GetComponent<Text>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        nextName.text = nameList[i];
+        nextText.text = dialogueList[i];
         if (Input.GetMouseButtonDown(0)) {
-            nextName.text = nameList[i];
-            nextText.text = dialogueList[i];
-            i++;
+            if (i == dialogueList.Count -2)
+            {
+                i++;
+                nextName.text = nameList[i];
+                nextText.text = dialogueList[i];
+                DialogueEnd.SetActive(true);
+
+                i = 0;
+
+            }
+            else
+            {
+                i++;
+                nextName.text = nameList[i];
+                nextText.text = dialogueList[i];
+            }
+            }
+
 
         }
     }
 
 
-}
