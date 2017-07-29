@@ -29,19 +29,21 @@ public class TextController : MonoBehaviour {
         }
         nextName = GameObject.Find("Name").GetComponent<Text>();
         nextText = GameObject.Find("Text").GetComponent<Text>();
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        nextName.text = nameList[i];
+        nextText.text = dialogueList[i];
         if (Input.GetMouseButtonDown(0)) {
-            nextName.text = nameList[i];
-            nextText.text = dialogueList[i];
-            i++;
+                i++;
+                nextName.text = nameList[i];
+                nextText.text = dialogueList[i];
+                
+            }
 
         }
     }
 
 
-}
