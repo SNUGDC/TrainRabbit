@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TextStarter : MonoBehaviour
 {
-
-	public GameObject MovingPad;
-	public GameObject AttackPad;
-	public GameObject DialoguePanel;
-	public GameObject MainCamera;
+    private GameObject MovingPad;
+    private GameObject AttackPad;
+    private GameObject DialoguePanel;
+    private GameObject MainCamera;
 	private GameObject Player;
+
+    private void Start()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        MovingPad = canvas.transform.Find("Moving Pad").gameObject;
+        AttackPad = canvas.transform.Find("Attack Pad").gameObject;
+        DialoguePanel = canvas.transform.Find("Dialogue Panel").gameObject;
+        MainCamera = GameObject.Find("Main Camera");
+    }
 
 	private void OnMouseDown()
 	{
@@ -19,13 +27,12 @@ public class TextStarter : MonoBehaviour
 
 		if(isMeetPlayer == true)
 		{
-			//텍스트 시작
 			DialogueStart();
-			Debug.Log("시작!");
+			Debug.Log("대화 시작!");
 		}
 	}
 
-		private void DialogueStart()
+	private void DialogueStart()
 	{
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
