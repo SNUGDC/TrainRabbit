@@ -7,9 +7,10 @@ public class TrainGenerator : MonoBehaviour
     //하는 일 : 주인공 토끼가 누구고 몇번째 칸인지에 따라 열차 안의 토끼들을 생성
     //지하철을 청소하는 함수와 생성하는 함수가 필요
 
-    public RabbitDictionary[] NRD;
-    public RabbitDictionary[] BRD;
-    public RabbitDictionary[] GRD;
+    public RabbitDictionary[] NRD; //Normal Rabbit Dictionary
+    public RabbitDictionary[] BRD; //Bad Rabbit Dictionary
+    public RabbitDictionary[] GRD; //Good Rabbit Dictionary
+    public RabbitDictionary[] SRD; //Sitting Rabbit Dictionary
 
     public PlayerStatus.PlayerAge playerAge;
     public int trainNum;
