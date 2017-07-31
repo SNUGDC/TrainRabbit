@@ -22,6 +22,7 @@ public class TrainGenerator : MonoBehaviour
 
     private List<GameObject> Rabbits;
     private GameObject NowTrain;
+    private float[] chairPosX = new float[12] {-12.8f, -11.3f, -9.8f, -4.4f, -2.8f, -1.2f, 0.4f, 2.0f, 3.6f, 9.1f, 10.7f, 12.2f};
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class TrainGenerator : MonoBehaviour
     {
         CreateGoodRabbits(playerAge, trainNum);
         CreateNormalRabbits();
+        CreateSittingRabbits();
     }
 
     private void CreateGoodRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)
@@ -80,6 +82,22 @@ public class TrainGenerator : MonoBehaviour
             Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
 
             Rabbits.Add(Instantiate(NRD[randomNum].RabbitPrefab, spawnPos, Quaternion.identity));
+        }
+    }
+
+    private void CreateSittingRabbits()
+    {
+        for(int amount = 0; amount < chairPosX.Length; amount++)
+        {
+            int randomNum = Random.Range(0, SRD.Length);
+            Vector2 spawnPos = new Vector2(chairPosX[amount], 4.1f);
+
+            Rabbits.Add(Instantiate(SRD[randomNum].RabbitPrefab, spawnPos, Quaternion.identity));
+
+            if(playerAge == PlayerStatus.PlayerAge.Kinder && trainNum == 17 && amount == 9)
+            {
+                Destroy(Rabbits[Rabbits.Count - 1]);
+            }
         }
     }
 
