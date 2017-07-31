@@ -18,7 +18,11 @@ public class PlayerStatus : MonoBehaviour
 
 	private void Start()
 	{
+		GameObject Canvas = GameObject.Find("Canvas");
+		//HPBar = Canvas.transform.Find("HP bar").gameObject;
+		//ConscienceBar = Canvas.transform.Find("Conscience Bar").gameObject;
 	}
+
 	private void Update()
 	{
 		HPBar.GetComponent<Scrollbar>().size = ((float)GetComponent<PlayerController>().HP / 100);
