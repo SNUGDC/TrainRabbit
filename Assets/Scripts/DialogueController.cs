@@ -39,14 +39,10 @@ public class DialogueController : MonoBehaviour
 
         speakerName.text = nameList[dialogueOrder];
         speakerText.text = dialogueList[dialogueOrder];
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (dialogueOrder == dialogueList.Count -2)
-            {
-                DialogueEndButton.SetActive(true);
-            }
 
-            dialogueOrder++;
+        if (dialogueOrder == dialogueList.Count - 1)
+        {
+            DialogueEndButton.SetActive(true);
         }
     }
 
@@ -54,6 +50,11 @@ public class DialogueController : MonoBehaviour
     {
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
+    }
+
+    public void NextText()
+    {
+        dialogueOrder++;
     }
 }
 

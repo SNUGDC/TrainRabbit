@@ -21,7 +21,21 @@ public class TextStarter : MonoBehaviour
 		Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-	private void OnMouseUp()
+	private void Update()
+	{
+		if(Input.GetMouseButtonUp(0))
+		{
+			Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Vector2 myPos = transform.position;
+
+			if(Vector2.Distance(mousePos, myPos) <= 1f)
+			{
+				ClickBubble();
+			}
+		}
+	}
+
+	private void ClickBubble()
 	{
 		Debug.Log("말풍선을 누름");
 		GameObject TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
