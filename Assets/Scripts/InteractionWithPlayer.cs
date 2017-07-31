@@ -21,6 +21,7 @@ public class InteractionWithPlayer : MonoBehaviour
 		{
 			isMeetPlayer = false;
 			Debug.Log("헤어짐!");
+			gameObject.transform.parent.GetComponent<BasicRabbitController>().isTalking = false;
 		}
 	}
 }

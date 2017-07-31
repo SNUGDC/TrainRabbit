@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TextStarter : MonoBehaviour
 {
+	public TextAsset Dialogue;
     private GameObject MovingPad;
     private GameObject AttackPad;
     private GameObject DialoguePanel;
@@ -17,9 +18,10 @@ public class TextStarter : MonoBehaviour
         AttackPad = canvas.transform.Find("Attack Pad").gameObject;
         DialoguePanel = canvas.transform.Find("Dialogue Panel").gameObject;
         MainCamera = GameObject.Find("Main Camera");
+		Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-	private void OnMouseDown()
+	private void OnMouseUp()
 	{
 		Debug.Log("말풍선을 누름");
 		GameObject TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
@@ -36,15 +38,37 @@ public class TextStarter : MonoBehaviour
 	{
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
+		LookEachOther();
 		CloseUp();
 		DialoguePanel.SetActive(true);
-		gameObject.transform.parent.GetComponent<DialogueController>().dialogueOrder = 0;
+		DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue;
+		DialoguePanel.GetComponent<DialogueController>().dialogueOrder = 0;
+		gameObject.transform.parent.GetComponent<BasicRabbitController>().isTalking = true;
 	}
 
 	private void CloseUp()
 	{
 		MainCamera.GetComponent<Camera>().orthographicSize = 5f;
-		//MainCamera.transform.position = Player.transform.position + new Vector3(1, -1.5f, -10f);
+
+		Vector3 playerPos = Player.transform.position;
+		Vector3 myPos = transform.parent.transform.position;
+
+		MainCamera.transform.position = (playerPos + myPos) / 2 + new Vector3 (0,0,-10);
+	}
+
+	private void LookEachOther()
+	{
+		Vector3 playerPos = Player.transform.position;
+		Vector3 myPos = transform.parent.transform.position;
+
+		if(myPos.x > playerPos.x)
+		{
+			transform.parent.transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
+		else
+		{
+			transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
 	}
 
 	public void DialogueEnd()

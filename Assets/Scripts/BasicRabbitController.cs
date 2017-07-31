@@ -8,6 +8,7 @@ public class BasicRabbitController : MonoBehaviour
 	public float AP; //공격력
 	public float moveSpeed = 1f;
 	public bool isSeat;
+	public bool isTalking;
 
 	private float movingTime;
 	private float waitingTime;
@@ -21,7 +22,7 @@ public class BasicRabbitController : MonoBehaviour
 
 	private void Update()
 	{
-		if(isSeat == false)
+		if(isSeat == false && isTalking == false)
 		{
 			MoveBackAndForth();
 		}

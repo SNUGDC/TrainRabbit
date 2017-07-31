@@ -4,50 +4,57 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueController : MonoBehaviour
 {
-    public TextAsset ttext;
-    public int dialogueOrder = 0;
-    public GameObject DialogueEnd;
-    public Text nextName;
-	public Text nextText;
+    public TextAsset Dialogue;
+    public int dialogueOrder;
+    public Text speakerName;
+	public Text speakerText;
+    public GameObject DialogueEndButton;
 
     private List<string> dialogueList = new List<string>();
-    private List<string> nameList = new List<string>();
-/*
+    private List<string> nameList = new List<string>();    
+    private GameObject mainCamera;
+
     private void Start()
     {
-        //Debug.Log(ttext.text);
+        mainCamera = GameObject.Find("Main Camera");
+
         DialougeReader reader = new DialougeReader();
-        reader.Load(ttext);
+        reader.Load(Dialogue);
 
         foreach (var row in reader.GetRowList())
         {
             nameList.Add(row.name);
             dialogueList.Add(row.dialogue);
-            Debug.Log(row.name + ": " + row.dialogue);
         }
+
+        DialogueEndButton.SetActive(false);
     }
 
     private void Update()
     {
-        nextName.text = nameList[dialogueOrder];
-        nextText.text = dialogueList[dialogueOrder];
+        if(Dialogue == null)
+            return;
+        if(dialogueOrder >= nameList.Count)
+            return;
+
+        speakerName.text = nameList[dialogueOrder];
+        speakerText.text = dialogueList[dialogueOrder];
         if (Input.GetMouseButtonDown(0))
         {
             if (dialogueOrder == dialogueList.Count -2)
             {
-                dialogueOrder++;
-                nextName.text = nameList[dialogueOrder];
-                nextText.text = dialogueList[dialogueOrder];
-                DialogueEnd.SetActive(true);
+                DialogueEndButton.SetActive(true);
             }
-            else
-            {
-                dialogueOrder++;
-                nextName.text = nameList[dialogueOrder];
-                nextText.text = dialogueList[dialogueOrder];
-            }
+
+            dialogueOrder++;
         }
     }
-*/}
+
+    public void DialogueEnd()
+    {
+        mainCamera.transform.position = new Vector3(0,0,-10);
+        mainCamera.GetComponent<Camera>().orthographicSize = 8f;
+    }
+}
 
 
