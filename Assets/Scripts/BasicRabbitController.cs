@@ -63,7 +63,7 @@ public class BasicRabbitController : MonoBehaviour
 		{
 			movingVector = DecideBackAndForthVector();
 			movingTime = Random.Range(0.3f, 1.2f);
-			waitingTime = Random.Range(2f, 6f);
+			waitingTime = Random.Range(2f, 10f);
 			gameTime += Time.deltaTime;
 		}
 		else if(gameTime <= movingTime)
