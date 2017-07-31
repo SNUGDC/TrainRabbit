@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject AttackCollider;
 	public float moveSpeed;
 
-	private float HPDecreasePush = 0.02f;
+	private float HPDecreasePush = 0.05f;
     private Animator animator;
 
 	private void Start()
