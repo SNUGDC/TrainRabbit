@@ -9,6 +9,7 @@ public class DialogueController : MonoBehaviour
     public Text speakerName;
 	public Text speakerText;
     public GameObject DialogueEndButton;
+    public GameObject DialogueContinue;
 
     private List<string> dialogueList = new List<string>();
     private List<string> nameList = new List<string>();    
@@ -27,6 +28,7 @@ public class DialogueController : MonoBehaviour
             dialogueList.Add(row.dialogue);
         }
 
+        DialogueContinue.SetActive(true);
         DialogueEndButton.SetActive(false);
     }
 
@@ -42,6 +44,7 @@ public class DialogueController : MonoBehaviour
 
         if (dialogueOrder == dialogueList.Count - 1)
         {
+            DialogueContinue.SetActive(false);
             DialogueEndButton.SetActive(true);
         }
     }
