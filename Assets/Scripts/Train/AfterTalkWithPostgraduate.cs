@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class AfterTalkWithPostgraduate : MonoBehaviour
 {
-	public bool isTalked = false;
+	static public bool isTalked = false;
 
 	private GameObject MapButton;
-	private GameObject AttackPad;
 
 	private void Start()
 	{
 		MapButton = GameObject.Find("Map Button");
-		AttackPad = GameObject.Find("Attack Pad");
 		MapButton.SetActive(false);
-		AttackPad.SetActive(false);
 	}
 
 	private void Update()
@@ -22,7 +19,6 @@ public class AfterTalkWithPostgraduate : MonoBehaviour
 		if(isTalked == true)
 		{
 			MapButton.SetActive(true);
-			AttackPad.SetActive(true);
 			Destroy(GameObject.FindGameObjectWithTag("Postgraduate Rabbit"));
 		}
 	}
