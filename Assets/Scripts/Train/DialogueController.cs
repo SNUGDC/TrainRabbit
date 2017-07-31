@@ -8,8 +8,7 @@ public class DialogueController : MonoBehaviour
     public int dialogueOrder;
     public Text speakerName;
 	public Text speakerText;
-    public GameObject DialogueEndButton;
-    public GameObject DialogueContinue;
+    public GameObject DialogueButton;
 
     private List<string> dialogueList = new List<string>();
     private List<string> nameList = new List<string>();    
@@ -28,8 +27,9 @@ public class DialogueController : MonoBehaviour
             dialogueList.Add(row.dialogue);
         }
 
-        DialogueContinue.SetActive(true);
-        DialogueEndButton.SetActive(false);
+        DialogueButton.SetActive(true);
+        DialogueButton.GetComponent<Text>().text = "다음";
+        DialogueButton.GetComponent<Button>().enabled = false;
     }
 
     private void Update()
@@ -44,8 +44,8 @@ public class DialogueController : MonoBehaviour
 
         if (dialogueOrder == dialogueList.Count - 1)
         {
-            DialogueContinue.SetActive(false);
-            DialogueEndButton.SetActive(true);
+            DialogueButton.GetComponent<Text>().text = "대화를 끝내려면 여기를 누르세요.";
+            DialogueButton.GetComponent<Button>().enabled = true;
         }
     }
 
