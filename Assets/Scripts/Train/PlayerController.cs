@@ -6,25 +6,25 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
-	public float HP;
+	static public float HP = 70;
 	public int AP;
-	public int Conscience;
+	static public int Conscience = 100;
 	public GameObject AttackCollider;
 	public float moveSpeed;
 
-	private float HPDecreasePush = 0.05f;
+	private float HPDecreasePush = 0.1f;
     private Animator animator;
 
 	private void Start()
 	{
-		if(PlayerPrefs.HasKey("Conscience") == false)
+		/*if(PlayerPrefs.HasKey("Conscience") == false)
 		{
-			Conscience = 1000;
+			Conscience = 100;
 		}
 		else
 		{
 			Conscience = PlayerPrefs.GetInt("Conscience");
-		}
+		}*/
 		
 		movingVector = Vector2.zero;
 
@@ -69,9 +69,10 @@ public class PlayerController : MonoBehaviour
 		foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
 		{
 			rabbit.GetComponent<BasicRabbitController>().HP -= AP;
-			if(rabbit.tag == "Normal Rabbit")
+			if(rabbit.name.Contains("Bunny"))
 			{
-				Conscience = Conscience - 10;
+				Conscience = Conscience - 1;
+				Debug.Log(Conscience);
 			}
 		}
 	}
