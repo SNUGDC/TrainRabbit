@@ -74,7 +74,10 @@ public class PlayerController : MonoBehaviour
 				Conscience = Conscience - 1;
 			}
 		}
-	}
+
+        animator.SetTrigger("attack");
+
+    }
 
 	private void OnCollisionEnter2D(Collision2D coll)
 	{
