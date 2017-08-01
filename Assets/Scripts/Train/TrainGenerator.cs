@@ -90,7 +90,7 @@ public class TrainGenerator : MonoBehaviour
         for(int amount = 0; amount < chairPosX.Length; amount++)
         {
             int randomNum = Random.Range(0, SRD.Length);
-            Vector2 spawnPos = new Vector2(chairPosX[amount], 4.1f);
+            Vector2 spawnPos = new Vector2(chairPosX[amount], 4.8f);
 
             Rabbits.Add(Instantiate(SRD[randomNum].RabbitPrefab, spawnPos, Quaternion.identity));
 

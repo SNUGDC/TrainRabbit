@@ -72,10 +72,12 @@ public class PlayerController : MonoBehaviour
 			if(rabbit.name.Contains("Bunny"))
 			{
 				Conscience = Conscience - 1;
-				Debug.Log(Conscience);
 			}
 		}
-	}
+
+        animator.SetTrigger("attack");
+
+    }
 
 	private void OnCollisionEnter2D(Collision2D coll)
 	{

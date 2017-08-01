@@ -17,7 +17,7 @@ public class BasicRabbitController : MonoBehaviour
 
 	private void Start()
 	{
-		gameTime = 0f;
+        gameTime = Random.Range(-4f, -1f);
 	}
 
 	private void Update()
