@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoryPageController : MonoBehaviour {
+public class StoryPageController : MonoBehaviour
+{
 
     public GameObject StoryPageControl;
-    public GameObject TrainNum;
+    public int TrainNum;
 
 
     // Use this for initialization
     void Start()
     {
-        GameObject train = GameObject.Find("Train Generator");
-        TrainNum = train.transform.Find("Train Num").gameObject;
-        if (TrainNum == 0) { 
-        StoryPageControl.SetActive(true);
-    }
+        TrainNum = Train.trainNumber.Value;
+
+        if (TrainNum != 20)
+        { 
+            StoryPageControl.SetActive(false);
+        }
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.GetMouseButtonUp(0))
         {
             StoryPageControl.SetActive(false);
