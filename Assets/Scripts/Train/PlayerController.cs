@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour
 			if(rabbit.name.Contains("Bunny"))
 			{
 				Conscience = Conscience - 1;
-				Debug.Log(Conscience);
 			}
 		}
 	}
