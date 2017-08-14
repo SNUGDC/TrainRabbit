@@ -593,6 +593,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114821958951664852, guid: 2cacaaa566cd58c4e98416d5ae184113,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cacaaa566cd58c4e98416d5ae184113, type: 2}
   m_IsPrefabParent: 0
@@ -601,6 +606,24 @@ GameObject:
   m_PrefabParentObject: {fileID: 1088802309439542, guid: 2cacaaa566cd58c4e98416d5ae184113,
     type: 2}
   m_PrefabInternal: {fileID: 1954381840}
+--- !u!114 &2035130104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035130103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170df1c2077b3a741a9c82ab9e69f137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 30
+  AP: 10
+  moveSpeed: 5
+  isSeat: 0
+  isTalking: 0
+  player: {fileID: 0}
+  target: {fileID: 0}
 --- !u!95 &2035130109
 Animator:
   serializedVersion: 3
