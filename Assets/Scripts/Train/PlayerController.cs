@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
 	
 	private void Update()
 	{
-		//앞에 있는 토끼는 앞에 있도록 해줍니다.
-		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+        //앞에 있는 토끼는 앞에 있도록 해줍니다.
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
 
 		if(transform.position.y >= 3f && movingVector.y > 0)
 		{
@@ -64,7 +64,9 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
     }
 
-	public void Attack()
+
+
+    public void Attack()
 	{
 		foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
 		{
