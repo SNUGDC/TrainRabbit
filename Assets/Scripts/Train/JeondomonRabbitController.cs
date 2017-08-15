@@ -14,8 +14,7 @@ public class JeondomonRabbitController : MonoBehaviour
 	private float waitingTime;
 	private float gameTime;
 	private Vector2 movingVector = new Vector2 (0, 0);
-    public GameObject player;
-    public Transform target;
+    public Transform player;
 
 
 	private void Start()
@@ -25,16 +24,21 @@ public class JeondomonRabbitController : MonoBehaviour
 
 	private void Update()
 	{
-        target = player.GetComponent<Transform>();
         float step = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        if ((transform.position - player.position).magnitude > 1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+        }
 
+        /*
         if (isSeat == false && isTalking == false)
 		{
 			MoveBackAndForth();
 		}
-			
-		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+		*/
+
+        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+        
 
 		if (HP <= 0)
 		{
@@ -42,6 +46,7 @@ public class JeondomonRabbitController : MonoBehaviour
 		}
 	}
 
+    /*
 	private Vector2 DecideBackAndForthVector()
 	{
 		Vector2 movingVector;
@@ -89,4 +94,5 @@ public class JeondomonRabbitController : MonoBehaviour
 			gameTime = 0f;
 		}
 	}
+    */
 }
