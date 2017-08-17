@@ -10,6 +10,7 @@ public class TextStarter : MonoBehaviour
     private GameObject DialoguePanel;
     private GameObject MainCamera;
 	private GameObject Player;
+	private bool isSeat;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class TextStarter : MonoBehaviour
         DialoguePanel = canvas.transform.Find("Dialogue Panel").gameObject;
         MainCamera = GameObject.Find("Main Camera");
 		Player = GameObject.FindGameObjectWithTag("Player");
+		isSeat = gameObject.transform.parent.gameObject.GetComponent<BasicRabbitController>().isSeat;
     }
 
 	private void Update()
@@ -52,7 +54,7 @@ public class TextStarter : MonoBehaviour
 	{
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
-		LookEachOther();
+		LookEachOther(isSeat);
 		CloseUp();
 		DialoguePanel.SetActive(true);
 		DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue;
@@ -70,8 +72,11 @@ public class TextStarter : MonoBehaviour
 		MainCamera.transform.position = (playerPos + myPos) / 2 + new Vector3 (0,0,-10);
 	}
 
-	private void LookEachOther()
+	private void LookEachOther(bool isSeat)
 	{
+		if(isSeat == true)
+			return;
+
 		Vector3 playerPos = Player.transform.position;
 		Vector3 myPos = transform.parent.transform.position;
 
