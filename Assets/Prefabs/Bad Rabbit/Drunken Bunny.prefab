@@ -421,7 +421,6 @@ MonoBehaviour:
   moveSpeed: 5
   isSeat: 0
   isTalking: 0
-  player: {fileID: 0}
 --- !u!114 &114539063475942478
 MonoBehaviour:
   m_ObjectHideFlags: 1
