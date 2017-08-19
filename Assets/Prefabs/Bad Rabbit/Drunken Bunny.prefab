@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 61743419371724776}
   - component: {fileID: 50720624497161036}
   - component: {fileID: 114107303722792870}
-  - component: {fileID: 95478855601828218}
+  - component: {fileID: 95205306601005228}
   m_Layer: 0
-  m_Name: Jeondomon Bunny 1
+  m_Name: Drunken Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826522306062372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.577833, y: 4.119588, z: 0}
+  m_LocalPosition: {x: -0.07, y: 4.119588, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4663948083744750}
@@ -353,8 +353,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -2.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.70199364, y: 0.5184475}
-    oldSize: {x: 3.77, y: 5.59}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.43, y: 5.6}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -388,7 +388,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4716954, y: 3.9101806}
   m_EdgeRadius: 0
---- !u!95 &95478855601828218
+--- !u!95 &95205306601005228
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -397,7 +397,7 @@ Animator:
   m_GameObject: {fileID: 1826522306062372}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3e600a32cce62b54e86313e3ed27d9a3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08ef0a7b27b107f489352d82963010e4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -466,7 +466,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -412
-  m_Sprite: {fileID: 21300000, guid: 3e0173df191fa8943b96d093bee6974a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c36b6babe7ff1b0489e0986506da2243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
