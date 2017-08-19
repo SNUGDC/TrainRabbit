@@ -14,12 +14,13 @@ public class JeondomonRabbitController : MonoBehaviour
 	private float waitingTime;
 	private float gameTime;
 	private Vector2 movingVector = new Vector2 (0, 0);
-    public Transform player;
+    private Transform player;
 
 
 	private void Start()
 	{
         gameTime = Random.Range(-4f, -1f);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 
 	private void Update()
@@ -29,6 +30,15 @@ public class JeondomonRabbitController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, step);
         }
+       
+        if ((transform.position - player.position).magnitude < 3f)
+        {
+            GetComponent<Animator>().SetTrigger("attack");
+            PlayerController.HP -= AP * Time.deltaTime; 
+        }
+        
+
+
 
         /*
         if (isSeat == false && isTalking == false)
@@ -36,6 +46,8 @@ public class JeondomonRabbitController : MonoBehaviour
 			MoveBackAndForth();
 		}
 		*/
+
+
 
         GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
         
