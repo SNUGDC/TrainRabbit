@@ -17,7 +17,8 @@ public class PanelButton : MonoBehaviour
 
     void TaskOnClick()
     {
-		textPanelPress++;
+        textPanelPress++;
         Debug.Log("Panel Press : " + textPanelPress);
     }
+
 }

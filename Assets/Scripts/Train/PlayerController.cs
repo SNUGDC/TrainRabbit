@@ -68,22 +68,24 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", false);
     }
 
-
-
     public void Attack()
-	{
-		foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
-		{
-			rabbit.GetComponent<BasicRabbitController>().HP -= AP;
-			if(rabbit.name.Contains("Bunny"))
-			{
-				Conscience = Conscience - 1;
-			}
-		}
+    {
+        if (gameObject.tag == "Player")
+        {
+            foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
+            {
+                rabbit.GetComponent<BasicRabbitController>().HP -= AP;
+                if (rabbit.name.Contains("Bunny"))
+                {
+                    Conscience = Conscience - 1;
+                }
 
-        animator.SetTrigger("attack");
+            }
 
+            animator.SetTrigger("attack");
+        }
     }
+        
 
 	private void OnCollisionEnter2D(Collision2D coll)
 	{
