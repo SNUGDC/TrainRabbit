@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 50043833180862776}
   - component: {fileID: 114058691460689690}
   m_Layer: 0
-  m_Name: Bernard Bunny 1 Kinder
+  m_Name: Bernard Bunny 3 Jooding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - {fileID: 4900000, guid: 4c1ae8c9d6ad2df48a258a8a42a64a9e, type: 3}
+  - {fileID: 4900000, guid: d58d8c9ddeba87049ae177dcda371ef0, type: 3}
 --- !u!114 &114811886413494790
 MonoBehaviour:
   m_ObjectHideFlags: 1
