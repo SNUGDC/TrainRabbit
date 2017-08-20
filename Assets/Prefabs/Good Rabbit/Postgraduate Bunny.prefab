@@ -430,7 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c156bbb5dea614e43aa1822573ab67b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogue: {fileID: 4900000, guid: f9aec0e36b97a084e951fe8a16a04647, type: 3}
+  Dialogue:
+  - {fileID: 4900000, guid: f9aec0e36b97a084e951fe8a16a04647, type: 3}
 --- !u!114 &114578801647902534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,6 +500,7 @@ SpriteRenderer:
   m_Size: {x: 2.96, y: 4.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
 --- !u!212 &212235879651517524
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -539,6 +541,7 @@ SpriteRenderer:
   m_Size: {x: 7.04, y: 5.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!212 &212678343865626522
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -579,3 +582,4 @@ SpriteRenderer:
   m_Size: {x: 3.55, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
