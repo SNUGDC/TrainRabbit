@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871203706570870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.26, y: 4.8, z: 0}
+  m_LocalPosition: {x: -9, y: 0.33319187, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4210597481539062}
@@ -446,7 +446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c156bbb5dea614e43aa1822573ab67b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dialogue: {fileID: 4900000, guid: b2f8407c235d52246b731645499902c5, type: 3}
+  Dialogue:
+  - {fileID: 4900000, guid: b2f8407c235d52246b731645499902c5, type: 3}
+  - {fileID: 4900000, guid: c054bc62de531ff439dcb68b4f4ce7fb, type: 3}
+  - {fileID: 4900000, guid: 95da8ab8c0fcec643b9df120bb94d60e, type: 3}
 --- !u!114 &114811886413494790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -499,8 +502,7 @@ SpriteRenderer:
   m_Size: {x: 2.96, y: 4.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_WasSpriteAssigned: 0
 --- !u!212 &212287992072999400
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -542,7 +544,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212312107893318650
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -584,4 +585,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
