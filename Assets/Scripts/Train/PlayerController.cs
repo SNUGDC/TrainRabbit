@@ -70,24 +70,21 @@ public class PlayerController : MonoBehaviour
 
     public void Attack()
     {
-        if (gameObject.tag == "Player")
+        foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
         {
-            foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
+            rabbit.GetComponent<BasicRabbitController>().HP -= AP;
+            if (rabbit.name.Contains("Bunny"))
             {
-                rabbit.GetComponent<BasicRabbitController>().HP -= AP;
-                if (rabbit.name.Contains("Bunny"))
-                {
-                    Conscience = Conscience - 1;
-                }
-
+                Conscience = Conscience - 1;
             }
 
-            animator.SetTrigger("attack");
         }
-    }
-        
 
-	private void OnCollisionEnter2D(Collision2D coll)
+        animator.SetTrigger("attack");
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
 	{
 		if(coll.gameObject.tag == "Door") //문에 부딪치면 다음 열차 차량으로 넘어가는 코드
 		{
