@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 50043833180862776}
   - component: {fileID: 114058691460689690}
   m_Layer: 0
-  m_Name: Getout Bunny 1 Kinder
+  m_Name: Rachel Bunny 3 Joongding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1871203706570870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.3, y: 4.8, z: 0}
+  m_LocalPosition: {x: -9.53, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4210597481539062}
@@ -164,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1588514379370896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -1.29, z: 0}
+  m_LocalPosition: {x: -0.14, y: -1.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4343705560162830}
@@ -381,7 +381,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.18, y: 5.73}
+    oldSize: {x: 2.22, y: 5.86}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - {fileID: 4900000, guid: 976a77691e1c94e4ea87300b2fe18fc2, type: 3}
+  - {fileID: 4900000, guid: 291940abda2dded46a34c7f62406439e, type: 3}
 --- !u!114 &114811886413494790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -533,7 +533,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f1fd5931737c3b04c838731d59258732, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdc261c550ae6cf44811548a9396e403, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
