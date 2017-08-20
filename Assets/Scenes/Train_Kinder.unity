@@ -361,7 +361,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &130385100
 GameObject:
@@ -567,48 +567,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 18
---- !u!1001 &230665348
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.33319187
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4343705560162830, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9aaca544c309d344b8fc829e97a35097, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &379528439
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
@@ -1121,7 +1079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4698409234219314, guid: 3472ec4ba45a3fd46919999eec77b227, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4698409234219314, guid: 3472ec4ba45a3fd46919999eec77b227, type: 2}
       propertyPath: m_LocalScale.y
@@ -1752,7 +1710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0627013, y: 0.38000003}
   m_AnchorMax: {x: 0.9787013, y: 0.62}
-  m_AnchoredPosition: {x: -3.100006, y: 4.1749997}
+  m_AnchoredPosition: {x: -3.100006, y: 4.175}
   m_SizeDelta: {x: 6.2, y: 0.76999927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1207722776
@@ -1947,7 +1905,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319240547
 GameObject:
@@ -2047,7 +2005,7 @@ RectTransform:
   - {fileID: 941833926}
   - {fileID: 1970772964}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2091,7 +2049,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4898192687654014, guid: 2e3e8c4cf5ff22f42b1d28e9589f2858, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114046449484245664, guid: 2e3e8c4cf5ff22f42b1d28e9589f2858,
         type: 2}
