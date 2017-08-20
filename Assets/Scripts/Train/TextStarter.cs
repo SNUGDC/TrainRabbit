@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TextStarter : MonoBehaviour
 {
-	public TextAsset Dialogue;
+	public TextAsset[] Dialogue;
     private GameObject MovingPad;
     private GameObject AttackPad;
     private GameObject DialoguePanel;
@@ -57,9 +57,35 @@ public class TextStarter : MonoBehaviour
 		LookEachOther(isSeat);
 		CloseUp();
 		DialoguePanel.SetActive(true);
-		DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue;
+		PassDialogue();
+		DialoguePanel.GetComponent<DialogueController>().ReadDialogue();
 		DialoguePanel.GetComponent<DialogueController>().dialogueOrder = 0;
 		gameObject.transform.parent.GetComponent<BasicRabbitController>().isTalking = true;
+	}
+
+	private void PassDialogue()
+	{
+		if(Dialogue.Length <= 1)
+		{
+			DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue[0];
+			return;
+		}
+
+		if(Player.GetComponent<PlayerController>().isQuest == false)
+		{
+			DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue[0];
+		}
+		else if(Player.GetComponent<PlayerController>().isQuest == true)
+		{
+			if(Player.GetComponent<PlayerController>().isQuestComplete == false)
+			{
+				DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue[1];
+			}
+			else if(Player.GetComponent<PlayerController>().isQuestComplete == true)
+			{
+				DialoguePanel.GetComponent<DialogueController>().Dialogue = Dialogue[2];
+			}
+		}
 	}
 
 	private void CloseUp()

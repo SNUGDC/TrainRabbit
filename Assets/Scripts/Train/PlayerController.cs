@@ -11,12 +11,16 @@ public class PlayerController : MonoBehaviour
 	static public int Conscience = 100;
 	public GameObject AttackCollider;
 	public float moveSpeed;
+	public bool isQuest;
+	public bool isQuestComplete;
 
 	private float HPDecreasePush = 0.1f;
     private Animator animator;
 
 	private void Start()
 	{
+		isQuest = false;
+		isQuestComplete = false;
 		/*if(PlayerPrefs.HasKey("Conscience") == false)
 		{
 			Conscience = 100;
@@ -113,5 +117,10 @@ public class PlayerController : MonoBehaviour
 		{
 			HP -= HPDecreasePush;
 		}
+	}
+
+	public void GetQuest()
+	{
+		isQuest = true;
 	}
 }

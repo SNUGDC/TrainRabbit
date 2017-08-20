@@ -24,6 +24,11 @@ public class DialogueController : MonoBehaviour
         QuestAccept = ChoicePanel.transform.Find("Yes").gameObject;
         QuestRefuse = ChoicePanel.transform.Find("No").gameObject;
 
+        ReadDialogue();
+    }
+
+    public void ReadDialogue()
+    {
         TextReader reader = new TextReader();
         reader.Parse(Dialogue);
         dialogueList = reader.dialogueList;
@@ -31,6 +36,7 @@ public class DialogueController : MonoBehaviour
         DialogueButton.SetActive(true);
         DialogueButton.GetComponent<Text>().text = "다음";
         DialogueButton.GetComponent<Button>().enabled = false;
+        ChoicePanel.SetActive(false);
     }
 
     private void Update()
@@ -67,6 +73,7 @@ public class DialogueController : MonoBehaviour
         {
             DialogueButton.SetActive(false);
             ChoicePanel.SetActive(true);
+            QuestAccept.GetComponent<QuestManager>().QuestItemName = dialogueList[dialogueOrder].Text.Trim();
             dialogueOrder -= 1;
         }
     }
