@@ -86,10 +86,56 @@ public class TrainGenerator : MonoBehaviour
             case PlayerStatus.PlayerAge.Elementry:
                 if (trainNum == 20)
                     Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 12)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 7)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
                 break;
             case PlayerStatus.PlayerAge.Middle:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 18)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 15)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 12)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 9)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 6)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 3)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
                 break;
             case PlayerStatus.PlayerAge.High:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(BRdic["Drunken"]));
+                else if (trainNum == 19)
+                {
+                    Rabbits.Add(Instantiate(BRdic["Drunken"]));
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                }
+                else if (trainNum == 16)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 14)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 11)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                else if (trainNum == 10)
+                {
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                }
+                else if (trainNum == 7)
+                    Rabbits.Add(Instantiate(BRdic["Drunken"]));
+                else if (trainNum == 6)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 4)
+                    Rabbits.Add(Instantiate(BRdic["Jeondomon"]));
+                else if (trainNum == 2)
+                    Rabbits.Add(Instantiate(BRdic["Drunken"]));
+                else if (trainNum == 1)
+                    Rabbits.Add(Instantiate(BRdic["Drunken"]));
                 break;
             case PlayerStatus.PlayerAge.Graduate:
                 break;
