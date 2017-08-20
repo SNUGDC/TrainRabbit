@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 50268281356594398}
   - component: {fileID: 114892542224445162}
   - component: {fileID: 114046449484245664}
-  - component: {fileID: 95004641219395378}
+  - component: {fileID: 95609664308546006}
   m_Layer: 0
   m_Name: Goding Player
   m_TagString: Player
@@ -248,7 +248,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.2, y: 4.1}
+    oldSize: {x: 2.64, y: 5.52}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -257,7 +257,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 0.6622753}
   m_EdgeRadius: 0
---- !u!95 &95004641219395378
+--- !u!95 &95609664308546006
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -266,7 +266,7 @@ Animator:
   m_GameObject: {fileID: 1766929867104680}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb8bd9c2857b1a54ba9df5a9e92ce003, type: 2}
+  m_Controller: {fileID: 9100000, guid: 89c3996486cf90648a4905c7cd9f640d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -313,6 +313,8 @@ MonoBehaviour:
   AP: 10
   AttackCollider: {fileID: 1348273045480354}
   moveSpeed: 4
+  isQuest: 0
+  isQuestComplete: 0
 --- !u!212 &212533673550945324
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -345,7 +347,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7f60b5ca0d9885746a8e58307e19ebed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 387807800f3830048b4a0e53f0f4a895, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -354,6 +356,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212958470561170368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -395,3 +398,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0

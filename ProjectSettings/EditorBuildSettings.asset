@@ -20,3 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Train_Kinder.unity
     guid: e7d750a83d386074daa2151a7f2c4477
+  - enabled: 1
+    path: Assets/Scenes/Train_Choding.unity
+    guid: 4150d1f936ebe414284dcb757e078af7
+  - enabled: 1
+    path: Assets/Scenes/Train_Joongding.unity
+    guid: 66455f48263841c438df70df59925066
+  - enabled: 1
+    path: Assets/Scenes/Train_Goding.unity
+    guid: 9bb082e23be78ff419371b922c0deed4
