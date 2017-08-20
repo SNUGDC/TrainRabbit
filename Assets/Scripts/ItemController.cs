@@ -23,10 +23,24 @@ public class ItemController : MonoBehaviour
 	{
 		if(coll.gameObject.tag == "Player")
 		{
-			Debug.Log(ItemName + "을 획득!");
+			UpdateItemCollect();
+			Debug.Log(ItemName + "을" + PlayerPrefs.GetInt(ItemName) + "째 획득!");
 			GetItemPanel.SetActive(true);
 			coll.gameObject.GetComponent<PlayerController>().isQuestComplete = true;
 			Destroy(gameObject);
+		}
+	}
+
+	private void UpdateItemCollect()
+	{
+		if(PlayerPrefs.HasKey(ItemName))
+		{
+			PlayerPrefs.SetInt(ItemName, PlayerPrefs.GetInt(ItemName) + 1);
+			return;
+		}
+		else
+		{
+			PlayerPrefs.SetInt(ItemName, 1);
 		}
 	}
 }
