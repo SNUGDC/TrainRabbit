@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114046449484245664}
   - component: {fileID: 95004641219395378}
   m_Layer: 0
-  m_Name: Kinder Player
+  m_Name: Goding Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212958470561170368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -396,4 +395,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
