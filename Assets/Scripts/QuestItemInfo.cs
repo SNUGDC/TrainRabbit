@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ItemInfo
+public class QuestItemInfo
 {
 	public string Name;
 	public GameObject ItemPrefab;
-	public string Information;
 }

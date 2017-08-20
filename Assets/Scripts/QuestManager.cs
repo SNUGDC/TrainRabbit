@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
-	public ItemInfo[] QuestItem;
+	public QuestItemInfo[] QuestItem;
 	[HideInInspector]
 	public string QuestItemName;
 

@@ -103,6 +103,10 @@ MonoBehaviour:
   - RabbitName: WideSitting
     RabbitPrefab: {fileID: 1416863553585502, guid: 5bfb641345ad2cc42afccfb45c3823d0,
       type: 2}
+  ItemDictionary:
+  - Name: 
+    ItemPrefab: {fileID: 0}
+    Information: 
   playerAge: 0
   trainNum: 0
   AmountOfNR: 10

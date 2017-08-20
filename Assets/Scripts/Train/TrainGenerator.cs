@@ -11,6 +11,7 @@ public class TrainGenerator : MonoBehaviour
     public RabbitDictionary[] BRD; //Bad Rabbit Dictionary
     public RabbitDictionary[] GRD; //Good Rabbit Dictionary
     public RabbitDictionary[] SRD; //Sitting Rabbit Dictionary
+    public ItemInfo[] ItemDictionary;
 
     public PlayerStatus.PlayerAge playerAge;
     public int trainNum;
