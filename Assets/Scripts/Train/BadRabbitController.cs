@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JeondomonRabbitController : MonoBehaviour
+public class BadRabbitController : MonoBehaviour
 {
 	public float HP; //체력
 	public float AP; //공격력
 	public float moveSpeed = 1f;
-	public bool isSeat;
-	public bool isTalking;
 
 	private float movingTime;
 	private float waitingTime;
@@ -36,8 +34,8 @@ public class JeondomonRabbitController : MonoBehaviour
             GetComponent<Animator>().SetTrigger("attack");
             PlayerController.HP -= AP * Time.deltaTime; 
         }
-        
 
+        LookEachOther();
 
 
         /*
@@ -57,6 +55,23 @@ public class JeondomonRabbitController : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
+
+    
+    private void LookEachOther()
+    {
+        Vector3 playerPos = player.position;
+        Vector3 myPos = transform.parent.transform.position;
+
+        if (myPos.x > playerPos.x)
+        {
+            transform.parent.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+    
 
     /*
 	private Vector2 DecideBackAndForthVector()
