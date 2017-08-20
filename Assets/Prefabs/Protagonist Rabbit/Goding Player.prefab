@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114046449484245664}
   - component: {fileID: 95004641219395378}
   m_Layer: 0
-  m_Name: Kinder Player
+  m_Name: Goding Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
