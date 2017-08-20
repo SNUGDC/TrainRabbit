@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 50043833180862776}
   - component: {fileID: 114058691460689690}
   m_Layer: 0
-  m_Name: Bernard Bunny
+  m_Name: Getout Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,7 +381,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.98, y: 5.76}
+    oldSize: {x: 2.18, y: 5.73}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -536,7 +536,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: da500271bd424a944903bf00cf8b07b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1fd5931737c3b04c838731d59258732, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
