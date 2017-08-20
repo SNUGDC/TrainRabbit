@@ -48,6 +48,7 @@ public class TrainGenerator : MonoBehaviour
         CreateGoodRabbits(playerAge, trainNum);
         CreateNormalRabbits();
         CreateSittingRabbits();
+        CreateItem();
     }
 
     private void CreateGoodRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)
@@ -100,6 +101,14 @@ public class TrainGenerator : MonoBehaviour
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
         }
+    }
+
+    private void CreateItem()
+    {
+        int randomNum = Random.Range(0, ItemDictionary.Length);
+        Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
+
+        Instantiate(ItemDictionary[randomNum].ItemPrefab, spawnPos, Quaternion.identity);
     }
 
     private void DeleteAllRabbits() //모든 토끼 제거

@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class ItemController : MonoBehaviour
 {
+	public string ItemName;
 	public bool isForQuest;
+
+	private GameObject GetItemPanel;
+
+	private void Start()
+	{
+		GetItemPanel = GameObject.Find("Canvas").transform.Find("Item Get Panel").gameObject;
+	}
 
 	private void Update()
 	{
@@ -15,7 +23,8 @@ public class ItemController : MonoBehaviour
 	{
 		if(coll.gameObject.tag == "Player")
 		{
-			Debug.Log("당근 쿠키와 플레이어의 만남!");
+			Debug.Log(ItemName + "을 획득!");
+			GetItemPanel.SetActive(true);
 			coll.gameObject.GetComponent<PlayerController>().isQuestComplete = true;
 			Destroy(gameObject);
 		}

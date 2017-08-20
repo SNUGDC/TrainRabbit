@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6159c1f055133b944ba030a88a80b248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemName: "\uB300\uC6B0\uC8FC\uC655\uD1A0\uB07C\uAD50 \uC804\uB3C4\uCC45"
   isForQuest: 0
 --- !u!212 &212580846397254246
 SpriteRenderer:
