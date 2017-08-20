@@ -13,10 +13,15 @@ public class ItemBox : MonoBehaviour
 	{
 		if(PlayerPrefs.HasKey(ItemName))
 		{
+			GetComponent<Button>().interactable = true;
 			GetComponent<Image>().sprite = ItemImage;
 			//GetComponent<Image>().SetNativeSize();
 
 			Amount = PlayerPrefs.GetInt(ItemName);
+		}
+		else
+		{
+			GetComponent<Button>().interactable = false;
 		}
 	}
 }
