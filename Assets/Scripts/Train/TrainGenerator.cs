@@ -46,6 +46,7 @@ public class TrainGenerator : MonoBehaviour
     private void CreateRabbits()
     {
         CreateGoodRabbits(playerAge, trainNum);
+        CreateBadRabbits(playerAge, trainNum);
         CreateNormalRabbits();
         CreateSittingRabbits();
         CreateItem();
@@ -66,6 +67,25 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Mama"]));                
                 break;
             case PlayerStatus.PlayerAge.Elementry:
+                break;
+            case PlayerStatus.PlayerAge.Middle:
+                break;
+            case PlayerStatus.PlayerAge.High:
+                break;
+            case PlayerStatus.PlayerAge.Graduate:
+                break;
+        }
+    }
+
+    private void CreateBadRabbits(PlayerStatus.PlayerAge playerAge, int trainNum)
+    {
+        switch (playerAge)
+        {
+            case PlayerStatus.PlayerAge.Kinder:
+                break;
+            case PlayerStatus.PlayerAge.Elementry:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(BRdic["Merchant"]));
                 break;
             case PlayerStatus.PlayerAge.Middle:
                 break;
