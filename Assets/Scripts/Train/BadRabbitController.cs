@@ -14,11 +14,13 @@ public class BadRabbitController : MonoBehaviour
 	private Vector2 movingVector = new Vector2 (0, 0);
     private Transform player;
 
+    private SpriteRenderer spriteRenderer;
 
 	private void Start()
 	{
         gameTime = Random.Range(-4f, -1f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	private void Update()
@@ -44,10 +46,7 @@ public class BadRabbitController : MonoBehaviour
 			MoveBackAndForth();
 		}
 		*/
-
-
-
-        GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
         
 
 		if (HP <= 0)
@@ -60,15 +59,15 @@ public class BadRabbitController : MonoBehaviour
     private void LookEachOther()
     {
         Vector3 playerPos = player.position;
-        Vector3 myPos = transform.parent.transform.position;
+        Vector3 myPos = transform.transform.position;
 
         if (myPos.x > playerPos.x)
         {
-            transform.parent.transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.localScale = new Vector3(1,1,1);
         }
         else
         {
-            transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
     

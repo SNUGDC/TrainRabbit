@@ -24,8 +24,11 @@ public class MovingCursorController : MonoBehaviour
 
 	public void TrackingMouse()
 	{
-        Vector2 mousePos = myTouch.Where(a => a.position.x < 400).First().position;
-		movingVector = new Vector2 (mousePos.x, mousePos.y) - origin;
+        if (myTouch.Any())
+        {
+            Vector2 mousePos = myTouch.Where(a => a.position.x < 400).First().position;
+            movingVector = new Vector2(mousePos.x, mousePos.y) - origin;
+        }
 		
 		transform.position = CursorPos(movingVector);
 	}

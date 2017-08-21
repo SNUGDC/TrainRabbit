@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
-	static public float HP = 70;
+	static public float HP = 100;
 	public int AP;
 	static public int Conscience = 100;
 	public GameObject AttackCollider;
