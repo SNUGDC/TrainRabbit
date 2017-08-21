@@ -38,6 +38,10 @@ public class TrainGenerator : MonoBehaviour
 
         Instantiate(musicManager);
 
+        if(PlayerData.Conscience < 20)
+        {
+            Rabbits.Add(Instantiate(BRdic["Gongik"]));
+        }
     }
 
     private void Update()

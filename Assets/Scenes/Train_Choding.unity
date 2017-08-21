@@ -1037,7 +1037,7 @@ Prefab:
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
       propertyPath: BRD.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1092,6 +1092,17 @@ Prefab:
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 1413833932819754, guid: f8ea73df56dcb964e9265d540d15f7b6,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[1].RabbitName
+      value: Gongik
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[1].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: abf0b9152ebdf44409df81a8ec54c9a9,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
