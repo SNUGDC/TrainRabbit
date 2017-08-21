@@ -24,7 +24,7 @@ public class BadRabbitController : MonoBehaviour
 	private void Update()
 	{
         float step = moveSpeed * Time.deltaTime;
-        if ((transform.position - player.position).magnitude > 1f)
+        if ((transform.position - player.position).magnitude > 2f)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.position, step);
         }
