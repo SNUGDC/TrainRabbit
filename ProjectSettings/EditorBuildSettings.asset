@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage Select.unity
     guid: 7f3d6938a5a93cd4a879e398aecca9f8
   - enabled: 1
-    path: Assets/Scenes/Collections.unity
+    path: Assets/Scenes/Item Collection.unity
     guid: 981cc2fadd951134ea104f003f1cf726
   - enabled: 1
     path: Assets/Scenes/Opening Story_Kinder.unity
@@ -33,5 +33,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameover Scene.unity
     guid: bc7603f6d5f5a004181fb62cfa639229
   - enabled: 1
+    path: Assets/Scenes/Collection Choice.unity
+    guid: 2fc727cdb9d506043a6998e0e07205dc
+  - enabled: 1
+    path: Assets/Scenes/Train_Soonung.unity
+    guid: b3d63fd63c520534a97fab06144bcc7f
+  - enabled: 1
     path: Assets/Scenes/Opening Story_Choding.unity
+    guid: 233261e7668f7e04b82ead63656992da
+  - enabled: 1
+    path: Assets/Scenes/How Many Station Quest.unity
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Rabbit Collection.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Opening Story_Joongding.unity
+    guid: 60e469ebd84cb9a44beb4cb276b41208
+  - enabled: 1
+    path: Assets/Scenes/Opening Story_Goding.unity
+    guid: b9216cc07ef37774986317a672980eb1
