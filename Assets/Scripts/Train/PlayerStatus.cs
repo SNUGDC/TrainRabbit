@@ -10,11 +10,8 @@ public class PlayerStatus : MonoBehaviour
 		Kinder, Elementry, Middle, High, Graduate
 	}
 	
-	public GameObject HPBar;
-	public GameObject ConscienceBar;
-
-	private int HP;
-	private int Conscience;
+	public Slider HPBar;
+	public Image ConscienceBar;
 
 	private void Start()
 	{
@@ -25,7 +22,7 @@ public class PlayerStatus : MonoBehaviour
 
 	private void Update()
 	{
-		HPBar.GetComponent<Scrollbar>().size = ((float)PlayerController.HP / 100);
-		ConscienceBar.GetComponent<Scrollbar>().size = ((float)PlayerController.Conscience / 100);
+		HPBar.value = ((float)PlayerController.HP / 100);
+        ConscienceBar.color = new Color(255, 255, 255, (float)(PlayerController.Conscience) / 50);//((float)PlayerController.Conscience / 100);
 	}
 }

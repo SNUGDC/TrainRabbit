@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+static class PlayerData
+{
+    public static int Conscience = 100;
+}
+
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
-	static public float HP = 70;
+	static public float HP = 100;
 	public int AP;
 	static public int Conscience = 100;
 	public GameObject AttackCollider;
@@ -21,7 +26,7 @@ public class PlayerController : MonoBehaviour
 	{
 		isQuest = false;
 		isQuestComplete = false;
-		/*if(PlayerPrefs.HasKey("Conscience") == false)
+        /*if(PlayerPrefs.HasKey("Conscience") == false)
 		{
 			Conscience = 100;
 		}
@@ -29,7 +34,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Conscience = PlayerPrefs.GetInt("Conscience");
 		}*/
-		
+        Conscience = PlayerData.Conscience;
 		movingVector = Vector2.zero;
 
         animator = GetComponent<Animator>();
@@ -66,6 +71,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", true);
         else
             animator.SetBool("isMoving", false);
+
+        if(HP < 0.01f)
+        {
+            SceneManager.LoadScene("Gameover Scene");
+        }
     }
 
     public void Attack()
@@ -76,6 +86,7 @@ public class PlayerController : MonoBehaviour
             if (rabbit.name.Contains("Bunny"))
             {
                 Conscience = Conscience - 1;
+                PlayerData.Conscience = Conscience;
             }
 
         }

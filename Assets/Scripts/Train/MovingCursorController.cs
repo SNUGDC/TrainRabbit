@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MovingCursorController : MonoBehaviour
 {
 	private Vector2 origin;
 	private Vector2 movingVector;
+
+    Touch[] myTouch;
 
 	private void Start()
 	{
@@ -15,12 +18,17 @@ public class MovingCursorController : MonoBehaviour
 
 	private void Update()
 	{
+        myTouch = Input.touches;
 		TellMovingVectorToPlayer(movingVector);
 	}
 
 	public void TrackingMouse()
 	{
-		movingVector = new Vector2 (Input.mousePosition.x, Input.mousePosition.y) - origin;
+        if (myTouch.Any())
+        {
+            Vector2 mousePos = myTouch.Where(a => a.position.x < 400).First().position;
+            movingVector = new Vector2(mousePos.x, mousePos.y) - origin;
+        }
 		
 		transform.position = CursorPos(movingVector);
 	}
