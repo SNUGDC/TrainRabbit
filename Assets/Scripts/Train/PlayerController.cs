@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+static class PlayerData
+{
+    public static int Conscience = 100;
+}
+
 public class PlayerController : MonoBehaviour
 {
 	public static Vector2 movingVector;
@@ -21,7 +26,7 @@ public class PlayerController : MonoBehaviour
 	{
 		isQuest = false;
 		isQuestComplete = false;
-		/*if(PlayerPrefs.HasKey("Conscience") == false)
+        /*if(PlayerPrefs.HasKey("Conscience") == false)
 		{
 			Conscience = 100;
 		}
@@ -29,7 +34,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Conscience = PlayerPrefs.GetInt("Conscience");
 		}*/
-		
+        Conscience = PlayerData.Conscience;
 		movingVector = Vector2.zero;
 
         animator = GetComponent<Animator>();
@@ -76,6 +81,7 @@ public class PlayerController : MonoBehaviour
             if (rabbit.name.Contains("Bunny"))
             {
                 Conscience = Conscience - 1;
+                PlayerData.Conscience = Conscience;
             }
 
         }

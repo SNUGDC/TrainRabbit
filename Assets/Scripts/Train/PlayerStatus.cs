@@ -13,9 +13,6 @@ public class PlayerStatus : MonoBehaviour
 	public Slider HPBar;
 	public Image ConscienceBar;
 
-	private int HP;
-	private int Conscience;
-
 	private void Start()
 	{
 		GameObject Canvas = GameObject.Find("Canvas");
