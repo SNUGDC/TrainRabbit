@@ -71,6 +71,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMoving", true);
         else
             animator.SetBool("isMoving", false);
+
+        if(HP < 0.01f)
+        {
+            SceneManager.LoadScene("Gameover Scene");
+        }
     }
 
     public void Attack()
