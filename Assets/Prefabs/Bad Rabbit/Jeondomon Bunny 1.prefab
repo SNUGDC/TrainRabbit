@@ -418,9 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 50
   AP: 10
-  moveSpeed: 5
-  isSeat: 0
-  isTalking: 0
+  moveSpeed: 4
 --- !u!114 &114539063475942478
 MonoBehaviour:
   m_ObjectHideFlags: 1
