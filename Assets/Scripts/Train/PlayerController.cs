@@ -142,4 +142,10 @@ public class PlayerController : MonoBehaviour
 	{
 		isQuest = true;
 	}
+
+    public void reset()
+    {
+        PlayerController.HP = 100;
+        PlayerData.Conscience = 100;
+    }
 }
