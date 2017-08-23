@@ -14,8 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Item Collection.unity
     guid: 981cc2fadd951134ea104f003f1cf726
-  - enabled: 1
-    path: Assets/Scenes/Opening Story/Opening Story_Kinder.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/36863ce1a5352b243b62ed5d2b6099cf
     guid: 36863ce1a5352b243b62ed5d2b6099cf
   - enabled: 1
     path: Assets/Scenes/Train/Train_Kinder.unity
@@ -45,11 +45,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Opening Story/Opening Story_Choding.unity
     guid: 233261e7668f7e04b82ead63656992da
   - enabled: 1
+    path: Assets/Scenes/Opening Story/Opening Story_Kinder.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
     path: Assets/Scenes/How Many Station Quest.unity
     guid: 335d6850037b15a4a823fc6448b0dffe
   - enabled: 1
     path: Assets/Scenes/Opening Story/Opening Story_College.unity
-    guid: 00000000000000000000000000000000
+    guid: 25507d47b1441c942bcf8e3296a03136
   - enabled: 1
     path: Assets/Scenes/Rabbit Collection.unity
     guid: c43971859ae434e4fa05ef2dce600523

@@ -253,7 +253,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 22202571c09ceca479cd55a71771154f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01bda2f05dd4a594798f3619255c641c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -307,14 +307,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 557001166}
-        m_MethodName: SceneChange
-        m_Mode: 1
+        m_MethodName: MoveScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Train_Kinder
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 557001161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a4a39c9919f0e498b3fa984de8814f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a3db62392eae404fa0b2170a1d433c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1193607887
