@@ -177,6 +177,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215,6 +220,66 @@ Prefab:
       value: 
       objectReference: {fileID: 1413833932819754, guid: f8ea73df56dcb964e9265d540d15f7b6,
         type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[0].RabbitName
+      value: Drunken
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[1].RabbitName
+      value: Gongik
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[2].RabbitName
+      value: Hentai
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[3].RabbitName
+      value: Jeondomon
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[4].RabbitName
+      value: Merchant
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[0].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: 495545f4e9956c84da5e3c7d4a047e20,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[1].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: abf0b9152ebdf44409df81a8ec54c9a9,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[2].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: 59d27d44693a5f64b8ee56ec262e1244,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[3].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: 22dbaaa430e1f9f4983653c05216afde,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: BRD.Array.data[4].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1826522306062372, guid: f5d8431b7cc27b048b19c8dbaa1b0a83,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: playerAge
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
   m_IsPrefabParent: 0
