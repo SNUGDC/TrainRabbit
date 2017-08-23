@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114107303722792870}
   - component: {fileID: 95705575929806434}
   m_Layer: 0
-  m_Name: Merchant Bunny
+  m_Name: Merchant Bad Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
