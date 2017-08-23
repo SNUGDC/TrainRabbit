@@ -82,12 +82,23 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
         {
-            rabbit.GetComponent<BasicRabbitController>().HP -= AP;
+            if (rabbit.name.Contains("Bad"))
+            {
+                rabbit.GetComponent<BadRabbitController>().HP -= AP;
+            }
+            else
+            {
+                rabbit.GetComponent<BasicRabbitController>().HP -= AP;
+                Conscience = Conscience - 1;
+                PlayerData.Conscience = Conscience;
+            }
+            /*
             if (rabbit.name.Contains("Bunny"))
             {
                 Conscience = Conscience - 1;
                 PlayerData.Conscience = Conscience;
             }
+            */
 
         }
 
