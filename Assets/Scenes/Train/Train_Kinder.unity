@@ -183,6 +183,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -220,6 +225,28 @@ Prefab:
       propertyPath: musicManager
       value: 
       objectReference: {fileID: 1413833932819754, guid: f8ea73df56dcb964e9265d540d15f7b6,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[8].RabbitName
+      value: Fact
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[8].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 46f38337dc4293240b6e93d87e3f6bf9,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[9].RabbitName
+      value: Gag
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[9].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: c9b5f52aff2001a4d8553e0c9007aba3,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}

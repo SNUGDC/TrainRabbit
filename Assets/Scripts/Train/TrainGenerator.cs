@@ -76,12 +76,14 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["OldGentleman"]));
                 else if (trainNum == 16)
                     Rabbits.Add(Instantiate(GRdic["Scared"]));
-
+                else if (trainNum == 15)
+                    Rabbits.Add(Instantiate(GRdic["Fact"]));
                 else if (trainNum == 14)
                     Rabbits.Add(Instantiate(GRdic["College"]));
                 else if (trainNum == 13)
                     Rabbits.Add(Instantiate(GRdic["Rachel"]));
-
+                else if (trainNum == 12)
+                    Rabbits.Add(Instantiate(GRdic["Gag"]));
                 else if (trainNum == 10)
                     Rabbits.Add(Instantiate(GRdic["Mama"]));
                 break;
@@ -264,7 +266,22 @@ public class TrainGenerator : MonoBehaviour
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
+            if (playerAge == PlayerStatus.PlayerAge.Kinder && trainNum == 15 && amount == 9)
+            {
+                Destroy(Rabbits[Rabbits.Count - 1]);
+            }
+
             if (playerAge == PlayerStatus.PlayerAge.Kinder && trainNum == 13 && amount == 1)
+            {
+                Destroy(Rabbits[Rabbits.Count - 1]);
+            }
+
+            if (playerAge == PlayerStatus.PlayerAge.Kinder && trainNum == 12 && amount == 9)
+            {
+                Destroy(Rabbits[Rabbits.Count - 1]);
+            }
+
+            if(playerAge == PlayerStatus.PlayerAge.Kinder && trainNum == 12 && amount == 10)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }

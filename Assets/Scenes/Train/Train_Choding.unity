@@ -240,6 +240,11 @@ Prefab:
       propertyPath: BRD.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -304,6 +309,94 @@ Prefab:
       propertyPath: BRD.Array.data[1].RabbitPrefab
       value: 
       objectReference: {fileID: 1826522306062372, guid: abf0b9152ebdf44409df81a8ec54c9a9,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[4].RabbitName
+      value: Fact
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[4].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 89d63841d0b685342a2f4085fe57ee30,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[5].RabbitName
+      value: Gag
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[5].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 762f593cdcc81c14dbd177ed51534dfa,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[6].RabbitName
+      value: Rachel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[6].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: d3b8ec0fc0c658a43b1e004ece4bf5d7,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[7].RabbitName
+      value: Scared
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[7].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: eacf52a26d908d44daa94b971b9f78c9,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[0].RabbitName
+      value: Bernard
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[0].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 86f81f808a587aa4283d1fd95cdffbda,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[1].RabbitName
+      value: Getout
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[1].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 1ae1fd370d2e10145b36dd43f7854f4a,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[2].RabbitName
+      value: Scared
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[2].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 4133de29b8282aa448e0527a49cad62d,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[3].RabbitName
+      value: Rachel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[3].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 5478e77fd96d81e47afbe88e1c277d61,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
@@ -550,6 +643,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1830660265
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 9.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343705560162830, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 762f593cdcc81c14dbd177ed51534dfa, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1928168769
 Prefab:
   m_ObjectHideFlags: 0
