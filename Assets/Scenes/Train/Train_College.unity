@@ -182,6 +182,11 @@ Prefab:
       propertyPath: BRD.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -280,6 +285,94 @@ Prefab:
       propertyPath: playerAge
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[6].RabbitName
+      value: Rachel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[6].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: d3b8ec0fc0c658a43b1e004ece4bf5d7,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[7].RabbitName
+      value: Scared
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[7].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: eacf52a26d908d44daa94b971b9f78c9,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[0].RabbitName
+      value: Bernard
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[0].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: f535debd181723e4789f0114ccd14160,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[1].RabbitName
+      value: Getout
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[1].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: bd75be4001341754389feb332985f573,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[2].RabbitName
+      value: Scared
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[2].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: f5bb57b3066dae64eb497c65570baf8b,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[3].RabbitName
+      value: Rachel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[3].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 37bba21ae28381e4fa1f10efff5d406d,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[4].RabbitName
+      value: Fact
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[4].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: f779480600e2f6e428ecb64e8cd3b10f,
+        type: 2}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[5].RabbitName
+      value: Gag
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[5].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: 88478ece1b693b74bb19131c615b3d63,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
   m_IsPrefabParent: 0
