@@ -87,6 +87,18 @@ MonoBehaviour:
   - RabbitName: Mama
     RabbitPrefab: {fileID: 1327015129102742, guid: e08dc0d4408811044b3cd249c65157ce,
       type: 2}
+  - RabbitName: Bernard
+    RabbitPrefab: {fileID: 1871203706570870, guid: 6c2f7467be0a6d643a9372726edccdd3,
+      type: 2}
+  - RabbitName: Getout
+    RabbitPrefab: {fileID: 1871203706570870, guid: 8580a57f18eae7044a1f70725d4f2d42,
+      type: 2}
+  - RabbitName: Rachel
+    RabbitPrefab: {fileID: 1871203706570870, guid: d3b8ec0fc0c658a43b1e004ece4bf5d7,
+      type: 2}
+  - RabbitName: Scared
+    RabbitPrefab: {fileID: 1871203706570870, guid: eacf52a26d908d44daa94b971b9f78c9,
+      type: 2}
   SRD:
   - RabbitName: JustSitting
     RabbitPrefab: {fileID: 1292705755755886, guid: fcece0717592c224d9baa8475ab9a1a7,
@@ -173,3 +185,5 @@ MonoBehaviour:
   playerAge: 0
   trainNum: 0
   AmountOfNR: 10
+  musicManager: {fileID: 1413833932819754, guid: f8ea73df56dcb964e9265d540d15f7b6,
+    type: 2}
