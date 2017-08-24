@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 		SetConscience();
 		Debug.Log(PlayerData.Conscience);
 
-        theMM = FindObjectOfType<MusicManager>();
+        //theMM = FindObjectOfType<MusicManager>();
     }
 	
 	private void Update()
