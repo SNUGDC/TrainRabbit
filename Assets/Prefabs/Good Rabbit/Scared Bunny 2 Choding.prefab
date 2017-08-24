@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - {fileID: 4900000, guid: b2f8407c235d52246b731645499902c5, type: 3}
+  - {fileID: 4900000, guid: f08379d0832f9a74aaa4e5ba42924b09, type: 3}
 --- !u!114 &114811886413494790
 MonoBehaviour:
   m_ObjectHideFlags: 1
