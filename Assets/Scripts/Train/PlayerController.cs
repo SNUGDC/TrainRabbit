@@ -21,14 +21,15 @@ public class PlayerController : MonoBehaviour
 	private float HPDecreasePush = 0.1f;
     private Animator animator;
 
-	private void Awake()
-	{
-		SetConscience();
-	}
-
 	private void SetConscience()
 	{
-		PlayerStatus.PlayerAge playerAge = GameObject.Find("Train Generator").GetComponent<TrainGenerator>().playerAge;
+		TrainGenerator trainGenerator = GameObject.Find("Train Generator").GetComponent<TrainGenerator>();
+		int trainNum = trainGenerator.trainNum;
+
+		if(trainNum != 20)
+			return;
+
+		PlayerStatus.PlayerAge playerAge = trainGenerator.playerAge;
 		string ConscienceKey = "Conscience_" + playerAge.ToString();
 
 		if(PlayerPrefs.HasKey(ConscienceKey))
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
 		movingVector = Vector2.zero;
 
         animator = GetComponent<Animator>();
+		SetConscience();
+		Debug.Log(PlayerData.Conscience);
 	}
 	
 	private void Update()
