@@ -188,5 +188,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerController.HP = 100;
         PlayerData.Conscience = 100;
+
+		PlayerPrefs.DeleteAll();
     }
 }
