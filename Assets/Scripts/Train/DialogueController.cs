@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
 	public Text speakerText;
     public GameObject DialogueButton;
     public GameObject ChoicePanel;
+    public GameObject ClearPanel;
 
     private List<Dialogue> dialogueList = new List<Dialogue>();
     private GameObject mainCamera;
@@ -46,16 +47,24 @@ public class DialogueController : MonoBehaviour
         if(dialogueOrder >= dialogueList.Count)
             return;
 
-        SoundEffect();
-        Choice();
-        speakerName.text = dialogueList[dialogueOrder].Speaker;
-        speakerText.text = dialogueList[dialogueOrder].Text;
+        UpdateDialogue();        
 
         if (dialogueOrder == dialogueList.Count - 1)
         {
             DialogueButton.GetComponent<Text>().text = "대화를 끝내려면 여기를 누르세요.";
             DialogueButton.GetComponent<Button>().enabled = true;
         }
+    }
+
+    private void UpdateDialogue()
+    {
+        speakerName.text = dialogueList[dialogueOrder].Speaker;
+        speakerText.text = dialogueList[dialogueOrder].Text;
+
+        SoundEffect();
+        Choice();
+        StatusChange();
+        ImagePopUp();
     }
 
     private void SoundEffect()
@@ -75,6 +84,42 @@ public class DialogueController : MonoBehaviour
             ChoicePanel.SetActive(true);
             QuestAccept.GetComponent<QuestManager>().QuestItemName = dialogueList[dialogueOrder].Text.Trim();
             dialogueOrder -= 1;
+        }
+    }
+
+    private void StatusChange()
+    {
+        if(dialogueList[dialogueOrder].Speaker == "Status")
+        {
+            string[] status_String = dialogueList[dialogueOrder].Text.Split(',');
+            int[] status_Int = new int[status_String.Length];
+
+            for(int i = 0; i < status_String.Length; i++)
+            {
+                status_Int[i] = System.Convert.ToInt32(status_String[i].Trim());
+            }
+
+            PlayerController.HP += status_Int[0];
+            Debug.Log(PlayerData.Conscience);
+            PlayerData.Conscience += status_Int[1];
+            Debug.Log(PlayerData.Conscience);
+
+            speakerName.text = "System";
+            speakerText.text = "체력이 " + status_Int[0] + "만큼 토성이 " + status_Int[1] + "만큼 회복되었다.";
+        }
+    }
+
+    private void ImagePopUp()
+    {
+        if(dialogueList[dialogueOrder].Speaker == "Image")
+        {
+            switch(dialogueList[dialogueOrder].Text.Trim())
+            {
+                case "Clear":
+                ClearPanel.SetActive(true);
+                gameObject.SetActive(false);
+                break;
+            }
         }
     }
 
