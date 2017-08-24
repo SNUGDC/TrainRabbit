@@ -29,4 +29,11 @@ public class MusicManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void ChangeMusic(AudioClip music)
+    {
+        mainMusic.Stop();
+        mainMusic.clip = music;
+        mainMusic.Play();
+    }
 }
