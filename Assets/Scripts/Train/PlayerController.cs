@@ -10,7 +10,10 @@ static class PlayerData
 
 public class PlayerController : MonoBehaviour
 {
-	public static Vector2 movingVector;
+    //public AudioClip hitSound;
+    //private MusicManager theMM;
+
+    public static Vector2 movingVector;
 	static public float HP = 100;
 	public int AP;
 	public GameObject AttackCollider;
@@ -52,7 +55,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
 		SetConscience();
 		Debug.Log(PlayerData.Conscience);
-	}
+
+        theMM = FindObjectOfType<MusicManager>();
+    }
 	
 	private void Update()
 	{
@@ -158,7 +163,12 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetTrigger("attack");
-
+        /*
+        if (hitSound != null)
+        {
+            theMM.ChangeMusic(hitSound);
+        }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
