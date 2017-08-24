@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
 	public Text speakerText;
     public GameObject DialogueButton;
     public GameObject ChoicePanel;
+    public GameObject ClearPanel;
 
     private List<Dialogue> dialogueList = new List<Dialogue>();
     private GameObject mainCamera;
@@ -63,6 +64,7 @@ public class DialogueController : MonoBehaviour
         SoundEffect();
         Choice();
         StatusChange();
+        ImagePopUp();
     }
 
     private void SoundEffect()
@@ -104,6 +106,20 @@ public class DialogueController : MonoBehaviour
 
             speakerName.text = "System";
             speakerText.text = "체력이 " + status_Int[0] + "만큼 토성이 " + status_Int[1] + "만큼 회복되었다.";
+        }
+    }
+
+    private void ImagePopUp()
+    {
+        if(dialogueList[dialogueOrder].Speaker == "Image")
+        {
+            switch(dialogueList[dialogueOrder].Text.Trim())
+            {
+                case "Clear":
+                ClearPanel.SetActive(true);
+                gameObject.SetActive(false);
+                break;
+            }
         }
     }
 
