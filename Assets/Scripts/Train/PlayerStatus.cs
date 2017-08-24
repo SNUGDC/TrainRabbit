@@ -23,6 +23,9 @@ public class PlayerStatus : MonoBehaviour
 	private void Update()
 	{
 		HPBar.value = ((float)PlayerController.HP / 100);
-        ConscienceBar.color = new Color(255, 255, 255, (float)(PlayerController.Conscience) / 50);//((float)PlayerController.Conscience / 100);
+
+		Debug.Log(ConscienceBar.color);
+		float ConscienceColor = ((float)PlayerData.Conscience / 100);
+        ConscienceBar.color = new Color(ConscienceColor, ConscienceColor, ConscienceColor);
 	}
 }
