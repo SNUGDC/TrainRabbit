@@ -447,9 +447,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialogue:
-  - {fileID: 4900000, guid: b2f8407c235d52246b731645499902c5, type: 3}
-  - {fileID: 4900000, guid: c054bc62de531ff439dcb68b4f4ce7fb, type: 3}
-  - {fileID: 4900000, guid: 95da8ab8c0fcec643b9df120bb94d60e, type: 3}
+  - {fileID: 4900000, guid: 948ae87adf8c31945bbae2621f88d3b5, type: 3}
+  - {fileID: 4900000, guid: 56e53857c968585448f5f89de2dccf2c, type: 3}
+  - {fileID: 4900000, guid: fe2fa31d9c93ef34f9ac19c4a8a280c6, type: 3}
 --- !u!114 &114811886413494790
 MonoBehaviour:
   m_ObjectHideFlags: 1
