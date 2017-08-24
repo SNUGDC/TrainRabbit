@@ -21,7 +21,7 @@ public class ItemController : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D coll)
 	{
-		if(coll.gameObject.tag == "Player")
+		if(coll.gameObject.tag == "Player" && isForQuest == false)
 		{
 			UpdateItemCollect();
 			Debug.Log(ItemName + "을" + PlayerPrefs.GetInt(ItemName) + "째 획득!");

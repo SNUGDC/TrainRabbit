@@ -99,6 +99,12 @@ MonoBehaviour:
   - RabbitName: Scared
     RabbitPrefab: {fileID: 1871203706570870, guid: eacf52a26d908d44daa94b971b9f78c9,
       type: 2}
+  - RabbitName: Fact
+    RabbitPrefab: {fileID: 1871203706570870, guid: 46f38337dc4293240b6e93d87e3f6bf9,
+      type: 2}
+  - RabbitName: Gag
+    RabbitPrefab: {fileID: 1871203706570870, guid: c9b5f52aff2001a4d8553e0c9007aba3,
+      type: 2}
   SRD:
   - RabbitName: JustSitting
     RabbitPrefab: {fileID: 1292705755755886, guid: fcece0717592c224d9baa8475ab9a1a7,

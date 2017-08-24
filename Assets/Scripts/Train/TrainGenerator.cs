@@ -87,7 +87,7 @@ public class TrainGenerator : MonoBehaviour
                 else if (trainNum == 10)
                     Rabbits.Add(Instantiate(GRdic["Mama"]));
                 break;
-            case PlayerStatus.PlayerAge.Elementry:
+            case PlayerStatus.PlayerAge.Elementary:
                 if (trainNum == 18)
                     Rabbits.Add(Instantiate(GRdic["Bernard"]));
                 if (trainNum == 15)
@@ -153,7 +153,7 @@ public class TrainGenerator : MonoBehaviour
             case PlayerStatus.PlayerAge.Kinder:
                 break;
 
-            case PlayerStatus.PlayerAge.Elementry:
+            case PlayerStatus.PlayerAge.Elementary:
                 if (trainNum == 20)
                     Rabbits.Add(Instantiate(BRdic["Merchant"]));
                 else if (trainNum == 12)
@@ -322,37 +322,37 @@ public class TrainGenerator : MonoBehaviour
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 18 && amount == 5)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 18 && amount == 5)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 15 && amount == 9)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 15 && amount == 9)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 12 && amount == 7)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 12 && amount == 7)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 9 && amount == 1)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 9 && amount == 1)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 6 && amount == 9)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 6 && amount == 9)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 3 && amount == 9)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 3 && amount == 9)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }
 
-            if (playerAge == PlayerStatus.PlayerAge.Elementry && trainNum == 3 && amount == 10)
+            if (playerAge == PlayerStatus.PlayerAge.Elementary && trainNum == 3 && amount == 10)
             {
                 Destroy(Rabbits[Rabbits.Count - 1]);
             }

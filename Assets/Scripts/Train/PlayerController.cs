@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 static class PlayerData
 {
-    public static int Conscience = 100;
+    public static int Conscience;
 }
 
 public class PlayerController : MonoBehaviour
@@ -20,21 +20,32 @@ public class PlayerController : MonoBehaviour
 
 	private float HPDecreasePush = 0.1f;
     private Animator animator;
-	//private int Conscience;
+
+	private void Awake()
+	{
+		SetConscience();
+	}
+
+	private void SetConscience()
+	{
+		PlayerStatus.PlayerAge playerAge = GameObject.Find("Train Generator").GetComponent<TrainGenerator>().playerAge;
+		string ConscienceKey = "Conscience_" + playerAge.ToString();
+
+		if(PlayerPrefs.HasKey(ConscienceKey))
+		{
+			PlayerData.Conscience = PlayerPrefs.GetInt(ConscienceKey);
+		}
+		else
+		{
+			Debug.Log("유치원 스테이지가 아니라면 정상적이지 않은 스테이지 접근!! 토성 100으로 시작합니다.");
+			PlayerData.Conscience = 100;
+		}
+	}
 
 	private void Start()
 	{
 		isQuest = false;
 		isQuestComplete = false;
-        /*if(PlayerPrefs.HasKey("Conscience") == false)
-		{
-			Conscience = 100;
-		}
-		else
-		{
-			Conscience = PlayerPrefs.GetInt("Conscience");
-		}*/
-        //Conscience = PlayerData.Conscience;
 		movingVector = Vector2.zero;
 
         animator = GetComponent<Animator>();
