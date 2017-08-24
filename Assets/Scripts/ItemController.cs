@@ -26,6 +26,10 @@ public class ItemController : MonoBehaviour
 			UpdateItemCollect();
 			Debug.Log(ItemName + "을" + PlayerPrefs.GetInt(ItemName) + "째 획득!");
 			GetItemPanel.SetActive(true);
+			Destroy(gameObject);
+		}
+		else if(coll.gameObject.tag == "Player" && isForQuest == true)
+		{
 			coll.gameObject.GetComponent<PlayerController>().isQuestComplete = true;
 			Destroy(gameObject);
 		}
