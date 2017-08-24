@@ -2290,8 +2290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestItem:
-  - Name: Carrot Cookies
-    ItemPrefab: {fileID: 1999429617106378, guid: 46d118ef27ed37a4fa4c766d8aed8257,
+  - Name: Glasses
+    ItemPrefab: {fileID: 1999429617106378, guid: 4e07758830ec4dd4cb2c797bbea703ab,
       type: 2}
   QuestItemName: 
 --- !u!114 &114883199766552368
