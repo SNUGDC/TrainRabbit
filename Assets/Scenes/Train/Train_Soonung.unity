@@ -373,7 +373,7 @@ Prefab:
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
       propertyPath: playerAge
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}

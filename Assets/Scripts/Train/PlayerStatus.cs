@@ -7,7 +7,7 @@ public class PlayerStatus : MonoBehaviour
 {
 	public enum PlayerAge
 	{
-		Kinder, Elementry, Middle, High, Graduate
+		Kinder, Elementary, Middle, High, Soonung, Graduate
 	}
 	
 	public Slider HPBar;
@@ -23,6 +23,8 @@ public class PlayerStatus : MonoBehaviour
 	private void Update()
 	{
 		HPBar.value = ((float)PlayerController.HP / 100);
-        ConscienceBar.color = new Color(255, 255, 255, (float)(PlayerController.Conscience) / 50);//((float)PlayerController.Conscience / 100);
+
+		float ConscienceColor = ((float)PlayerData.Conscience / 100);
+        ConscienceBar.color = new Color(ConscienceColor, ConscienceColor, ConscienceColor);
 	}
 }

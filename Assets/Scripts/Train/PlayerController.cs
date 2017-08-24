@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 static class PlayerData
 {
-    public static int Conscience = 100;
+    public static int Conscience;
 }
 
 public class PlayerController : MonoBehaviour
@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 	public static Vector2 movingVector;
 	static public float HP = 100;
 	public int AP;
-	static public int Conscience = 100;
 	public GameObject AttackCollider;
 	public float moveSpeed;
 	public bool isQuest;
@@ -22,26 +21,43 @@ public class PlayerController : MonoBehaviour
 	private float HPDecreasePush = 0.1f;
     private Animator animator;
 
+	private void SetConscience()
+	{
+		TrainGenerator trainGenerator = GameObject.Find("Train Generator").GetComponent<TrainGenerator>();
+		int trainNum = trainGenerator.trainNum;
+
+		if(trainNum != 20)
+			return;
+
+		PlayerStatus.PlayerAge playerAge = trainGenerator.playerAge;
+		string ConscienceKey = "Conscience_" + playerAge.ToString();
+
+		if(PlayerPrefs.HasKey(ConscienceKey))
+		{
+			PlayerData.Conscience = PlayerPrefs.GetInt(ConscienceKey);
+		}
+		else
+		{
+			Debug.Log("유치원 스테이지가 아니라면 정상적이지 않은 스테이지 접근!! 토성 100으로 시작합니다.");
+			PlayerData.Conscience = 100;
+		}
+	}
+
 	private void Start()
 	{
 		isQuest = false;
 		isQuestComplete = false;
-        /*if(PlayerPrefs.HasKey("Conscience") == false)
-		{
-			Conscience = 100;
-		}
-		else
-		{
-			Conscience = PlayerPrefs.GetInt("Conscience");
-		}*/
-        Conscience = PlayerData.Conscience;
 		movingVector = Vector2.zero;
 
         animator = GetComponent<Animator>();
+		SetConscience();
+		Debug.Log(PlayerData.Conscience);
 	}
 	
 	private void Update()
 	{
+		MoveWithKeyboard();
+		MaxMinStatus();
         //앞에 있는 토끼는 앞에 있도록 해줍니다.
         GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
 
@@ -78,6 +94,46 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+	private void MaxMinStatus()
+	{
+		if(PlayerData.Conscience >= 100)
+		{
+			PlayerData.Conscience = 100;
+		}
+		if(PlayerData.Conscience <= 0)
+		{
+			PlayerData.Conscience = 0;
+		}
+		if(PlayerController.HP >= 100)
+		{
+			PlayerController.HP = 100;
+		}
+		if(PlayerController.HP <= 0)
+		{
+			Debug.Log("플레이어가 지쳐서 쓰러져부렀다...");
+		}
+	}
+
+	private void MoveWithKeyboard()
+	{
+		if(Input.GetKey(KeyCode.RightArrow))
+		{
+			movingVector = new Vector2(1,0);
+		}
+		if(Input.GetKey(KeyCode.LeftArrow))
+		{
+			movingVector = new Vector2(-1,0);
+		}
+		if(Input.GetKey(KeyCode.UpArrow))
+		{
+			movingVector = new Vector2(0,1);
+		}
+		if(Input.GetKey(KeyCode.DownArrow))
+		{
+			movingVector = new Vector2(0,-1);
+		}
+	}
+
     public void Attack()
     {
         foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
@@ -89,8 +145,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 rabbit.GetComponent<BasicRabbitController>().HP -= AP;
-                Conscience = Conscience - 1;
-                PlayerData.Conscience = Conscience;
+                PlayerData.Conscience = PlayerData.Conscience - 1;
             }
             /*
             if (rabbit.name.Contains("Bunny"))
@@ -147,5 +202,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerController.HP = 100;
         PlayerData.Conscience = 100;
+
+		PlayerPrefs.DeleteAll();
     }
 }
