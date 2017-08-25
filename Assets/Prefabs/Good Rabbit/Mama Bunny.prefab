@@ -430,6 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc7b26957f135409e0d9cdff999bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rabbit: 1
   HP: 3000
   AP: 10
   moveSpeed: 1

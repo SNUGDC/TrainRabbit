@@ -11,9 +11,11 @@ public class TextStarter : MonoBehaviour
     private GameObject MainCamera;
 	private GameObject Player;
 	private bool isSeat;
+    private BasicRabbitController brc;
 
     private void Start()
     {
+        brc = GetComponentInParent<BasicRabbitController>();
         GameObject canvas = GameObject.Find("Canvas");
         MovingPad = canvas.transform.Find("Moving Pad").gameObject;
         AttackPad = canvas.transform.Find("Attack Pad").gameObject;
@@ -43,6 +45,8 @@ public class TextStarter : MonoBehaviour
 		GameObject TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
 		bool isMeetPlayer = TalkCollider.GetComponent<InteractionWithPlayer>().isMeetPlayer;
 
+        FindObjectOfType<MusicManager>().PlayOtherMusic(brc.rabbit);
+        
 		if(isMeetPlayer == true)
 		{
 			DialogueStart();
@@ -118,6 +122,7 @@ public class TextStarter : MonoBehaviour
 
 	public void DialogueEnd()
 	{
+        FindObjectOfType<MusicManager>().ResumeMainMusic();
 		MainCamera.GetComponent<Camera>().orthographicSize = 8f;
 		MainCamera.transform.position = new Vector3(0, 0f, -10f);
 		MovingPad.SetActive(true);

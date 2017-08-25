@@ -45,19 +45,20 @@ public class DialogueController : MonoBehaviour
         if(Dialogue == null)
             return;
         if(dialogueOrder >= dialogueList.Count)
-            return;
-
-        UpdateDialogue();        
-
-        if (dialogueOrder == dialogueList.Count - 1)
         {
             DialogueButton.GetComponent<Text>().text = "대화를 끝내려면 여기를 누르세요.";
             DialogueButton.GetComponent<Button>().enabled = true;
+            return;
         }
+
+        UpdateDialogue();
     }
 
     private void UpdateDialogue()
     {
+        if(dialogueOrder >= dialogueList.Count)
+            return;
+
         speakerName.text = dialogueList[dialogueOrder].Speaker;
         speakerText.text = dialogueList[dialogueOrder].Text;
 
@@ -106,6 +107,7 @@ public class DialogueController : MonoBehaviour
 
             speakerName.text = "System";
             speakerText.text = "체력이 " + status_Int[0] + "만큼 토성이 " + status_Int[1] + "만큼 회복되었다.";
+            dialogueOrder += 1;
         }
     }
 
@@ -125,6 +127,7 @@ public class DialogueController : MonoBehaviour
 
     public void DialogueEnd()
     {
+        FindObjectOfType<MusicManager>().ResumeMainMusic();
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
     }
