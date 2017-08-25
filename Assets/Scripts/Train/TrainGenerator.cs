@@ -96,6 +96,8 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Scared"]));
                 if (trainNum == 9)
                     Rabbits.Add(Instantiate(GRdic["Rachel"]));
+                if (trainNum == 7)
+                    Rabbits.Add(Instantiate(GRdic["Foreigner"]));
                 if (trainNum == 6)
                     Rabbits.Add(Instantiate(GRdic["Fact"]));
                 if (trainNum == 3)

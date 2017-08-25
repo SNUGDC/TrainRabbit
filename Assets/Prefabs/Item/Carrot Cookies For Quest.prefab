@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: "\uD018\uC2A4\uD2B8\uC6A9 \uB2F9\uADFC \uCFE0\uD0A4"
-  isForQuest: 1
+  isForQuest: 0
 --- !u!212 &212879946715314332
 SpriteRenderer:
   m_ObjectHideFlags: 1

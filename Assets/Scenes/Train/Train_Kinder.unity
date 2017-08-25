@@ -563,7 +563,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114888269478452356, guid: a3084d774a6159347b13941182923e6d,
+    - target: {fileID: 114151198450073524, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1301122846}
+    - target: {fileID: 114152356870292246, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1301122846}
+    - target: {fileID: 114220039897126848, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -573,21 +583,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
       objectReference: {fileID: 1259812159}
-    - target: {fileID: 114220039897126848, guid: a3084d774a6159347b13941182923e6d,
+    - target: {fileID: 114888269478452356, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 825804705}
-    - target: {fileID: 114152356870292246, guid: a3084d774a6159347b13941182923e6d,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1301122846}
-    - target: {fileID: 114151198450073524, guid: a3084d774a6159347b13941182923e6d,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1301122846}
     - target: {fileID: 224468987905718352, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -598,18 +598,17 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114133212890667818, guid: a3084d774a6159347b13941182923e6d,
+    - target: {fileID: 114851510377597638, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fc458e71711c05649a3c233d97b817e0,
-        type: 3}
-    - target: {fileID: 114419606468952714, guid: a3084d774a6159347b13941182923e6d,
+      propertyPath: QuestItem.Array.data[0].Name
+      value: Glasses
+      objectReference: {fileID: 0}
+    - target: {fileID: 114851510377597638, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
-      propertyPath: m_Sprite
+      propertyPath: QuestItem.Array.data[0].ItemPrefab
       value: 
-      objectReference: {fileID: 21300000, guid: 24bcff21ee8757144a6fc7394abb31d1,
-        type: 3}
+      objectReference: {fileID: 1999429617106378, guid: 4e07758830ec4dd4cb2c797bbea703ab,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3084d774a6159347b13941182923e6d, type: 2}
   m_IsPrefabParent: 0

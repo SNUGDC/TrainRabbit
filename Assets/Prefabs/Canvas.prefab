@@ -1084,7 +1084,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2afdaa9551b167b4b86ef777080fe015, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f0742e8159dae646b4959cfffdc71fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2290,8 +2290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestItem:
-  - Name: Glasses
-    ItemPrefab: {fileID: 1999429617106378, guid: 4e07758830ec4dd4cb2c797bbea703ab,
+  - Name: Keyring
+    ItemPrefab: {fileID: 1693385043296012, guid: 3cb07939aff02ca4f954373c4a15481a,
       type: 2}
   QuestItemName: 
 --- !u!114 &114883199766552368
