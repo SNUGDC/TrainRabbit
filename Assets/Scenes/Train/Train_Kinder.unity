@@ -185,6 +185,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
+      propertyPath: GRD.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
       propertyPath: ItemDictionary.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -471,6 +476,17 @@ Prefab:
       value: "\uC220\uC744 \uB9C8\uC2E4\uB54C\uB294 \uC624\uB298\uC774 \uB9C8\uC9C0\uB9C9\uC778
         \uAC83\uCC98\uB7FC \uB9C8\uC2DC\uB3C4\uB85D \uD558\uC790."
       objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[10].RabbitName
+      value: Last
+      objectReference: {fileID: 0}
+    - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
+        type: 2}
+      propertyPath: GRD.Array.data[10].RabbitPrefab
+      value: 
+      objectReference: {fileID: 1871203706570870, guid: c9b5f52aff2001a4d8553e0c9007aba3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 15da7709cad01b8499f757bbff918910, type: 2}
   m_IsPrefabParent: 0
