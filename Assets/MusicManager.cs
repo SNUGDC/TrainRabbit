@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour {
 
-    public static GameObject instance = null;
+    public static MusicManager instance = null;
 
     public AudioSource mainMusic;
 
@@ -12,11 +12,12 @@ public class MusicManager : MonoBehaviour {
     {
         if (instance == null)
         {
-            instance = this.gameObject;
+            instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
         {
+            Debug.Log("destroy musicmanager");
             Destroy(gameObject);
         }
 	}
