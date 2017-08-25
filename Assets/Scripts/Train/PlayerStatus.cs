@@ -7,7 +7,7 @@ public class PlayerStatus : MonoBehaviour
 {
 	public enum PlayerAge
 	{
-		Kinder, Elementary, Middle, High, Soonung, Graduate
+		Kinder, Elementary, Middle, High, Soonung, Graduate, Happy, Sad
 	}
 	
 	public Slider HPBar;
