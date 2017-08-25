@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 61743419371724776}
   - component: {fileID: 50720624497161036}
   - component: {fileID: 114107303722792870}
-  - component: {fileID: 95106690910884050}
+  - component: {fileID: 95535682679020354}
   m_Layer: 0
   m_Name: Hentai Bad Bunny
   m_TagString: Untagged
@@ -353,7 +353,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -2.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.9772783, y: 0.5924641}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.38, y: 5.67}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
@@ -388,7 +388,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4716954, y: 3.9101806}
   m_EdgeRadius: 0
---- !u!95 &95106690910884050
+--- !u!95 &95535682679020354
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -397,7 +397,7 @@ Animator:
   m_GameObject: {fileID: 1826522306062372}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 22b44682557d5384892b88000056fbd9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d40a27c720a5ed4185a899e4c280579, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -463,7 +463,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -412
-  m_Sprite: {fileID: 21300000, guid: 7f096609926ad43419234e1e99716995, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20492dbdda211794f87e5111705d694f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -471,6 +471,8 @@ SpriteRenderer:
   m_Size: {x: 3.55, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212572349913854516
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -511,6 +513,8 @@ SpriteRenderer:
   m_Size: {x: 7.04, y: 5.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
 --- !u!212 &212579489109447208
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -551,3 +555,5 @@ SpriteRenderer:
   m_Size: {x: 2.96, y: 4.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
