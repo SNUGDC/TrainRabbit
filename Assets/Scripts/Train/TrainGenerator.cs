@@ -50,7 +50,7 @@ public class TrainGenerator : MonoBehaviour
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
                 GongikInstanceCooltime += Time.deltaTime;
-        if(PlayerData.Conscience < 20 && GongikInstanceCooltime > 6f)
+        if(PlayerData.Conscience < 30 && GongikInstanceCooltime > 6f)
         {
             Debug.Log("lowCs");
             if(!FindObjectsOfType<BadRabbitController>().Any(a => a.badRabbit == BadRabbit.Gongik))
@@ -112,6 +112,8 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Fact"]));
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
+                if (trainNum == 1)
+                    Rabbits.Add(Instantiate(GRdic["Last"]));
                 break;
             case PlayerStatus.PlayerAge.Middle:
                 if (trainNum == 18)
@@ -126,6 +128,8 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Fact"]));
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
+                if (trainNum == 1)
+                    Rabbits.Add(Instantiate(GRdic["Last"]));
                 break;
             case PlayerStatus.PlayerAge.High:
                 if (trainNum == 18)
@@ -142,6 +146,12 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Pregnant"]));
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
+                if (trainNum == 1)
+                    Rabbits.Add(Instantiate(GRdic["Last"]));
+                break;
+            case PlayerStatus.PlayerAge.Soonung:
+                if (trainNum == 1)
+                    Rabbits.Add(Instantiate(GRdic["Last"]));
                 break;
             case PlayerStatus.PlayerAge.Graduate:
                 if (trainNum == 18)
@@ -156,6 +166,8 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Fact"]));
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
+                if (trainNum == 1)
+                    Rabbits.Add(Instantiate(GRdic["Last"]));
                 break;
             case PlayerStatus.PlayerAge.Happy:
                 if (trainNum == 20)

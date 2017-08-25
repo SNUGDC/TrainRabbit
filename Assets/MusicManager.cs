@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public enum Music { goodMain, badMain, goodRabbit, stangeRabbit, sympatheic}
+public enum Music { goodMain, badMain, goodRabbit, stangeRabbit, serious}
+
 
 [System.Serializable]
 public class MusicDic
 {
     public Music music;
     public AudioClip audioClip;
+
 }
+
 
 public class MusicManager : MonoBehaviour {
 
@@ -18,6 +21,9 @@ public class MusicManager : MonoBehaviour {
 
     public AudioSource mainMusic;
     public AudioSource otherMusic;
+    public AudioSource click;
+    public AudioSource death;
+    public AudioSource hit;
 
     public MusicDic[] audioClip;
 
@@ -51,6 +57,7 @@ public class MusicManager : MonoBehaviour {
         mainMusic.Play();
     }
 
+
     public void PlayOtherMusic(Rabbit rabbit)
     {
         Debug.Log("playOhterMusic");
@@ -64,13 +71,28 @@ public class MusicManager : MonoBehaviour {
             case Rabbit.strange:
                 music = Music.stangeRabbit;
                 break;
-            case Rabbit.sympathetic:
-                music = Music.sympatheic;
+            case Rabbit.serious:
+                music = Music.serious;
                 break;
         }
         otherMusic.clip = audioClip.First(a => a.music == music).audioClip;
         otherMusic.Play();
     }
+
+    public void PlayClick()
+    {
+        click.Play();
+    }
+
+    public void PlayDeath()
+    {
+        death.Play();
+    }
+    public void PlayHit()
+    {
+        hit.Play();
+    }
+
 
     public void ResumeMainMusic()
     {

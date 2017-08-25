@@ -185,7 +185,7 @@ Prefab:
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
       propertyPath: GRD.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4553471475872384, guid: 15da7709cad01b8499f757bbff918910, type: 2}
       propertyPath: m_LocalPosition.x
@@ -288,13 +288,13 @@ Prefab:
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
       propertyPath: GRD.Array.data[6].RabbitName
-      value: Rachel
+      value: Last
       objectReference: {fileID: 0}
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
       propertyPath: GRD.Array.data[6].RabbitPrefab
       value: 
-      objectReference: {fileID: 1871203706570870, guid: d3b8ec0fc0c658a43b1e004ece4bf5d7,
+      objectReference: {fileID: 1444702688824022, guid: f2856432990de8b4384f32be2f41d929,
         type: 2}
     - target: {fileID: 114718762476040244, guid: 15da7709cad01b8499f757bbff918910,
         type: 2}
