@@ -27,7 +27,7 @@ public class StageClear : MonoBehaviour
 				PlayerPrefs.SetInt("Conscience_Graduate", PlayerData.Conscience);
 				return;
 			case PlayerStatus.PlayerAge.Graduate:
-				Debug.Log("엔딩!");
+				PlayerPrefs.SetInt("Conscience_Ending", PlayerData.Conscience);
 				return;
 		}
 	}
