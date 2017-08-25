@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 82454095241241926}
   - component: {fileID: 114932882900527482}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: HappyMusicManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
