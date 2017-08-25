@@ -127,6 +127,7 @@ public class DialogueController : MonoBehaviour
 
     public void DialogueEnd()
     {
+        FindObjectOfType<MusicManager>().ResumeMainMusic();
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
     }
