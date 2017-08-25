@@ -147,6 +147,36 @@ public class TrainGenerator : MonoBehaviour
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
                 break;
+            case PlayerStatus.PlayerAge.Happy:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                if (trainNum == 19)
+                    Rabbits.Add(Instantiate(GRdic["Scared"]));
+                if (trainNum == 18)
+                    Rabbits.Add(Instantiate(GRdic["Pregnant"]));
+                if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["Getout"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Rachel"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Bernard"]));
+                if (trainNum == 15)
+                    Rabbits.Add(Instantiate(GRdic["Gongik"]));
+                break;
+            case PlayerStatus.PlayerAge.Sad:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                if (trainNum == 19)
+                    Rabbits.Add(Instantiate(GRdic["Scared"]));
+                if (trainNum == 18)
+                    Rabbits.Add(Instantiate(GRdic["Choding"]));
+                if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["Getout"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Pregnant"]));
+                if (trainNum == 15)
+                    Rabbits.Add(Instantiate(GRdic["Hentai"]));
+                break;
         }
     }
 
