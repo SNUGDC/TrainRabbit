@@ -30,9 +30,5 @@ public class StageClear : MonoBehaviour
 				PlayerPrefs.SetInt("Conscience_Ending", PlayerData.Conscience);
 				return;
 		}
-
-		TrainGenerator TG = GameObject.Find("Train Generator").GetComponent<TrainGenerator>();
-		TG.trainNum = 20;
-		PlayerController.HP = 100;
 	}
 }
