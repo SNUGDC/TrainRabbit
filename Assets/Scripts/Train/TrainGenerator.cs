@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class TrainGenerator : MonoBehaviour
 {
@@ -27,8 +26,6 @@ public class TrainGenerator : MonoBehaviour
     private List<GameObject> Rabbits;
     private GameObject NowTrain;
     private float[] chairPosX = new float[12] {-12.8f, -11.3f, -9.8f, -4.4f, -2.8f, -1.2f, 0.4f, 2.0f, 3.6f, 9.1f, 10.7f, 12.2f};
-    private float gongikInstanceCooltime;
-    public float GongikInstanceCooltime { get { return (Mathf.Clamp(gongikInstanceCooltime, 0, 10)); } set { gongikInstanceCooltime = value; } }
 
     private void Start()
     {
@@ -40,6 +37,11 @@ public class TrainGenerator : MonoBehaviour
         CreateRabbits();
 
         Instantiate(musicManager);
+
+        if(PlayerData.Conscience < 20)
+        {
+            Rabbits.Add(Instantiate(BRdic["Gongik"]));
+        }
     }
 
     private void Update()
@@ -47,17 +49,6 @@ public class TrainGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
-        }
-        GongikInstanceCooltime += Time.deltaTime;
-        if(PlayerData.Conscience < 20 && GongikInstanceCooltime > 6f)
-        {
-            Debug.Log("lowCs");
-            if(!FindObjectsOfType<BadRabbitController>().Any(a => a.badRabbit == BadRabbit.Gongik))
-            {
-                GameObject newGongik = Instantiate(BRdic["Gongik"]);
-                newGongik.GetComponent<BadRabbitController>().tr = this;
-                Rabbits.Add(newGongik);
-            }
         }
     }
 
@@ -155,6 +146,36 @@ public class TrainGenerator : MonoBehaviour
                     Rabbits.Add(Instantiate(GRdic["Fact"]));
                 if (trainNum == 3)
                     Rabbits.Add(Instantiate(GRdic["Gag"]));
+                break;
+            case PlayerStatus.PlayerAge.Happy:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                if (trainNum == 19)
+                    Rabbits.Add(Instantiate(GRdic["Scared"]));
+                if (trainNum == 18)
+                    Rabbits.Add(Instantiate(GRdic["Pregnant"]));
+                if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["Getout"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Rachel"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Bernard"]));
+                if (trainNum == 15)
+                    Rabbits.Add(Instantiate(GRdic["Gongik"]));
+                break;
+            case PlayerStatus.PlayerAge.Sad:
+                if (trainNum == 20)
+                    Rabbits.Add(Instantiate(GRdic["Postgraduate"]));
+                if (trainNum == 19)
+                    Rabbits.Add(Instantiate(GRdic["Scared"]));
+                if (trainNum == 18)
+                    Rabbits.Add(Instantiate(GRdic["Choding"]));
+                if (trainNum == 17)
+                    Rabbits.Add(Instantiate(GRdic["Getout"]));
+                if (trainNum == 16)
+                    Rabbits.Add(Instantiate(GRdic["Pregnant"]));
+                if (trainNum == 15)
+                    Rabbits.Add(Instantiate(GRdic["Hentai"]));
                 break;
         }
     }
@@ -484,14 +505,10 @@ public class TrainGenerator : MonoBehaviour
 
     private void CreateItem()
     {
-        if (ItemDictionary.Length != 0)
-        {
-            int randomNum = Random.Range(0, ItemDictionary.Length);
-            Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
+        int randomNum = Random.Range(0, ItemDictionary.Length);
+        Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
 
-            Instantiate(ItemDictionary[randomNum].ItemPrefab, spawnPos, Quaternion.identity);
-        }
-        else return;
+        Instantiate(ItemDictionary[randomNum].ItemPrefab, spawnPos, Quaternion.identity);
     }
 
     private void DeleteAllRabbits() //모든 토끼 제거

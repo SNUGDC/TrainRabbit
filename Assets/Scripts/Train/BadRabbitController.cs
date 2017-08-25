@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum BadRabbit { Drunken, Gongik, Hentai, Jeondomon, Merchant}
+
 public class BadRabbitController : MonoBehaviour
 {
-    public BadRabbit badRabbit;
-
 	public float HP; //체력
 	public float AP; //공격력
 	public float moveSpeed = 1f;
@@ -17,8 +15,6 @@ public class BadRabbitController : MonoBehaviour
     private Transform player;
 
     private SpriteRenderer spriteRenderer;
-
-    public TrainGenerator tr;
 
 	private void Start()
 	{
@@ -55,10 +51,6 @@ public class BadRabbitController : MonoBehaviour
 
 		if (HP <= 0)
 		{
-            if(badRabbit == BadRabbit.Gongik)
-            {
-                tr.GongikInstanceCooltime = 0f;
-            }
 			Destroy(gameObject);
 		}
 	}
