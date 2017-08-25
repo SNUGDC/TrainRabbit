@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 static class PlayerData
 {
-    public static int Conscience { get; set; }
+    public static int Conscience;
 }
 
 public class PlayerController : MonoBehaviour
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
         animator = GetComponent<Animator>();
 		SetConscience();
+		Debug.Log(PlayerData.Conscience);
 
         //theMM = FindObjectOfType<MusicManager>();
     }

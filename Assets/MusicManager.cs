@@ -14,7 +14,7 @@ public class MusicDic
 
 public class MusicManager : MonoBehaviour {
 
-    public static MusicManager instance = null;
+    public static GameObject instance = null;
 
     public AudioSource mainMusic;
     public AudioSource otherMusic;
@@ -25,12 +25,11 @@ public class MusicManager : MonoBehaviour {
     {
         if (instance == null)
         {
-            instance = this;
+            instance = this.gameObject;
             DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
         {
-            Debug.Log("destroy musicmanager");
             Destroy(gameObject);
         }
 	}
