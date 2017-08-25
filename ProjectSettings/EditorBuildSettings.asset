@@ -63,6 +63,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Ending Story/Ending Story_College.unity
     guid: 0f93cdf2706a5ae498cbf401dd734461
   - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Ending Happy.unity
+    guid: e3cb6af5e9595ec4fa65092548073b03
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Ending Sad.unity
+    guid: b66fb304750e30e449218bc8953f382e
+  - enabled: 1
     path: Assets/Scenes/Opening Story/Opening Story_Kinder.unity
     guid: 6474e15e26a1a274fb87d76351f597fc
   - enabled: 1
