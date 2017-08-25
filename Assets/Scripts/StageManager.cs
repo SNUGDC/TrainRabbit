@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
-	public GameObject[] LockPanel;
 	public GameObject[] StageButton;
 	public Text[] StageConscience;
 
@@ -56,14 +55,14 @@ public class StageManager : MonoBehaviour
 		{
 			if(Conscience[i].HasValue)
 			{
-				LockPanel[i].SetActive(false);
-				StageButton[i].SetActive(true);
+				StageButton[i].GetComponent<Button>().interactable = true;
+				StageButton[i].GetComponent<Image>().color = new Color (1, 1, 1, 0);
 				StageConscience[i].text = Conscience[i].Value.ToString();
 			}
 			else
 			{
-				LockPanel[i].SetActive(true);
-				StageButton[i].SetActive(false);
+				StageButton[i].GetComponent<Button>().interactable = false;
+				StageButton[i].GetComponent<Image>().color = new Color (1, 1, 1, 0.8f);
 				StageConscience[i].text = "";
 			}
 		}
