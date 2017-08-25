@@ -194,7 +194,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Sungho
         m_Mode: 1
         m_Arguments:
@@ -326,7 +326,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Mz
         m_Mode: 1
         m_Arguments:
@@ -641,7 +641,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Choong
         m_Mode: 1
         m_Arguments:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Yongjae
         m_Mode: 1
         m_Arguments:
@@ -1172,6 +1172,7 @@ GameObject:
   - component: {fileID: 890886598}
   - component: {fileID: 890886600}
   - component: {fileID: 890886599}
+  - component: {fileID: 890886601}
   m_Layer: 5
   m_Name: Credit Panel
   m_TagString: Untagged
@@ -1190,7 +1191,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1183045371}
   - {fileID: 1026739957}
   m_Father: {fileID: 1704773167}
   m_RootOrder: 2
@@ -1235,6 +1235,25 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 890886597}
+--- !u!114 &890886601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890886597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b787270e3db66bc4ea8fade6bcdfbd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hr: {fileID: 21300000, guid: 233baad4e28a38d4a90ee7c8e4e17800, type: 3}
+  ch: {fileID: 21300000, guid: 10b235617868e93419f258226a3ddf00, type: 3}
+  eq: {fileID: 21300000, guid: 497ef4e768d1e434ca9ee6389ac235dc, type: 3}
+  jy: {fileID: 21300000, guid: bf47b2bb0a58c554ea044f5ecce109ca, type: 3}
+  mj: {fileID: 21300000, guid: 149c84aace5da1244b7f9bbdf794d42e, type: 3}
+  sh: {fileID: 21300000, guid: aaa37def7b0c1264981a0102b7b294bd, type: 3}
+  yj: {fileID: 21300000, guid: 8da7c3f58a3d1df468af68ac960d0125, type: 3}
+  yy: {fileID: 21300000, guid: 1399e3762b8d1e948a82cdd5bb1fcf03, type: 3}
 --- !u!1 &979133203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1340,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Haram
         m_Mode: 1
         m_Arguments:
@@ -1453,7 +1472,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Jooyil
         m_Mode: 1
         m_Arguments:
@@ -1530,7 +1549,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 890886598}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1625,94 +1644,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026739956}
---- !u!1 &1183045370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1183045371}
-  - component: {fileID: 1183045373}
-  - component: {fileID: 1183045372}
-  - component: {fileID: 1183045374}
-  m_Layer: 5
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1183045371
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183045370}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 890886598}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -228, y: -55}
-  m_SizeDelta: {x: 220, y: 280}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1183045372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183045370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1183045373
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183045370}
---- !u!114 &1183045374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183045370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b787270e3db66bc4ea8fade6bcdfbd2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hr: {fileID: 21300000, guid: 92ce2d0cf0b094c4b8b0ef608a7c9c5d, type: 3}
-  ch: {fileID: 21300000, guid: 0efb913766e82064dbbf4b3630eafc9b, type: 3}
-  eq: {fileID: 21300000, guid: a940cbc39f28e0c4eb2f184a63cb111a, type: 3}
-  jy: {fileID: 21300000, guid: 611c2b543752f8741925e449dcfb2a4f, type: 3}
-  mj: {fileID: 21300000, guid: 4874cffabbb79ab45a9cf01cac87bb77, type: 3}
-  sh: {fileID: 21300000, guid: 2c9921223bbdc8941a4a97d1d0d90880, type: 3}
-  yj: {fileID: 21300000, guid: 15455d9d93bacc24f9a16cc226225fa4, type: 3}
-  yy: {fileID: 21300000, guid: 70e3be68716a5d3459e54f7cf7f40025, type: 3}
 --- !u!1 &1189519760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +1973,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Yeolyum
         m_Mode: 1
         m_Arguments:
@@ -2391,7 +2322,7 @@ MonoBehaviour:
           m_StringArgument: Stage Select
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1183045374}
+      - m_Target: {fileID: 890886601}
         m_MethodName: Eqwon
         m_Mode: 1
         m_Arguments:
