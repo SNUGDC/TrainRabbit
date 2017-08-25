@@ -455,6 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cc7b26957f135409e0d9cdff999bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rabbit: 1
   HP: 1500
   AP: 10
   moveSpeed: 1
@@ -500,7 +501,6 @@ SpriteRenderer:
   m_Size: {x: 2.96, y: 4.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
 --- !u!212 &212235879651517524
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -541,7 +541,6 @@ SpriteRenderer:
   m_Size: {x: 7.04, y: 5.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
 --- !u!212 &212678343865626522
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -582,4 +581,3 @@ SpriteRenderer:
   m_Size: {x: 3.55, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1

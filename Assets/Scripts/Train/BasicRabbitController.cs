@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum Rabbit { basic, good, strange, sympathetic}
 
 public class BasicRabbitController : MonoBehaviour
 {
+    public Rabbit rabbit;
 	public float HP; //체력
 	public float AP; //공격력
 	public float moveSpeed = 1f;
