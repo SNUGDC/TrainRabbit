@@ -181,7 +181,6 @@ GameObject:
   - component: {fileID: 1014018224}
   - component: {fileID: 1014018223}
   - component: {fileID: 1014018225}
-  - component: {fileID: 1014018227}
   - component: {fileID: 1014018226}
   m_Layer: 5
   m_Name: Ending Image
@@ -288,7 +287,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Opening Story_College
+          m_StringArgument: Stage Select
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -302,17 +301,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a3db62392eae404fa0b2170a1d433c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1014018227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1014018221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b057196a375fa40b0cf37ff0c9cef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2026258043
