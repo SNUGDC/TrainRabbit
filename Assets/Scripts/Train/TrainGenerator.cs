@@ -50,7 +50,7 @@ public class TrainGenerator : MonoBehaviour
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
                 GongikInstanceCooltime += Time.deltaTime;
-        if(PlayerData.Conscience < 20 && GongikInstanceCooltime > 6f)
+        if(PlayerData.Conscience < 30 && GongikInstanceCooltime > 6f)
         {
             Debug.Log("lowCs");
             if(!FindObjectsOfType<BadRabbitController>().Any(a => a.badRabbit == BadRabbit.Gongik))

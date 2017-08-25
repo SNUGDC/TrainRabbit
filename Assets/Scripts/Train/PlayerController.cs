@@ -163,6 +163,8 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetTrigger("attack");
+
+        FindObjectOfType<MusicManager>().PlayHit();
         /*
         if (hitSound != null)
         {

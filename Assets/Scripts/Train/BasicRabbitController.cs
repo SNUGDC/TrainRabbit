@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum Rabbit { basic, good, strange, sympathetic}
+public enum Rabbit { basic, good, strange, serious}
 
 public class BasicRabbitController : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class BasicRabbitController : MonoBehaviour
 	public float moveSpeed = 1f;
 	public bool isSeat;
 	public bool isTalking;
-
+    
 	private float movingTime;
 	private float waitingTime;
 	private float gameTime;
@@ -33,7 +33,8 @@ public class BasicRabbitController : MonoBehaviour
 
 		if (HP <= 0)
 		{
-			Destroy(gameObject);
+            FindObjectOfType<MusicManager>().PlayDeath();
+            Destroy(gameObject);
 		}
 	}
 
