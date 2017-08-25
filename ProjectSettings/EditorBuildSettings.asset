@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Item Collection.unity
     guid: 981cc2fadd951134ea104f003f1cf726
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/36863ce1a5352b243b62ed5d2b6099cf
+    path: 
     guid: 36863ce1a5352b243b62ed5d2b6099cf
   - enabled: 1
     path: Assets/Scenes/Train/Train_Kinder.unity
@@ -30,8 +30,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Train/Train_Goding.unity
     guid: 9bb082e23be78ff419371b922c0deed4
   - enabled: 1
+    path: Assets/Scenes/Train/Train_Happy.unity
+    guid: 1d123a0181d73cf4fa536c946341ca86
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Choding.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_College.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Goding.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Joongding.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Soonung.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Train/Train_Sad.unity
+    guid: 31963b6411f80b74da0c4fbcad4a7544
+  - enabled: 1
     path: Assets/Scenes/Gameover Scene.unity
     guid: bc7603f6d5f5a004181fb62cfa639229
+  - enabled: 1
+    path: Assets/Scenes/Ending Story/Ending Story_Kinder.unity
+    guid: 409f01ded96f09644a2f90f583ce7dc0
+  - enabled: 1
+    path: Assets/Scenes/Opening Story/Opening Story_Soonung.unity
+    guid: 5163843bb2eb69545b1e64c52f79a729
   - enabled: 1
     path: Assets/Scenes/Collection Choice.unity
     guid: 2fc727cdb9d506043a6998e0e07205dc
@@ -46,8 +73,8 @@ EditorBuildSettings:
     guid: 233261e7668f7e04b82ead63656992da
   - enabled: 1
     path: Assets/Scenes/Opening Story/Opening Story_Kinder.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
+    guid: 6474e15e26a1a274fb87d76351f597fc
+  - enabled: 0
     path: Assets/Scenes/How Many Station Quest.unity
     guid: 335d6850037b15a4a823fc6448b0dffe
   - enabled: 1

@@ -313,6 +313,8 @@ MonoBehaviour:
   AP: 10
   AttackCollider: {fileID: 1348273045480354}
   moveSpeed: 4
+  isQuest: 0
+  isQuestComplete: 0
 --- !u!212 &212533673550945324
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -354,7 +356,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212958470561170368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -396,4 +397,3 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0

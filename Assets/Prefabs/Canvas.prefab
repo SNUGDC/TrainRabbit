@@ -2290,8 +2290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuestItem:
-  - Name: Glasses
-    ItemPrefab: {fileID: 1999429617106378, guid: 4e07758830ec4dd4cb2c797bbea703ab,
+  - Name: Keyring
+    ItemPrefab: {fileID: 1693385043296012, guid: 3cb07939aff02ca4f954373c4a15481a,
       type: 2}
   QuestItemName: 
 --- !u!114 &114883199766552368
