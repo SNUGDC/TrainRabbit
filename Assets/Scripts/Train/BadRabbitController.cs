@@ -54,7 +54,8 @@ public class BadRabbitController : MonoBehaviour
         
 
 		if (HP <= 0)
-		{            if(badRabbit == BadRabbit.Gongik)
+		{
+            if (badRabbit == BadRabbit.Gongik)
             {
                 tr.GongikInstanceCooltime = 0f;
             }
