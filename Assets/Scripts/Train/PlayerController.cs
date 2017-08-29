@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 static class PlayerData
 {
-    public static int Conscience { get; set; }
+    public static int Conscience = 100;
 }
 
 public class PlayerController : MonoBehaviour

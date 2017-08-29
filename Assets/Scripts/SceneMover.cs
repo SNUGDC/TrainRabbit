@@ -8,5 +8,6 @@ public class SceneMover : MonoBehaviour
 	public void MoveScene(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);
+        Train.trainNumber = 20;
 	}
 }
