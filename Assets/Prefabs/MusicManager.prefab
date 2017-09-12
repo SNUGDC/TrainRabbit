@@ -55,7 +55,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0d67f068317c5cb4f8a968a4cbd9d8be, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -295,7 +295,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: af8b4a97f7a3cb94db764b7749d10161, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -456,19 +456,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb0d505215dd0f41a42746887fab148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardSoundPlayer: {fileID: 0}
   mainMusic: {fileID: 82454095241241926}
   otherMusic: {fileID: 82787787505154038}
   click: {fileID: 82442783082439166}
   death: {fileID: 82145463119830362}
   hit: {fileID: 82592864882208016}
-  audioClip:
-  - music: 0
+  musicClips:
+  - musicType: 0
     audioClip: {fileID: 8300000, guid: ba44d086d3f7ac14cb8919ef93c68392, type: 3}
-  - music: 1
-    audioClip: {fileID: 8300000, guid: 2ccc04cdb805cb84289e947b9f54117a, type: 3}
-  - music: 2
+  - musicType: 1
+    audioClip: {fileID: 8300000, guid: ee001d5f7111dc14ea354616681df525, type: 3}
+  - musicType: 2
     audioClip: {fileID: 8300000, guid: 4945c8edd643e0b4eb1c4f7b99cb0825, type: 3}
-  - music: 3
+  - musicType: 3
     audioClip: {fileID: 8300000, guid: c832069bd84340d498e8fd96a016cf97, type: 3}
-  - music: 4
-    audioClip: {fileID: 8300000, guid: 80389a908d02f7b43859ef9337aac40c, type: 3}
+  - musicType: 4
+    audioClip: {fileID: 8300000, guid: 3a1137589fff58047adbfdc80920b55b, type: 3}
+  soundClips:
+  - soundType: 0
+    audioClip: {fileID: 8300000, guid: 6a79ad232c321ce4a997594a8dc078ef, type: 3}
+  - soundType: 1
+    audioClip: {fileID: 8300000, guid: 9eb2f7626e81df64da36224d0b09f7b6, type: 3}
+  - soundType: 2
+    audioClip: {fileID: 8300000, guid: af8b4a97f7a3cb94db764b7749d10161, type: 3}
+  - soundType: 3
+    audioClip: {fileID: 8300000, guid: 0d67f068317c5cb4f8a968a4cbd9d8be, type: 3}
+  - soundType: 4
+    audioClip: {fileID: 8300000, guid: 0d1e7fa03abcc39428aa8cb34ea9700d, type: 3}
+  - soundType: 4
+    audioClip: {fileID: 8300000, guid: 05293e847cf552e408876c0b82479a0b, type: 3}
+  - soundType: 4
+    audioClip: {fileID: 8300000, guid: a0c787e01919cc94d826dd63d28390d2, type: 3}
