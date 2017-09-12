@@ -456,7 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb0d505215dd0f41a42746887fab148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardSoundPlayer: {fileID: 0}
+  standardSoundPlayer: {fileID: 1470180625475904, guid: 6fd06d0370c8dcc4987a662dc03c7ed1,
+    type: 2}
   mainMusic: {fileID: 82454095241241926}
   otherMusic: {fileID: 82787787505154038}
   click: {fileID: 82442783082439166}
