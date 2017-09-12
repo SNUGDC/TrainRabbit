@@ -23,25 +23,27 @@ public class SoundDic
 public class MusicManager : MonoBehaviour {
 
     public static GameObject instance = null;
-    public static Queue<SoundPlayer> soundPlayers;
-    public static List<SoundPlayer> usingPlayers;
+    static MusicManager theMM;
+    static Queue<SoundPlayer> soundPlayers;
+    static List<SoundPlayer> usingPlayers;
+    MusicPlayer mainMusicPlayer;
+    MusicPlayer subMusicPlayer;
     public GameObject standardSoundPlayer;
-    public AudioSource mainMusic;
-    public AudioSource otherMusic;
-    public AudioSource click;
-    public AudioSource death;
-    public AudioSource hit;
-
+    public GameObject standardMusicPlayer;
     public MusicDic[] musicClips;
     public SoundDic[] soundClips;
+    public float fadeDuration = 0.5f;
 
     void Awake()
     {
         if (instance == null)
         {
+            theMM = this;
             instance = this.gameObject;
             soundPlayers = new Queue<SoundPlayer>();
             usingPlayers = new List<SoundPlayer>();
+            mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
+            subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
             DontDestroyOnLoad(this.gameObject);
         }
         else if (instance != this)
@@ -52,21 +54,27 @@ public class MusicManager : MonoBehaviour {
 
     void Start()
     {
-        mainMusic.Play();
+        mainMusicPlayer.SetMusic(musicClips.First(a => a.musicType == MusicType.goodMain).audioClip);
+        mainMusicPlayer.Play();
     }
 
-    public void ChangeMainMusic(MusicType musicType)
+    /*public void ChangeMainMusic(MusicType musicType)
     {
         mainMusic.Stop();
         mainMusic.clip = musicClips.First(a => a.musicType == musicType).audioClip;
         mainMusic.Play();
-    }
-
+    }*/
 
     public void PlayOtherMusic(Rabbit rabbit)
     {
         Debug.Log("playOhterMusic");
-        mainMusic.Stop();
+        mainMusicPlayer.FadeOut(fadeDuration);
+        var clip = ChooseMusicClip(rabbit);
+        subMusicPlayer.SetMusic(clip);
+        subMusicPlayer.FadeIn(fadeDuration);
+    }
+    AudioClip ChooseMusicClip(Rabbit rabbit)
+    {
         MusicType musicType = MusicType.goodRabbit;
         switch(rabbit)
         {
@@ -80,13 +88,17 @@ public class MusicManager : MonoBehaviour {
                 musicType = MusicType.seriousRabbit;
                 break;
         }
-        otherMusic.clip = musicClips.First(a => a.musicType == musicType).audioClip;
-        otherMusic.Play();
+        return musicClips.First(a => a.musicType == musicType).audioClip;
+    }
+    public void ResumeMainMusic()
+    {
+        subMusicPlayer.FadeOut(fadeDuration);
+        mainMusicPlayer.FadeIn(fadeDuration);
     }
 
     void PlaySound(SoundType st)
     {
-        var clip = ChooseClip(st);
+        var clip = ChooseSoundClip(st);
         if (soundPlayers.Count > 0)
         {
             var sp = soundPlayers.Dequeue();
@@ -101,7 +113,12 @@ public class MusicManager : MonoBehaviour {
             sp.Play(clip);
         }
     }
-    AudioClip ChooseClip(SoundType st)
+    public static void CompleteSound(SoundPlayer sp)
+    {
+        usingPlayers.Remove(sp);
+        soundPlayers.Enqueue(sp);
+    }
+    AudioClip ChooseSoundClip(SoundType st)
     {
         AudioClip result;
         var iclips = 
@@ -119,26 +136,17 @@ public class MusicManager : MonoBehaviour {
         }
         return result;
     }
+
     public void PlayClick()
     {
-        PlaySound(SoundType.click);
+        theMM.PlaySound(SoundType.click);
     }
-
     public void PlayDeath()
     {
-        PlaySound(SoundType.death);
+        theMM.PlaySound(SoundType.death);
     }
     public void PlayHit()
     {
-        PlaySound(SoundType.hit);
+        theMM.PlaySound(SoundType.hit);
     }
-
-
-    public void ResumeMainMusic()
-    {
-        otherMusic.Stop();
-        mainMusic.Play();
-    }
-
-    //public void PlayOtherMusic(AudioClip )
 }

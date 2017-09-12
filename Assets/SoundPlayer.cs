@@ -15,16 +15,15 @@ public class SoundPlayer : MonoBehaviour
     {
         audio.Play();
     }
-    public void Play(AudioClip clip)
+    public void Play(AudioClip soundClip)
     {
-        audio.clip = clip;
+        audio.clip = soundClip;
         audio.Play();
-        StartCoroutine(WaitAndEnqueue(clip.length));
+        StartCoroutine(WaitAndEnqueue(soundClip.length));
     }
     IEnumerator WaitAndEnqueue(float time)
     {
         yield return new WaitForSeconds(time);
-        MusicManager.usingPlayers.Remove(this);
-        MusicManager.soundPlayers.Enqueue(this);
+        MusicManager.CompleteSound(this);
     }
 }
