@@ -44,8 +44,6 @@ public class TextStarter : MonoBehaviour
 		Debug.Log("말풍선을 누름");
 		GameObject TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
 		bool isMeetPlayer = TalkCollider.GetComponent<InteractionWithPlayer>().isMeetPlayer;
-
-        FindObjectOfType<MusicManager>().PlayOtherMusic(brc.rabbit);
         
 		if(isMeetPlayer == true)
 		{
@@ -56,6 +54,7 @@ public class TextStarter : MonoBehaviour
 
 	private void DialogueStart()
 	{
+        MusicManager.PlayOtherMusic(brc.rabbit);
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
 		LookEachOther(isSeat);
@@ -122,7 +121,7 @@ public class TextStarter : MonoBehaviour
 
 	public void DialogueEnd()
 	{
-        FindObjectOfType<MusicManager>().ResumeMainMusic();
+        MusicManager.ResumeMainMusic();
 		MainCamera.GetComponent<Camera>().orthographicSize = 8f;
 		MainCamera.transform.position = new Vector3(0, 0f, -10f);
 		MovingPad.SetActive(true);

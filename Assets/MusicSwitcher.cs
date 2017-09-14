@@ -12,7 +12,7 @@ public class MusicSwitcher : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        theMM = FindObjectOfType<MusicManager>();
+        //theMM = MusicManager;
     }
 
     // Update is called once per frame

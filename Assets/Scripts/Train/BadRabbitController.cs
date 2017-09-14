@@ -59,7 +59,7 @@ public class BadRabbitController : MonoBehaviour
             {
                 tr.GongikInstanceCooltime = 0f;
             }
-            FindObjectOfType<MusicManager>().PlayDeath();
+            MusicManager.PlayDeath();
             Destroy(gameObject);
 		}
 	}

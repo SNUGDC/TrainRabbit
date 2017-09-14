@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 		SetConscience();
 		Debug.Log(PlayerData.Conscience);
 
-        //theMM = FindObjectOfType<MusicManager>();
+        //theMM = MusicManager;
     }
 	
 	private void Update()
@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
         {
+			MusicManager.PlayHit(); // TODO : 원래 토끼 피격 애니메이션에 있을 코드. 임시로 여기에 넣음
             if (rabbit.name.Contains("Bad"))
             {
                 rabbit.GetComponent<BadRabbitController>().HP -= AP;
@@ -164,7 +165,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetTrigger("attack");
 
-        FindObjectOfType<MusicManager>().PlayHit();
+        MusicManager.PlaySwing();
         /*
         if (hitSound != null)
         {

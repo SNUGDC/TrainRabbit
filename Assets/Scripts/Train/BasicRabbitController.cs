@@ -33,7 +33,7 @@ public class BasicRabbitController : MonoBehaviour
 
 		if (HP <= 0)
 		{
-            FindObjectOfType<MusicManager>().PlayDeath();
+            MusicManager.PlayDeath();
             Destroy(gameObject);
 		}
 	}

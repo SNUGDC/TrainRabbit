@@ -22,12 +22,12 @@ public class SoundDic
 
 public class MusicManager : MonoBehaviour {
 
-    public static GameObject instance = null;
-    static MusicManager theMM;
+    public static GameObject instanceGO = null;
+    static MusicManager instance;
     static Queue<SoundPlayer> soundPlayers;
     static List<SoundPlayer> usingPlayers;
-    MusicPlayer mainMusicPlayer;
-    MusicPlayer subMusicPlayer;
+    static MusicPlayer mainMusicPlayer;
+    static MusicPlayer subMusicPlayer;
     public GameObject standardSoundPlayer;
     public GameObject standardMusicPlayer;
     public MusicDic[] musicClips;
@@ -36,17 +36,17 @@ public class MusicManager : MonoBehaviour {
 
     void Awake()
     {
-        if (instance == null)
+        if (instanceGO == null)
         {
-            theMM = this;
-            instance = this.gameObject;
+            instance = this;
+            instanceGO = this.gameObject;
             soundPlayers = new Queue<SoundPlayer>();
             usingPlayers = new List<SoundPlayer>();
-            mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
-            subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
+            MusicManager.mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
+            MusicManager.subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
             DontDestroyOnLoad(this.gameObject);
         }
-        else if (instance != this)
+        else if (instanceGO != this)
         {
             Destroy(gameObject);
         }
@@ -65,15 +65,15 @@ public class MusicManager : MonoBehaviour {
         mainMusic.Play();
     }*/
 
-    public void PlayOtherMusic(Rabbit rabbit)
+    public static void PlayOtherMusic(Rabbit rabbit)
     {
         Debug.Log("playOhterMusic");
-        mainMusicPlayer.FadeOut(fadeDuration);
+        mainMusicPlayer.FadeOut(instance.fadeDuration);
         var clip = ChooseMusicClip(rabbit);
         subMusicPlayer.SetMusic(clip);
-        subMusicPlayer.FadeIn(fadeDuration);
+        subMusicPlayer.FadeIn(instance.fadeDuration);
     }
-    AudioClip ChooseMusicClip(Rabbit rabbit)
+    static AudioClip ChooseMusicClip(Rabbit rabbit)
     {
         MusicType musicType = MusicType.goodRabbit;
         switch(rabbit)
@@ -88,12 +88,12 @@ public class MusicManager : MonoBehaviour {
                 musicType = MusicType.seriousRabbit;
                 break;
         }
-        return musicClips.First(a => a.musicType == musicType).audioClip;
+        return instance.musicClips.First(a => a.musicType == musicType).audioClip;
     }
-    public void ResumeMainMusic()
+    public static void ResumeMainMusic()
     {
-        subMusicPlayer.FadeOut(fadeDuration);
-        mainMusicPlayer.FadeIn(fadeDuration);
+        subMusicPlayer.FadeOut(instance.fadeDuration);
+        mainMusicPlayer.FadeIn(instance.fadeDuration);
     }
 
     void PlaySound(SoundType st)
@@ -107,7 +107,7 @@ public class MusicManager : MonoBehaviour {
         }
         else
         {
-            var spGO = Instantiate(standardSoundPlayer, instance.transform);
+            var spGO = Instantiate(standardSoundPlayer, instanceGO.transform);
             var sp = spGO.GetComponent<SoundPlayer>();
             usingPlayers.Add(sp);
             sp.Play(clip);
@@ -137,16 +137,20 @@ public class MusicManager : MonoBehaviour {
         return result;
     }
 
-    public void PlayClick()
+    public static void PlayClick()
     {
-        theMM.PlaySound(SoundType.click);
+        instance.PlaySound(SoundType.click);
     }
-    public void PlayDeath()
+    public static void PlayDeath()
     {
-        theMM.PlaySound(SoundType.death);
+        instance.PlaySound(SoundType.death);
     }
-    public void PlayHit()
+    public static void PlayHit()
     {
-        theMM.PlaySound(SoundType.hit);
+        instance.PlaySound(SoundType.hit);
+    }
+    public static void PlaySwing()
+    {
+        instance.PlaySound(SoundType.swing);
     }
 }
