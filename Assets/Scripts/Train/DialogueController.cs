@@ -135,6 +135,15 @@ public class DialogueController : MonoBehaviour
     public void NextText()
     {
         dialogueOrder++;
+        
+        if (!(dialogueList[dialogueOrder].Speaker == "Sound"
+            || dialogueList[dialogueOrder].Speaker == "Choice"
+            || dialogueList[dialogueOrder].Speaker == "Status"
+            || dialogueList[dialogueOrder].Speaker == "Image"
+            || dialogueList[dialogueOrder].Speaker == "효과음"))
+        {
+            MusicManager.PlayTalk();
+        }
     }
 }
 

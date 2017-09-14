@@ -96,7 +96,7 @@ public class MusicManager : MonoBehaviour {
         mainMusicPlayer.FadeIn(instance.fadeDuration);
     }
 
-    void PlaySound(SoundType st)
+    static void PlaySound(SoundType st)
     {
         var clip = ChooseSoundClip(st);
         if (soundPlayers.Count > 0)
@@ -107,7 +107,7 @@ public class MusicManager : MonoBehaviour {
         }
         else
         {
-            var spGO = Instantiate(standardSoundPlayer, instanceGO.transform);
+            var spGO = Instantiate(instance.standardSoundPlayer, instanceGO.transform);
             var sp = spGO.GetComponent<SoundPlayer>();
             usingPlayers.Add(sp);
             sp.Play(clip);
@@ -118,11 +118,11 @@ public class MusicManager : MonoBehaviour {
         usingPlayers.Remove(sp);
         soundPlayers.Enqueue(sp);
     }
-    AudioClip ChooseSoundClip(SoundType st)
+    static AudioClip ChooseSoundClip(SoundType st)
     {
         AudioClip result;
         var iclips = 
-            from sc in soundClips
+            from sc in instance.soundClips
             where sc.soundType == st
             select sc.audioClip;
         var clips = iclips.ToArray();
@@ -139,18 +139,22 @@ public class MusicManager : MonoBehaviour {
 
     public static void PlayClick()
     {
-        instance.PlaySound(SoundType.click);
+        PlaySound(SoundType.click);
     }
     public static void PlayDeath()
     {
-        instance.PlaySound(SoundType.death);
+        PlaySound(SoundType.death);
     }
     public static void PlayHit()
     {
-        instance.PlaySound(SoundType.hit);
+        PlaySound(SoundType.hit);
     }
     public static void PlaySwing()
     {
-        instance.PlaySound(SoundType.swing);
+        PlaySound(SoundType.swing);
+    }
+    public static void PlayTalk()
+    {
+        PlaySound(SoundType.talk);
     }
 }
