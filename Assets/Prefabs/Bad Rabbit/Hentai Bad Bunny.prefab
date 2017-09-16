@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   badRabbit: 0
-  HP: 50
+  HP: 90
   AP: 5
   moveSpeed: 4
   tr: {fileID: 0}

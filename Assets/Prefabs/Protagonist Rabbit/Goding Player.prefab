@@ -247,7 +247,7 @@ BoxCollider2D:
   m_Offset: {x: 0.19999999, y: -1.6688623}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.6784735, y: 0.5412066}
     oldSize: {x: 2.64, y: 5.52}
     newSize: {x: 3.55, y: 3.58}
     adaptiveTilingThreshold: 0.5
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bef26044d8a044a205f420c0ef701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AP: 10
+  AP: 20
   AttackCollider: {fileID: 1348273045480354}
   moveSpeed: 4
   isQuest: 0
@@ -355,8 +355,6 @@ SpriteRenderer:
   m_Size: {x: 3.55, y: 3.58}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
 --- !u!212 &212958470561170368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -397,5 +395,3 @@ SpriteRenderer:
   m_Size: {x: 2.96, y: 4.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0

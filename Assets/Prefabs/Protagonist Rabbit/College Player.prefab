@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423bef26044d8a044a205f420c0ef701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AP: 10
+  AP: 30
   AttackCollider: {fileID: 1348273045480354}
   moveSpeed: 4
   isQuest: 0
