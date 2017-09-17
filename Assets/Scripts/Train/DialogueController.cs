@@ -100,7 +100,7 @@ public class DialogueController : MonoBehaviour
                 status_Int[i] = System.Convert.ToInt32(status_String[i].Trim());
             }
 
-            PlayerController.HP += status_Int[0];
+            PlayerData.HP += status_Int[0];
             Debug.Log(PlayerData.Conscience);
             PlayerData.Conscience += status_Int[1];
             Debug.Log(PlayerData.Conscience);

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 static class PlayerData
 {
     public static int Conscience = 100;
+	public static float HP = 100;
 }
 
 public class PlayerController : MonoBehaviour
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //private MusicManager theMM;
 
     public static Vector2 movingVector;
-	static public float HP = 100;
+	//static public float HP = 100;
 	public int AP;
 	public GameObject AttackCollider;
 	public float moveSpeed;
@@ -46,6 +47,17 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	private void SetHP()
+	{
+		TrainGenerator trainGenerator = GameObject.Find("Train Generator").GetComponent<TrainGenerator>();
+		int trainNum = trainGenerator.trainNum;
+
+		if(trainNum != 20)
+			return;
+
+		PlayerData.HP = 100;
+	}
+
 	private void Start()
 	{
 		isQuest = false;
@@ -54,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
         animator = GetComponent<Animator>();
 		SetConscience();
+		SetHP();
 		Debug.Log(PlayerData.Conscience);
 
         //theMM = MusicManager;
@@ -93,7 +106,7 @@ public class PlayerController : MonoBehaviour
         else
             animator.SetBool("isMoving", false);
 
-        if(HP < 0.01f)
+        if(PlayerData.HP < 0.01f)
         {
             SceneManager.LoadScene("Gameover Scene");
         }
@@ -109,11 +122,11 @@ public class PlayerController : MonoBehaviour
 		{
 			PlayerData.Conscience = 0;
 		}
-		if(PlayerController.HP >= 100)
+		if(PlayerData.HP >= 100)
 		{
-			PlayerController.HP = 100;
+			PlayerData.HP = 100;
 		}
-		if(PlayerController.HP <= 0)
+		if(PlayerData.HP <= 0)
 		{
 			Debug.Log("플레이어가 지쳐서 쓰러져부렀다...");
 		}
@@ -202,7 +215,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(coll.gameObject.GetComponent<BasicRabbitController>() != null)
 		{
-			HP -= HPDecreasePush;
+			PlayerData.HP -= HPDecreasePush;
 		}
 	}
 
@@ -213,7 +226,7 @@ public class PlayerController : MonoBehaviour
 
     public void reset()
     {
-        PlayerController.HP = 100;
+        PlayerData.HP = 100;
         PlayerData.Conscience = 100;
 
 		PlayerPrefs.DeleteAll();
