@@ -49,9 +49,9 @@ public class TextStarter : MonoBehaviour
 		{
 			DialogueStart();
 			Debug.Log("대화 시작!");
-		}
 
-		Destroy(gameObject);
+			Destroy(gameObject);
+		}
 	}
 
 	private void DialogueStart()
