@@ -24,6 +24,6 @@ public class SoundPlayer : MonoBehaviour
     IEnumerator WaitAndEnqueue(float time)
     {
         yield return new WaitForSeconds(time);
-        MusicManager.CompleteSound(this);
+        SoundManager.CompleteSound(this);
     }
 }

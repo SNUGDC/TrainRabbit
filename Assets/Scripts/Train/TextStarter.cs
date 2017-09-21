@@ -56,7 +56,7 @@ public class TextStarter : MonoBehaviour
 
 	private void DialogueStart()
 	{
-        MusicManager.PlayOtherMusic(brc.rabbit);
+        SoundManager.PlayOtherMusic(brc.rabbit);
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
 		LookEachOther(isSeat);
@@ -123,7 +123,7 @@ public class TextStarter : MonoBehaviour
 
 	public void DialogueEnd()
 	{
-        MusicManager.ResumeMainMusic();
+        SoundManager.ResumeMainMusic();
 		MainCamera.GetComponent<Camera>().orthographicSize = 8f;
 		MainCamera.transform.position = new Vector3(0, 0f, -10f);
 		MovingPad.SetActive(true);

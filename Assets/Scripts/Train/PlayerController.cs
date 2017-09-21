@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
         {
-			MusicManager.PlayHit(); // TODO : 원래 토끼 피격 애니메이션에 있을 코드. 임시로 여기에 넣음
+			SoundManager.PlayHit(); // TODO : 원래 토끼 피격 애니메이션에 있을 코드. 임시로 여기에 넣음
             if (rabbit.name.Contains("Bad"))
             {
                 rabbit.GetComponent<BadRabbitController>().HP -= AP;
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetTrigger("attack");
 
-        MusicManager.PlaySwing();
+        SoundManager.PlaySwing();
         /*
         if (hitSound != null)
         {
