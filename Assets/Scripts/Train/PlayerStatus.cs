@@ -15,14 +15,14 @@ public class PlayerStatus : MonoBehaviour
 
 	private void Start()
 	{
-		GameObject Canvas = GameObject.Find("Canvas");
+		//GameObject Canvas = GameObject.Find("Canvas");
 		//HPBar = Canvas.transform.Find("HP bar").gameObject;
 		//ConscienceBar = Canvas.transform.Find("Conscience Bar").gameObject;
 	}
 
 	private void Update()
 	{
-		HPBar.value = ((float)PlayerController.HP / 100);
+		HPBar.value = ((float)PlayerData.HP / 100);
 
 		float ConscienceColor = ((float)PlayerData.Conscience / 100);
         ConscienceBar.color = new Color(ConscienceColor, ConscienceColor, ConscienceColor);

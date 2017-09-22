@@ -7,7 +7,7 @@ public class MusicSwitcher : MonoBehaviour
 
     public AudioClip newTrack;
 
-    private MusicManager theMM;
+    private SoundManager theMM;
 
     // Use this for initialization
     void Start()

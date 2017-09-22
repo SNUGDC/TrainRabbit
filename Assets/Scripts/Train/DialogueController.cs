@@ -100,7 +100,7 @@ public class DialogueController : MonoBehaviour
                 status_Int[i] = System.Convert.ToInt32(status_String[i].Trim());
             }
 
-            PlayerController.HP += status_Int[0];
+            PlayerData.HP += status_Int[0];
             Debug.Log(PlayerData.Conscience);
             PlayerData.Conscience += status_Int[1];
             Debug.Log(PlayerData.Conscience);
@@ -127,7 +127,7 @@ public class DialogueController : MonoBehaviour
 
     public void DialogueEnd()
     {
-        MusicManager.ResumeMainMusic();
+        SoundManager.ResumeMainMusic();
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
     }
@@ -142,7 +142,7 @@ public class DialogueController : MonoBehaviour
             || dialogueList[dialogueOrder].Speaker == "Image"
             || dialogueList[dialogueOrder].Speaker == "효과음"))
         {
-            MusicManager.PlayTalk();
+            SoundManager.PlayTalk();
         }
     }
 }

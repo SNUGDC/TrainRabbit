@@ -6,7 +6,7 @@ public class ResetGame : MonoBehaviour
 {
 	public void Reset()
 	{
-        PlayerController.HP = 100;
+        PlayerData.HP = 100;
         PlayerData.Conscience = 100;
 		PlayerPrefs.DeleteAll();
 	}

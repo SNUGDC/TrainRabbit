@@ -38,7 +38,7 @@ public class BadRabbitController : MonoBehaviour
         if ((transform.position - player.position).magnitude < 3f)
         {
             GetComponent<Animator>().SetTrigger("attack");
-            PlayerController.HP -= AP * Time.deltaTime; 
+            PlayerData.HP -= AP * Time.deltaTime; 
         }
 
         LookEachOther();
@@ -59,7 +59,7 @@ public class BadRabbitController : MonoBehaviour
             {
                 tr.GongikInstanceCooltime = 0f;
             }
-            MusicManager.PlayDeath();
+            SoundManager.PlayDeath();
             Destroy(gameObject);
 		}
 	}

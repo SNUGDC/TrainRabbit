@@ -20,10 +20,10 @@ public class SoundDic
 }
 
 
-public class MusicManager : MonoBehaviour {
+public class SoundManager : MonoBehaviour {
 
     public static GameObject instanceGO = null;
-    static MusicManager instance;
+    static SoundManager instance;
     static Queue<SoundPlayer> soundPlayers;
     static List<SoundPlayer> usingPlayers;
     static MusicPlayer mainMusicPlayer;
@@ -42,8 +42,8 @@ public class MusicManager : MonoBehaviour {
             instanceGO = this.gameObject;
             soundPlayers = new Queue<SoundPlayer>();
             usingPlayers = new List<SoundPlayer>();
-            MusicManager.mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
-            MusicManager.subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
+            SoundManager.mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
+            SoundManager.subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
             DontDestroyOnLoad(this.gameObject);
         }
         else if (instanceGO != this)

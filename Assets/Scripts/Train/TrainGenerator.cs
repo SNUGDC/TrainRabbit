@@ -18,8 +18,6 @@ public class TrainGenerator : MonoBehaviour
     public int trainNum;
     public int AmountOfNR;
 
-    public GameObject musicManager;
-
     private Dictionary<string, GameObject> NRdic;
     private Dictionary<string, GameObject> BRdic;
     private Dictionary<string, GameObject> GRdic;
@@ -37,9 +35,6 @@ public class TrainGenerator : MonoBehaviour
 
         ArrayToDictionary();
         CreateRabbits();
-
-        Instantiate(musicManager);
-
     }
 
     private void Update()
