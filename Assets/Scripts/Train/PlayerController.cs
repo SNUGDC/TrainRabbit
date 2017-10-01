@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 	public bool isQuest;
 	public bool isQuestComplete;
 
-	private float HPDecreasePush = 0.1f;
+	private float HPDecreasePush = 0.03f;
     private Animator animator;
 
 	private void SetConscience()
