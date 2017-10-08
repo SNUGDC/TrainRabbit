@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4607120587691882}
   - component: {fileID: 114757757449762038}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,13 +59,25 @@ MonoBehaviour:
   - musicType: 0
     audioClip: {fileID: 8300000, guid: ba44d086d3f7ac14cb8919ef93c68392, type: 3}
   - musicType: 1
-    audioClip: {fileID: 8300000, guid: ee001d5f7111dc14ea354616681df525, type: 3}
+    audioClip: {fileID: 8300000, guid: 6d8daf2d4e679404db5ac12dd8381f90, type: 3}
   - musicType: 2
-    audioClip: {fileID: 8300000, guid: 4945c8edd643e0b4eb1c4f7b99cb0825, type: 3}
+    audioClip: {fileID: 8300000, guid: ee001d5f7111dc14ea354616681df525, type: 3}
   - musicType: 3
-    audioClip: {fileID: 8300000, guid: c832069bd84340d498e8fd96a016cf97, type: 3}
+    audioClip: {fileID: 8300000, guid: 4945c8edd643e0b4eb1c4f7b99cb0825, type: 3}
   - musicType: 4
+    audioClip: {fileID: 8300000, guid: c832069bd84340d498e8fd96a016cf97, type: 3}
+  - musicType: 5
     audioClip: {fileID: 8300000, guid: 3a1137589fff58047adbfdc80920b55b, type: 3}
+  - musicType: 6
+    audioClip: {fileID: 8300000, guid: af3a3dccbabb2ce4a812e42e14584b51, type: 3}
+  - musicType: 7
+    audioClip: {fileID: 8300000, guid: 6b03273f2e123d747a78d3cb8a427d73, type: 3}
+  - musicType: 8
+    audioClip: {fileID: 8300000, guid: 80389a908d02f7b43859ef9337aac40c, type: 3}
+  - musicType: 9
+    audioClip: {fileID: 8300000, guid: 794c33beba48bca4ca60aab4f2c36c30, type: 3}
+  - musicType: 10
+    audioClip: {fileID: 8300000, guid: 6e42fd29847403b46b77f143b9369a8e, type: 3}
   soundClips:
   - soundType: 0
     audioClip: {fileID: 8300000, guid: 6a79ad232c321ce4a997594a8dc078ef, type: 3}
@@ -81,4 +93,6 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 05293e847cf552e408876c0b82479a0b, type: 3}
   - soundType: 4
     audioClip: {fileID: 8300000, guid: a0c787e01919cc94d826dd63d28390d2, type: 3}
+  - soundType: 5
+    audioClip: {fileID: 8300000, guid: a0b541191d111f04fa3ed2ad3618afb7, type: 3}
   fadeDuration: 0.5

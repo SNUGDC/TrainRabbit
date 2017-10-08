@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit}
-public enum SoundType { click, swing, hit, death, talk }
+public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit, stageClear, gameOver, happyEnding, sadEnding, sooneung}
+public enum SoundType { click, swing, hit, death, talk, trainDoor }
 
 [System.Serializable]
 public class MusicDic
@@ -78,12 +78,12 @@ public class SoundManager : MonoBehaviour {
             SoundManager.PlayClick();
         }
     }
-    /*public void ChangeMainMusic(MusicType musicType)
+    static void SwitchMusicPlayers()
     {
-        mainMusic.Stop();
-        mainMusic.clip = musicClips.First(a => a.musicType == musicType).audioClip;
-        mainMusic.Play();
-    }*/
+        var temp = mainMusicPlayer;
+        mainMusicPlayer = subMusicPlayer;
+        subMusicPlayer = temp;
+    }
 
     public static void PlayOtherMusic(Rabbit rabbit)
     {
@@ -92,6 +92,16 @@ public class SoundManager : MonoBehaviour {
         var clip = ChooseMusicClip(rabbit);
         subMusicPlayer.SetMusic(clip);
         subMusicPlayer.FadeIn(instance.fadeDuration);
+        SwitchMusicPlayers();
+    }
+    public static void PlayOtherMusic(MusicType mt)
+    {
+        Debug.Log("playOhterMusic");
+        mainMusicPlayer.FadeOut(instance.fadeDuration);
+        var clip = instance.musicClips.First(a => a.musicType == mt).audioClip;
+        subMusicPlayer.SetMusic(clip);
+        subMusicPlayer.FadeIn(instance.fadeDuration);
+        SwitchMusicPlayers();
     }
     static AudioClip ChooseMusicClip(Rabbit rabbit)
     {
@@ -110,10 +120,12 @@ public class SoundManager : MonoBehaviour {
         }
         return instance.musicClips.First(a => a.musicType == musicType).audioClip;
     }
+
     public static void ResumeMainMusic()
     {
-        subMusicPlayer.FadeOut(instance.fadeDuration);
-        mainMusicPlayer.FadeIn(instance.fadeDuration);
+        mainMusicPlayer.FadeOut(instance.fadeDuration);
+        subMusicPlayer.FadeIn(instance.fadeDuration);
+        SwitchMusicPlayers();
     }
 
     static void PlaySound(SoundType st)
@@ -177,5 +189,9 @@ public class SoundManager : MonoBehaviour {
     {
         var clip = ChooseSoundClip(SoundType.talk);
         talkPlayer.PlaySolo(clip);
+    }
+    public static void PlayTrainDoor()
+    {
+        PlaySound(SoundType.trainDoor);
     }
 }
