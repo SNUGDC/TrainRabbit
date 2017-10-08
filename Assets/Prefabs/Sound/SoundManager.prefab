@@ -95,4 +95,6 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: a0c787e01919cc94d826dd63d28390d2, type: 3}
   - soundType: 5
     audioClip: {fileID: 8300000, guid: a0b541191d111f04fa3ed2ad3618afb7, type: 3}
+  - soundType: 6
+    audioClip: {fileID: 8300000, guid: 1880858ad1359364daec9dc5f8f22ecf, type: 3}
   fadeDuration: 0.5

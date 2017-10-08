@@ -25,6 +25,7 @@ public class ItemController : MonoBehaviour
 		{
 			UpdateItemCollect();
 			Debug.Log(ItemName + "을" + PlayerPrefs.GetInt(ItemName) + "째 획득!");
+			SoundManager.PlayGetItem();
 			GetItemPanel.SetActive(true);
 			Destroy(gameObject);
 		}

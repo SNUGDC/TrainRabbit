@@ -205,6 +205,7 @@ public class PlayerController : MonoBehaviour
 			{
 				Debug.Log(Train.trainNumber + "에서 " + (Train.trainNumber - 1) + "으로 넘어갑니다.");
 				Train.trainNumber -= 1;
+				SoundManager.PlayTrainDoor();
 				Scene scene = SceneManager.GetActiveScene(); //현재 씬 가져오기
 				SceneManager.LoadScene(scene.name);
 			}

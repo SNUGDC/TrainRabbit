@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit, stageClear, gameOver, happyEnding, sadEnding, sooneung}
-public enum SoundType { click, swing, hit, death, talk, trainDoor }
+public enum SoundType { click, swing, hit, death, talk, trainDoor, getItem }
 
 [System.Serializable]
 public class MusicDic
@@ -193,5 +193,9 @@ public class SoundManager : MonoBehaviour {
     public static void PlayTrainDoor()
     {
         PlaySound(SoundType.trainDoor);
+    }
+    public static void PlayGetItem()
+    {
+        PlaySound(SoundType.getItem);
     }
 }
