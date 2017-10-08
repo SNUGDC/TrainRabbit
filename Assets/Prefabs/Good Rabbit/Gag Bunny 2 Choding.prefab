@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rabbit: 2
-  HP: 30
+  HP: 100
   AP: 10
   moveSpeed: 1
   isSeat: 1
