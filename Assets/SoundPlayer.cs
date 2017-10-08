@@ -21,6 +21,11 @@ public class SoundPlayer : MonoBehaviour
         audio.Play();
         StartCoroutine(WaitAndEnqueue(soundClip.length));
     }
+    public void PlaySolo(AudioClip soundClip)
+    {
+        audio.clip = soundClip;
+        audio.Play();
+    }
     IEnumerator WaitAndEnqueue(float time)
     {
         yield return new WaitForSeconds(time);

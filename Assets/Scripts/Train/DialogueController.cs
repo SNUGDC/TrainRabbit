@@ -120,6 +120,7 @@ public class DialogueController : MonoBehaviour
                 case "Clear":
                 ClearPanel.SetActive(true);
                 gameObject.SetActive(false);
+                SoundManager.SetIsOnTrain(false);
                 break;
             }
         }

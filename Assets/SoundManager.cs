@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public enum MusicType { goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit}
+public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit}
 public enum SoundType { click, swing, hit, death, talk }
 
 [System.Serializable]
@@ -28,6 +28,8 @@ public class SoundManager : MonoBehaviour {
     static List<SoundPlayer> usingPlayers;
     static MusicPlayer mainMusicPlayer;
     static MusicPlayer subMusicPlayer;
+    static SoundPlayer talkPlayer;
+    static bool isOnTrain = true;
     public GameObject standardSoundPlayer;
     public GameObject standardMusicPlayer;
     public MusicDic[] musicClips;
@@ -36,12 +38,14 @@ public class SoundManager : MonoBehaviour {
 
     void Awake()
     {
+        FindTrain();
         if (instanceGO == null)
         {
             instance = this;
             instanceGO = this.gameObject;
             soundPlayers = new Queue<SoundPlayer>();
             usingPlayers = new List<SoundPlayer>();
+            SoundManager.talkPlayer = Instantiate(standardSoundPlayer, transform).GetComponent<SoundPlayer>();
             SoundManager.mainMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
             SoundManager.subMusicPlayer = Instantiate(standardMusicPlayer, transform).GetComponent<MusicPlayer>();
             DontDestroyOnLoad(this.gameObject);
@@ -51,13 +55,29 @@ public class SoundManager : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
-
+    public static void FindTrain()
+    {
+        isOnTrain = FindObjectOfType<TrainGenerator>();
+        Debug.Log("isOnTrain : " + isOnTrain);
+    }
+    public static void SetIsOnTrain(bool value)
+    {
+        isOnTrain = value;
+        Debug.Log("isOnTrain : " + isOnTrain);
+    }     
     void Start()
     {
         mainMusicPlayer.SetMusic(musicClips.First(a => a.musicType == MusicType.goodMain).audioClip);
         mainMusicPlayer.Play();
     }
 
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0) && !isOnTrain)
+        {
+            SoundManager.PlayClick();
+        }
+    }
     /*public void ChangeMainMusic(MusicType musicType)
     {
         mainMusic.Stop();
@@ -155,6 +175,7 @@ public class SoundManager : MonoBehaviour {
     }
     public static void PlayTalk()
     {
-        PlaySound(SoundType.talk);
+        var clip = ChooseSoundClip(SoundType.talk);
+        talkPlayer.PlaySolo(clip);
     }
 }

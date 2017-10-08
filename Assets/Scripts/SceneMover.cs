@@ -8,6 +8,7 @@ public class SceneMover : MonoBehaviour
 	public void MoveScene(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);
+		SoundManager.SetIsOnTrain(false);
         Train.trainNumber = 20;
 	}
 }
