@@ -29,7 +29,8 @@ public class SoundManager : MonoBehaviour {
     static MusicPlayer mainMusicPlayer;
     static MusicPlayer subMusicPlayer;
     static SoundPlayer talkPlayer;
-    static bool isOnTrain = true;
+    static bool isOnTrain;
+    static bool wasOnTrain;
     public GameObject standardSoundPlayer;
     public GameObject standardMusicPlayer;
     public MusicDic[] musicClips;
@@ -57,17 +58,43 @@ public class SoundManager : MonoBehaviour {
 	}
     public static void FindTrain()
     {
+        wasOnTrain = isOnTrain;
         isOnTrain = FindObjectOfType<TrainGenerator>();
-        Debug.Log("isOnTrain : " + isOnTrain);
+        Debug.Log("FindTrain - wasOnTrain : " + wasOnTrain);
+        Debug.Log("FindTrain - isOnTrain : " + isOnTrain);
+        if(instance != null)
+        {
+            if(isOnTrain && !wasOnTrain)
+            {
+                PlayOtherMusic(ChooseMusicByConscience());   
+            }
+            else if (!isOnTrain)
+            {
+                PlayOtherMusic(MusicType.mainTheme);
+            }
+        }
     }
     public static void SetIsOnTrain(bool value)
     {
         isOnTrain = value;
-        Debug.Log("isOnTrain : " + isOnTrain);
+        Debug.Log("SetBool - isOnTrain : " + isOnTrain);
     }     
+    static MusicType ChooseMusicByConscience()
+    {
+        return MusicType.goodMain;
+    }
     void Start()
     {
-        mainMusicPlayer.SetMusic(musicClips.First(a => a.musicType == MusicType.goodMain).audioClip);
+        MusicType mt;
+        if (isOnTrain)
+        {
+            mt = ChooseMusicByConscience();
+        }
+        else
+        {
+            mt = MusicType.mainTheme;
+        }
+        mainMusicPlayer.SetMusic(musicClips.First(a => a.musicType == mt).audioClip);
         mainMusicPlayer.Play();
     }
 
@@ -88,7 +115,7 @@ public class SoundManager : MonoBehaviour {
     public static void PlayOtherMusic(Rabbit rabbit)
     {
         Debug.Log("playOhterMusic");
-        mainMusicPlayer.FadeOut(instance.fadeDuration);
+        mainMusicPlayer.FadeOut(instance.fadeDuration, true);
         var clip = ChooseMusicClip(rabbit);
         subMusicPlayer.SetMusic(clip);
         subMusicPlayer.FadeIn(instance.fadeDuration);
@@ -97,7 +124,7 @@ public class SoundManager : MonoBehaviour {
     public static void PlayOtherMusic(MusicType mt)
     {
         Debug.Log("playOhterMusic");
-        mainMusicPlayer.FadeOut(instance.fadeDuration);
+        mainMusicPlayer.FadeOut(instance.fadeDuration, false);
         var clip = instance.musicClips.First(a => a.musicType == mt).audioClip;
         subMusicPlayer.SetMusic(clip);
         subMusicPlayer.FadeIn(instance.fadeDuration);
@@ -123,7 +150,7 @@ public class SoundManager : MonoBehaviour {
 
     public static void ResumeMainMusic()
     {
-        mainMusicPlayer.FadeOut(instance.fadeDuration);
+        mainMusicPlayer.FadeOut(instance.fadeDuration, true);
         subMusicPlayer.FadeIn(instance.fadeDuration);
         SwitchMusicPlayers();
     }

@@ -51,14 +51,14 @@ public class MusicPlayer : MonoBehaviour
         audio.clip = musicClip;
         audio.Play();
     }
-    public void FadeOut(float duration)
+    public void FadeOut(float duration, bool doPause)
     {
         initVolume = audio.volume;
         finalVolume = 0;
         initTime = Time.time;
         finalTime = initTime + duration;
         isFading = true;
-        StartCoroutine(Pause(duration));
+        StartCoroutine(Pause(duration, doPause));
     }
     public void FadeIn(float duration)
     {
@@ -69,9 +69,16 @@ public class MusicPlayer : MonoBehaviour
         isFading = true;
         audio.Play();
     }
-    IEnumerator Pause(float duration)
+    IEnumerator Pause(float duration, bool doPause)
     {
         yield return new WaitForSeconds(duration);
-        audio.Pause();
+        if (doPause)
+        {
+            audio.Pause();
+        }
+        else
+        {
+            audio.Stop();
+        }
     }
 }
