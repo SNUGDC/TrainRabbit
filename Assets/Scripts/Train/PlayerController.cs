@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour
 
         if(PlayerData.HP < 0.01f)
         {
+			SoundManager.PlayOtherMusic(MusicType.gameOver);
             SceneManager.LoadScene("Gameover Scene");
         }
     }

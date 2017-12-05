@@ -119,8 +119,9 @@ public class DialogueController : MonoBehaviour
             {
                 case "Clear":
                 ClearPanel.SetActive(true);
-                gameObject.SetActive(false);
-                SoundManager.SetIsOnTrain(false);
+                gameObject.SetActive(false);    
+		        SoundManager.SetIsOnTrain(false);
+                SoundManager.PlayOtherMusic(MusicType.stageClear);
                 break;
             }
         }

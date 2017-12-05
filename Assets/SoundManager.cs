@@ -53,6 +53,11 @@ public class SoundManager : MonoBehaviour {
         }
         else if (instanceGO != this)
         {
+            if(!mainMusicPlayer.GetIsPlaying())
+            {
+                mainMusicPlayer.SetMusic(musicClips.First(a => a.musicType == MusicType.mainTheme).audioClip);
+                mainMusicPlayer.Play();
+            }
             Destroy(gameObject);
         }
 	}
@@ -115,8 +120,9 @@ public class SoundManager : MonoBehaviour {
     public static void PlayOtherMusic(Rabbit rabbit)
     {
         Debug.Log("playOhterMusic");
-        mainMusicPlayer.FadeOut(instance.fadeDuration, true);
         var clip = ChooseMusicClip(rabbit);
+        
+        mainMusicPlayer.FadeOut(instance.fadeDuration, true);
         subMusicPlayer.SetMusic(clip);
         subMusicPlayer.FadeIn(instance.fadeDuration);
         SwitchMusicPlayers();
@@ -124,12 +130,15 @@ public class SoundManager : MonoBehaviour {
     public static void PlayOtherMusic(MusicType mt)
     {
         Debug.Log("playOhterMusic");
-        mainMusicPlayer.FadeOut(instance.fadeDuration, false);
+        var loop = !(mt == MusicType.stageClear || mt == MusicType.gameOver);
         var clip = instance.musicClips.First(a => a.musicType == mt).audioClip;
+
+        mainMusicPlayer.FadeOut(instance.fadeDuration, false);
         subMusicPlayer.SetMusic(clip);
-        subMusicPlayer.FadeIn(instance.fadeDuration);
+        subMusicPlayer.Play(loop);
         SwitchMusicPlayers();
     }
+
     static AudioClip ChooseMusicClip(Rabbit rabbit)
     {
         MusicType musicType = MusicType.goodRabbit;
@@ -198,7 +207,10 @@ public class SoundManager : MonoBehaviour {
 
     public static void PlayClick()
     {
-        PlaySound(SoundType.click);
+        if(instance != null)
+        {
+            PlaySound(SoundType.click);
+        }
     }
     public static void PlayDeath()
     {

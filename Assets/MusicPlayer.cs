@@ -12,6 +12,7 @@ public class MusicPlayer : MonoBehaviour
     float initVolume;
     float finalVolume;
     bool isFading;
+    bool isPlaying;
 
     void Awake()
     {
@@ -22,6 +23,7 @@ public class MusicPlayer : MonoBehaviour
     void Initiate()
     {
         audio.volume = absVolume;
+        audio.loop = true;
         isFading = false;
     }
     void FixedUpdate()
@@ -42,14 +44,25 @@ public class MusicPlayer : MonoBehaviour
     {
         audio.clip = musicClip;
     }
+    public bool GetIsPlaying()
+    {
+        return isPlaying;
+    }
     public void Play()
     {
-        audio.Play();
+        Play(true);
     }
-    public void Play(AudioClip musicClip)
+    public void Play(bool loop)
     {
-        audio.clip = musicClip;
+        audio.volume = absVolume;
+        audio.loop = loop;
+        isPlaying = true;
         audio.Play();
+        if (!loop)
+        {
+            StopAllCoroutines();
+            StartCoroutine(Pause(audio.clip.length, false));
+        }
     }
     public void FadeOut(float duration, bool doPause)
     {
@@ -58,6 +71,9 @@ public class MusicPlayer : MonoBehaviour
         initTime = Time.time;
         finalTime = initTime + duration;
         isFading = true;
+        isPlaying = false;
+
+        StopAllCoroutines();
         StartCoroutine(Pause(duration, doPause));
     }
     public void FadeIn(float duration)
@@ -67,11 +83,14 @@ public class MusicPlayer : MonoBehaviour
         initTime = Time.time;
         finalTime = initTime + duration;
         isFading = true;
+        isPlaying = true;
+        audio.loop = true;
         audio.Play();
     }
     IEnumerator Pause(float duration, bool doPause)
     {
         yield return new WaitForSeconds(duration);
+        isPlaying = false;
         if (doPause)
         {
             audio.Pause();
