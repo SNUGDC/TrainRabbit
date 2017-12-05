@@ -68,7 +68,7 @@ public class SoundManager : MonoBehaviour {
             {
                 PlayOtherMusic(ChooseMusicByConscience());   
             }
-            else if (!isOnTrain)
+            else if (!isOnTrain && wasOnTrain)
             {
                 PlayOtherMusic(MusicType.mainTheme);
             }
