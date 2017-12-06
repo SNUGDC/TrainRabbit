@@ -260,6 +260,11 @@ public class SoundManager : MonoBehaviour {
             PlaySound(SoundType.click);
         }
     }
+    public void PlayClickNonStatic()
+    {
+        PlayClick();
+    }
+
     public static void PlayDeath()
     {
         PlaySound(SoundType.death);
