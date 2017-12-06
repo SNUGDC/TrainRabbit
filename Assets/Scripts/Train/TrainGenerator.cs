@@ -26,6 +26,7 @@ public class TrainGenerator : MonoBehaviour
     private GameObject NowTrain;
     private float[] chairPosX = new float[12] {-12.8f, -11.3f, -9.8f, -4.4f, -2.8f, -1.2f, 0.4f, 2.0f, 3.6f, 9.1f, 10.7f, 12.2f};
     public float GongikInstanceCooltime;
+    private bool wasConscienceHigherThan30;
 
     private void Start()
     {
@@ -35,6 +36,15 @@ public class TrainGenerator : MonoBehaviour
 
         ArrayToDictionary();
         CreateRabbits();
+
+        if(PlayerData.Conscience < 30)
+        {
+            wasConscienceHigherThan30 = false;
+        }
+        else
+        {
+            wasConscienceHigherThan30 = true;
+        }
     }
 
     private void Update()
@@ -43,16 +53,46 @@ public class TrainGenerator : MonoBehaviour
         {
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
-                GongikInstanceCooltime += Time.deltaTime;
-        if(PlayerData.Conscience < 30 && GongikInstanceCooltime > 6f)
+
+        if (playerAge != PlayerStatus.PlayerAge.Kinder)
         {
-            if(!FindObjectsOfType<BadRabbitController>().Any(a => a.badRabbit == BadRabbit.Gongik))
+            GongikInstanceCooltime += Time.deltaTime;
+            if(PlayerData.Conscience < 30)
             {
-                GongikInstanceCooltime = 0f;
-                GameObject newGongik = Instantiate(BRdic["Gongik"]);
-                newGongik.GetComponent<BadRabbitController>().tr = this;
-                Rabbits.Add(newGongik);
+                if(GongikInstanceCooltime > 6f && !FindObjectsOfType<BadRabbitController>().Any(a => a.badRabbit == BadRabbit.Gongik))
+                {
+                    GongikInstanceCooltime = 0f;
+                    GameObject newGongik = Instantiate(BRdic["Gongik"]);
+                    newGongik.GetComponent<BadRabbitController>().tr = this;
+                    Rabbits.Add(newGongik);
+                }
+
+                if(wasConscienceHigherThan30)
+                {
+                    wasConscienceHigherThan30 = false;
+                    SwitchMusic(MusicType.badMain);
+                }
             }
+            else
+            {
+                if(!wasConscienceHigherThan30)
+                {
+                    wasConscienceHigherThan30 = true;
+                    SwitchMusic(SoundManager.ChooseGoodMusic());
+                }
+            }
+        }
+    }
+
+    private void SwitchMusic(MusicType mt)
+    {
+        if(DialogueController.isTalking)
+        {
+            SoundManager.SetSubPlayerMusic(mt);
+        }  
+        else
+        {
+            SoundManager.PlayOtherMusic(mt);
         }
     }
 

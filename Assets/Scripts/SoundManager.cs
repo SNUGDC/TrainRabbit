@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, stangeRabbit, seriousRabbit, stageClear, gameOver, happyEnding, sadEnding, sooneung}
+public enum MusicType { mainTheme, goodMain, badMain, goodRabbit, strangeRabbit, seriousRabbit, stageClear, gameOver, happyEnding, sadEnding, sooneung, goodSlow }
 public enum SoundType { click, swing, hit, death, talk, trainDoor, getItem }
 
 [System.Serializable]
@@ -71,7 +71,7 @@ public class SoundManager : MonoBehaviour {
         {
             if(isOnTrain && !wasOnTrain)
             {
-                PlayOtherMusic(ChooseMusicByConscience());   
+                PlayOtherMusic(ChooseTrainMusic());   
             }
             else if (!isOnTrain && wasOnTrain)
             {
@@ -84,16 +84,52 @@ public class SoundManager : MonoBehaviour {
         isOnTrain = value;
         Debug.Log("SetBool - isOnTrain : " + isOnTrain);
     }     
-    static MusicType ChooseMusicByConscience()
+    static MusicType ChooseTrainMusic()
     {
-        return MusicType.goodMain;
+        var playerAge = FindObjectOfType<TrainGenerator>().playerAge;
+        MusicType mt = MusicType.goodMain;
+
+        if (playerAge == PlayerStatus.PlayerAge.Happy)
+        {
+            mt = MusicType.happyEnding;
+        }
+        else if (playerAge == PlayerStatus.PlayerAge.Sad)
+        {
+            mt = MusicType.sadEnding;
+        }
+        else if (playerAge == PlayerStatus.PlayerAge.Soonung)
+        {
+            mt = MusicType.sooneung;
+        }
+
+        else if(playerAge != PlayerStatus.PlayerAge.Kinder && PlayerData.Conscience < 30)
+        {
+            mt = MusicType.badMain;
+        }
+        else
+        {
+            mt = ChooseGoodMusic();
+        }
+        return mt;
+    }
+    public static MusicType ChooseGoodMusic()
+    {
+        var playerAge = FindObjectOfType<TrainGenerator>().playerAge; 
+        if (playerAge == PlayerStatus.PlayerAge.High || playerAge == PlayerStatus.PlayerAge.Graduate)
+        {
+            return MusicType.goodSlow;
+        }
+        else
+        {
+            return MusicType.goodMain;
+        }
     }
     void Start()
     {
         MusicType mt;
         if (isOnTrain)
         {
-            mt = ChooseMusicByConscience();
+            mt = ChooseTrainMusic();
         }
         else
         {
@@ -130,12 +166,19 @@ public class SoundManager : MonoBehaviour {
     public static void PlayOtherMusic(MusicType mt)
     {
         Debug.Log("playOhterMusic");
-        var loop = !(mt == MusicType.stageClear || mt == MusicType.gameOver);
+        var isBGM = !(mt == MusicType.stageClear || mt == MusicType.gameOver);
         var clip = instance.musicClips.First(a => a.musicType == mt).audioClip;
 
         mainMusicPlayer.FadeOut(instance.fadeDuration, false);
         subMusicPlayer.SetMusic(clip);
-        subMusicPlayer.Play(loop);
+        if(isBGM)
+        {
+            subMusicPlayer.FadeIn(instance.fadeDuration);
+        }
+        else
+        {
+            subMusicPlayer.Play(isBGM);
+        }
         SwitchMusicPlayers();
     }
 
@@ -148,7 +191,7 @@ public class SoundManager : MonoBehaviour {
                 musicType = MusicType.goodRabbit;
                 break;
             case Rabbit.strange:
-                musicType = MusicType.stangeRabbit;
+                musicType = MusicType.strangeRabbit;
                 break;
             case Rabbit.serious:
                 musicType = MusicType.seriousRabbit;
@@ -162,6 +205,11 @@ public class SoundManager : MonoBehaviour {
         mainMusicPlayer.FadeOut(instance.fadeDuration, true);
         subMusicPlayer.FadeIn(instance.fadeDuration);
         SwitchMusicPlayers();
+    }
+    
+    public static void SetSubPlayerMusic(MusicType mt)
+    {
+        subMusicPlayer.SetMusic(instance.musicClips.First(a => a.musicType == mt).audioClip);
     }
 
     static void PlaySound(SoundType st)

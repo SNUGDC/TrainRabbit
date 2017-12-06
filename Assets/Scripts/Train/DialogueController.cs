@@ -12,6 +12,8 @@ public class DialogueController : MonoBehaviour
     public GameObject ChoicePanel;
     public GameObject ClearPanel;
 
+    public static bool isTalking = false;
+
     private List<Dialogue> dialogueList = new List<Dialogue>();
     private GameObject mainCamera;
     private AudioSource SEAudio;
@@ -33,6 +35,7 @@ public class DialogueController : MonoBehaviour
         TextReader reader = new TextReader();
         reader.Parse(Dialogue);
         dialogueList = reader.dialogueList;
+        isTalking = true;
 
         DialogueButton.SetActive(true);
         DialogueButton.GetComponent<Text>().text = "다음";
@@ -130,6 +133,7 @@ public class DialogueController : MonoBehaviour
     public void DialogueEnd()
     {
         SoundManager.ResumeMainMusic();
+        isTalking = false;
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
     }

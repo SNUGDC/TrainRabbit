@@ -73,7 +73,6 @@ public class MusicPlayer : MonoBehaviour
         isFading = true;
         isPlaying = false;
 
-        StopAllCoroutines();
         StartCoroutine(Pause(duration, doPause));
     }
     public void FadeIn(float duration)
