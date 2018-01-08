@@ -20,6 +20,15 @@ public class DialogueController : MonoBehaviour
     private GameObject QuestAccept;
     private GameObject QuestRefuse;
 
+    private GameObject dialoguePanel, movingPad, attackPad, forKinder;
+
+    /*void Awake()
+    {
+        dialoguePanel = GameObject.Find("Dialogue Panel");
+        movingPad = GameObject.Find("Moving Pad");
+        attackPad = GameObject.Find("Attack Pad");
+        forKinder = GameObject.Find("For Kinder Stage");
+    }*/
     private void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
@@ -132,10 +141,20 @@ public class DialogueController : MonoBehaviour
 
     public void DialogueEnd()
     {
+        Debug.Log("Dialogue End!");
         SoundManager.ResumeMainMusic();
         isTalking = false;
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
+
+        /*dialoguePanel.SetActive(false);
+        movingPad.SetActive(true);
+        attackPad.SetActive(true);
+        if (forKinder != null)
+        {
+            forKinder.GetComponent<AfterTalkWithPostgraduate>().TalkingFinished();
+        }*/
+
     }
 
     public void NextText()
@@ -150,6 +169,11 @@ public class DialogueController : MonoBehaviour
         {
             SoundManager.PlayTalk();
         }
+        Debug.Log(dialogueOrder+" / "+dialogueList.Count);
+        /*if (dialogueOrder >= dialogueList.Count)
+        {
+            DialogueEnd();
+        }*/
     }
 }
 
