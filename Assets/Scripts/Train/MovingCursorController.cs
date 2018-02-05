@@ -8,8 +8,13 @@ public class MovingCursorController : MonoBehaviour
 	private Vector2 origin;
 	private Vector2 movingVector;
 
+	private float widthPixels;
     Touch[] myTouch;
 
+	void Awake()
+	{
+		widthPixels = Screen.currentResolution.width;
+	}
 	private void Start()
 	{
 		origin = transform.position;
@@ -26,7 +31,7 @@ public class MovingCursorController : MonoBehaviour
 	{
         if (myTouch.Any())
         {
-            Vector2 mousePos = myTouch.Where(a => a.position.x < 400).First().position;
+            Vector2 mousePos = myTouch.Where(a => a.position.x < widthPixels * 0.5).First().position;
             movingVector = new Vector2(mousePos.x, mousePos.y) - origin;
         }
 		
@@ -41,12 +46,12 @@ public class MovingCursorController : MonoBehaviour
 
 	private Vector2 CursorPos(Vector2 movingVector)
 	{
-		if(movingVector.magnitude <= 75f)
+		if(movingVector.magnitude <= widthPixels * 0.07f)
 		{
 			return movingVector + origin;
 		}
 
-		return origin + movingVector.normalized * 75;
+		return origin + movingVector.normalized * widthPixels * 0.07f;
 	}
 
 	private void TellMovingVectorToPlayer(Vector2 movingVector)
