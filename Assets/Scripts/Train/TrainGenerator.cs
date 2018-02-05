@@ -564,7 +564,7 @@ public class TrainGenerator : MonoBehaviour
         if (ItemDictionary.Length != 0)
         {
             int randomNum = Random.Range(0, ItemDictionary.Length);
-            Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 3f));
+            Vector2 spawnPos = new Vector2(Random.Range(-12.5f, 12.5f), Random.Range(-5f, 1f));
 
               Instantiate(ItemDictionary[randomNum].ItemPrefab, spawnPos, Quaternion.identity);
         }
