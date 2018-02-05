@@ -10,6 +10,7 @@ public class MovingCursorController : MonoBehaviour
 
 	private float widthPixels;
     Touch[] myTouch;
+	static bool isTracking;
 
 	void Awake()
 	{
@@ -24,9 +25,23 @@ public class MovingCursorController : MonoBehaviour
 	private void Update()
 	{
         myTouch = Input.touches;
+		if (isTracking) TrackingMouse();
 		TellMovingVectorToPlayer(movingVector);
 	}
 
+	public void TurnOnTracking()
+	{
+		isTracking = true;
+	}
+	public void TurnOffTracking()
+	{
+		isTracking = false;
+		GoToOrigin();
+	}
+	public static void TurnOffTrackingStatic()
+	{
+		isTracking = false;
+	}
 	public void TrackingMouse()
 	{
         if (myTouch.Any())
