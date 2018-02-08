@@ -56,7 +56,10 @@ public class TextStarter : MonoBehaviour
 
 	private void DialogueStart()
 	{
-        SoundManager.PlayOtherMusic(brc.rabbit);
+		var playerAge = FindObjectOfType<TrainGenerator>().playerAge;
+        if(!(playerAge == PlayerStatus.PlayerAge.Happy || playerAge == PlayerStatus.PlayerAge.Sad)) SoundManager.PlayOtherMusic(brc.rabbit);
+		SoundManager.PlayTalk();
+
 		MovingPad.SetActive(false);
 		AttackPad.SetActive(false);
 		LookEachOther(isSeat);

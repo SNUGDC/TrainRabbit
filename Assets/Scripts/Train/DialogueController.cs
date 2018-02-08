@@ -142,7 +142,9 @@ public class DialogueController : MonoBehaviour
     public void DialogueEnd()
     {
         Debug.Log("Dialogue End!");
-        SoundManager.ResumeMainMusic();
+        var playerAge = FindObjectOfType<TrainGenerator>().playerAge;
+        if(!(playerAge == PlayerStatus.PlayerAge.Happy || playerAge == PlayerStatus.PlayerAge.Sad)) SoundManager.ResumeMainMusic();
+        
         isTalking = false;
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;

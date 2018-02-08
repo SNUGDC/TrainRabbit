@@ -54,7 +54,9 @@ public class TrainGenerator : MonoBehaviour
             DeleteAllRabbits();//지하철 내의 모든 토끼들 제거
         }
 
-        if (playerAge != PlayerStatus.PlayerAge.Kinder)
+        if (playerAge != PlayerStatus.PlayerAge.Kinder 
+            && playerAge != PlayerStatus.PlayerAge.Happy 
+            && playerAge != PlayerStatus.PlayerAge.Sad)
         {
             GongikInstanceCooltime += Time.deltaTime;
             if(PlayerData.Conscience < 30)

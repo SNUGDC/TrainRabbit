@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
 	{
-		if(coll.gameObject.tag == "Door") //문에 부딪치면 다음 열차 차량으로 넘어가는 코드
+		if(coll.gameObject.GetComponent<Door>() != null) //문에 부딪치면 다음 열차 차량으로 넘어가는 코드
 		{
 			GameObject door = coll.gameObject;
             bool isRightDoor;
