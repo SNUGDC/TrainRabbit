@@ -9,6 +9,7 @@ public class BadRabbitController : MonoBehaviour
 	public float HP; //체력
 	public float AP; //공격력
 	public float moveSpeed = 1f;
+    public bool dead = false;
 
 	private float movingTime;
 	private float waitingTime;
@@ -55,15 +56,18 @@ public class BadRabbitController : MonoBehaviour
 
 		if (HP <= 0)
 		{
+            if (!dead)
+            SoundManager.PlayDeath();
+            GetComponent<Animator>().SetTrigger("dead");
+            Destroy(gameObject, 0.2f);
+
+            dead = true;
             if (badRabbit == BadRabbit.Gongik)
             {
                 tr.GongikInstanceCooltime = 0f;
             }
-            SoundManager.PlayDeath();
-            Destroy(gameObject);
-		}
+        }
 	}
-
     
     private void LookEachOther()
     {

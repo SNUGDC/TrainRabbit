@@ -541,6 +541,16 @@ Prefab:
       propertyPath: ConscienceBar
       value: 
       objectReference: {fileID: 1605738047}
+    - target: {fileID: 114892542224445162, guid: 0e1854ca1335ad54ea44e6ef19b781cb,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892542224445162, guid: 0e1854ca1335ad54ea44e6ef19b781cb,
+        type: 2}
+      propertyPath: isQuest
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e1854ca1335ad54ea44e6ef19b781cb, type: 2}
   m_IsPrefabParent: 0
