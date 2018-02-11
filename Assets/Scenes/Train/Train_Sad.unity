@@ -1099,12 +1099,12 @@ Prefab:
     - target: {fileID: 224743140588350614, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 224743140588350614, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 224743140588350614, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
@@ -1230,16 +1230,26 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 442893733}
+      objectReference: {fileID: 0}
     - target: {fileID: 114820310001469940, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: TalkingFinished
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114151198450073524, guid: a3084d774a6159347b13941182923e6d,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Ending Story_Ending Sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 224468987905718352, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224468987905718352, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3084d774a6159347b13941182923e6d, type: 2}
