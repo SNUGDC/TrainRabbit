@@ -348,6 +348,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Ending Story_Goding
       objectReference: {fileID: 0}
+    - target: {fileID: 224260460056198310, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 224260460056198310, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 205
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3084d774a6159347b13941182923e6d, type: 2}
   m_IsPrefabParent: 0
@@ -421,7 +431,12 @@ Prefab:
     - target: {fileID: 114892542224445162, guid: 190caa9f2a7e35c4499649c350079415,
         type: 2}
       propertyPath: moveSpeed
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892542224445162, guid: 190caa9f2a7e35c4499649c350079415,
+        type: 2}
+      propertyPath: isQuest
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 190caa9f2a7e35c4499649c350079415, type: 2}

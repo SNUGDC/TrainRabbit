@@ -504,7 +504,7 @@ Prefab:
     - target: {fileID: 114892542224445162, guid: 3dd1fc6b51075ec418945d7e3406ea3f,
         type: 2}
       propertyPath: moveSpeed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3dd1fc6b51075ec418945d7e3406ea3f, type: 2}
@@ -716,6 +716,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Ending Story_Joongding
+      objectReference: {fileID: 0}
+    - target: {fileID: 224260460056198310, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 224260460056198310, guid: a3084d774a6159347b13941182923e6d,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 205
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3084d774a6159347b13941182923e6d, type: 2}

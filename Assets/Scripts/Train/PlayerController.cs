@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 	
 	private void Update()
 	{
-		MoveWithKeyboard();
+        MoveWithKeyboard();
 		MaxMinStatus();
         //앞에 있는 토끼는 앞에 있도록 해줍니다.
         GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
