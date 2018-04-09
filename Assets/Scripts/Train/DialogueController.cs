@@ -19,9 +19,10 @@ public class DialogueController : MonoBehaviour
     private AudioSource SEAudio;
     private GameObject QuestAccept;
     private GameObject QuestRefuse;
+    private GameObject Player;
 
     private GameObject dialoguePanel, movingPad, attackPad, forKinder;
-
+    private GameObject bubbleObject;
     /*void Awake()
     {
         dialoguePanel = GameObject.Find("Dialogue Panel");
@@ -31,6 +32,7 @@ public class DialogueController : MonoBehaviour
     }*/
     private void Start()
     {
+		Player = GameObject.FindGameObjectWithTag("Player");
         mainCamera = GameObject.Find("Main Camera");
         SEAudio = GetComponent<AudioSource>();
         QuestAccept = ChoicePanel.transform.Find("Yes").gameObject;
@@ -39,8 +41,9 @@ public class DialogueController : MonoBehaviour
         ReadDialogue();
     }
 
-    public void ReadDialogue()
+    public void ReadDialogue(GameObject parent = null)
     {
+        if(parent != null) bubbleObject = parent;
         TextReader reader = new TextReader();
         reader.Parse(Dialogue);
         dialogueList = reader.dialogueList;
@@ -146,6 +149,9 @@ public class DialogueController : MonoBehaviour
         if(!(playerAge == PlayerStatus.PlayerAge.Happy || playerAge == PlayerStatus.PlayerAge.Sad)) SoundManager.ResumeMainMusic();
         
         isTalking = false;
+		if(!Player.GetComponent<PlayerController>().isQuest){
+			Destroy(bubbleObject);
+		}
         mainCamera.transform.position = new Vector3(0,0,-10);
         mainCamera.GetComponent<Camera>().orthographicSize = 8f;
 

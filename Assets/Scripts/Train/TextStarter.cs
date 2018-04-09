@@ -10,6 +10,7 @@ public class TextStarter : MonoBehaviour
     private GameObject DialoguePanel;
     private GameObject MainCamera;
 	private GameObject Player;
+	private GameObject TalkCollider;
 	private bool isSeat;
     private BasicRabbitController brc;
 
@@ -42,15 +43,13 @@ public class TextStarter : MonoBehaviour
 	private void ClickBubble()
 	{
 		Debug.Log("말풍선을 누름");
-		GameObject TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
+		TalkCollider = gameObject.transform.parent.transform.Find("Talk Collider").gameObject;
 		bool isMeetPlayer = TalkCollider.GetComponent<InteractionWithPlayer>().isMeetPlayer;
         
 		if(isMeetPlayer == true)
 		{
 			DialogueStart();
 			Debug.Log("대화 시작!");
-
-			Destroy(gameObject);
 		}
 	}
 
@@ -66,7 +65,8 @@ public class TextStarter : MonoBehaviour
 		CloseUp();
 		DialoguePanel.SetActive(true);
 		PassDialogue();
-		DialoguePanel.GetComponent<DialogueController>().ReadDialogue();
+		Debug.Log("TextStarter.DialogueStart");
+		DialoguePanel.GetComponent<DialogueController>().ReadDialogue(gameObject);
 		DialoguePanel.GetComponent<DialogueController>().dialogueOrder = 0;
 		gameObject.transform.parent.GetComponent<BasicRabbitController>().isTalking = true;
 	}
