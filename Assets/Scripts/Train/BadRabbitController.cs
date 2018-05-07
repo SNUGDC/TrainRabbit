@@ -59,7 +59,7 @@ public class BadRabbitController : MonoBehaviour
             if (!dead)
             SoundManager.PlayDeath();
             GetComponent<Animator>().SetTrigger("dead");
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject);
 
             dead = true;
             if (badRabbit == BadRabbit.Gongik)
