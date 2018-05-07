@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public enum Rabbit { basic, good, strange, serious}
 
@@ -17,25 +18,50 @@ public class BasicRabbitController : MonoBehaviour
 	private float gameTime;
 	private Vector2 movingVector = new Vector2 (0, 0);
 
+	float hitAnimDuration = 0.35f;
+	float hitLast;
+	bool isHit = false;
+	Sprite normalSprite;
+	public Sprite hitSprite;
+	SpriteRenderer spriteRenderer;
+	bool dead;
+
 	private void Start()
 	{
         gameTime = Random.Range(-4f, -1f);
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		normalSprite = spriteRenderer.sprite;
 	}
 
 	private void Update()
 	{
+		if(dead) return;
+		
 		if(isSeat == false && isTalking == false)
 		{
 			MoveBackAndForth();
 		}
 			
-		GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+		spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100f);
+
+		if(isHit && Time.time >= hitLast + hitAnimDuration) {
+			isHit = false;
+			spriteRenderer.sprite = normalSprite;
+		}
 
 		if (HP <= 0)
 		{
+			dead = true;
             SoundManager.PlayDeath();
-            Destroy(gameObject);
+			GetComponentsInChildren<Collider2D>().ToList().ForEach(col => Destroy(col));
+            Destroy(gameObject, hitAnimDuration);
 		}
+	}
+	public void GetHit(int ap){
+		HP -= AP;
+		isHit = true;
+		spriteRenderer.sprite = hitSprite;
+		hitLast = Time.time;
 	}
 
 	private Vector2 DecideBackAndForthVector()

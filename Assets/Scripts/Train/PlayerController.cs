@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                rabbit.GetComponent<BasicRabbitController>().HP -= AP;
+                rabbit.GetComponent<BasicRabbitController>().GetHit(AP);
                 PlayerData.Conscience = PlayerData.Conscience - 1;
             }
             /*
