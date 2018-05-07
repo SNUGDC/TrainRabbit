@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public enum BadRabbit { Drunken, Gongik, Hentai, Jeondomon, Merchant}
 
@@ -30,6 +31,8 @@ public class BadRabbitController : MonoBehaviour
 
 	private void Update()
 	{
+		if(dead) return;
+
         float step = moveSpeed * Time.deltaTime;
         if ((transform.position - player.position).magnitude > 2f)
         {
@@ -59,7 +62,8 @@ public class BadRabbitController : MonoBehaviour
             if (!dead)
             SoundManager.PlayDeath();
             GetComponent<Animator>().SetTrigger("dead");
-            Destroy(gameObject);
+			GetComponentsInChildren<Collider2D>().ToList().ForEach(col => Destroy(col));
+            Destroy(gameObject, 0.5f);
 
             dead = true;
             if (badRabbit == BadRabbit.Gongik)
