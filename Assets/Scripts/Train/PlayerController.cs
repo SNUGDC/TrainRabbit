@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void Attack()
     {
+		Debug.Log("Targets : "+AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked.Count);
         foreach (GameObject rabbit in AttackCollider.GetComponent<GetObjectToBeAttacked>().RabbitToBeAttacked)
         {
 			SoundManager.PlayHit(); // TODO : 원래 토끼 피격 애니메이션에 있을 코드. 임시로 여기에 넣음

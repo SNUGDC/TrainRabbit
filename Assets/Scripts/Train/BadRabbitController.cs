@@ -59,7 +59,6 @@ public class BadRabbitController : MonoBehaviour
 
 		if (HP <= 0)
 		{
-            if (!dead)
             SoundManager.PlayDeath();
             GetComponent<Animator>().SetTrigger("dead");
 			GetComponentsInChildren<Collider2D>().ToList().ForEach(col => Destroy(col));
