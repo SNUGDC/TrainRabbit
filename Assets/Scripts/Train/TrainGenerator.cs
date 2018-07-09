@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Linq;
 
 public class TrainGenerator : MonoBehaviour
@@ -34,6 +35,7 @@ public class TrainGenerator : MonoBehaviour
         NowTrain = GameObject.Find("Train");
         trainNum = Train.trainNumber.Value;
 
+        EndEnding();
         ArrayToDictionary();
         CreateRabbits();
 
@@ -83,6 +85,14 @@ public class TrainGenerator : MonoBehaviour
                     SwitchMusic(SoundManager.ChooseGoodMusic());
                 }
             }
+        }
+    }
+    private void EndEnding(){
+        if(playerAge == PlayerStatus.PlayerAge.Happy && trainNum <= 14){
+            GetComponent<SceneMover>().MoveScene();
+        }
+        if(playerAge == PlayerStatus.PlayerAge.Sad && trainNum <= 14){
+            GetComponent<SceneMover>().MoveScene();
         }
     }
 
